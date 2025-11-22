@@ -179,12 +179,16 @@ export default function About() {
               sophisticated financial tools without the complexity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button variant="primary" size="lg">
-                View on GitHub
-              </Button>
-              <Button variant="secondary" size="lg">
-                Read Documentation
-              </Button>
+              <a href="https://github.com/mollybeach/hedgepod" target="_blank" rel="noopener noreferrer">
+                <Button variant="primary" size="lg">
+                  View on GitHub
+                </Button>
+              </a>
+              <a href="https://github.com/mollybeach/hedgepod#-documentation" target="_blank" rel="noopener noreferrer">
+                <Button variant="secondary" size="lg">
+                  Read Documentation
+                </Button>
+              </a>
             </div>
           </div>
         </Card>
