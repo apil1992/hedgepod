@@ -9,25 +9,51 @@
 
 ## 🎯 Official Partner Prize Selections (Max 3)
 
-### 1. LayerZero - $20,000
+---
 
-**Why we're applicable for this prize:**
+### 1️⃣ LayerZero - $20,000
 
+#### 📝 Why we're applicable (copy this):
+
+```
 HedgePod uses LayerZero as the core infrastructure for cross-chain token transfers and agent rebalancing. We've extended the OFT (Omnichain Fungible Token) standard to create AutoYieldToken, which includes custom yield-aware routing logic. Our agents autonomously move user funds across 8+ chains via LayerZero to optimize APR, making it a critical component of our chain abstraction strategy. This is not a superficial integration - LayerZero is the backbone that enables true autonomous cross-chain yield optimization.
+```
 
-**Links to code:**
+#### 🔗 Code link #1 (AutoYieldToken OFT Extension):
 
-- **AutoYieldToken OFT Extension**: https://github.com/mollybeach/hedgepod/blob/master/contracts/AutoYieldToken.sol
-- **Cross-chain rebalancing logic**: https://github.com/mollybeach/hedgepod/blob/master/contracts/HedgePodVault.sol#L120-L180
-- **Backend LayerZero integration**: https://github.com/mollybeach/hedgepod/blob/master/backend/src/agent/rebalancer.ts
-- **Network configuration**: https://github.com/mollybeach/hedgepod/blob/master/config/networks.ts
+```
+https://github.com/mollybeach/hedgepod/blob/master/contracts/AutoYieldToken.sol
+```
 
-**How easy is it to use the API / Protocol?**  
-**Rating: 8/10**
+#### 🔗 Code link #2 (Cross-chain rebalancing logic):
 
-**Additional feedback:**
+```
+https://github.com/mollybeach/hedgepod/blob/master/contracts/HedgePodVault.sol#L120-L180
+```
 
+#### 🔗 Code link #3 (Backend LayerZero integration):
+
+```
+https://github.com/mollybeach/hedgepod/blob/master/backend/src/agent/rebalancer.ts
+```
+
+#### 🔗 Code link #4 (Network configuration):
+
+```
+https://github.com/mollybeach/hedgepod/blob/master/config/networks.ts
+```
+
+#### ⭐ Ease of use rating:
+
+```
+8
+```
+
+#### 💬 Additional feedback (copy this):
+
+```
 LayerZero's OFT standard is well-documented and the endpoint interface is clean. The testnet faucet worked flawlessly, and Layerscan was invaluable for debugging cross-chain transactions. Minor pain point: adapter params encoding for custom gas limits could use better TypeScript type definitions. Overall, excellent developer experience - we were able to implement custom yield-aware routing on top of the base OFT in just a few hours.
+```
 
 ---
 
