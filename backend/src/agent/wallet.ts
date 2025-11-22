@@ -3,7 +3,7 @@
  * Manages the autonomous agent wallet with x402 authorization
  */
 
-import { Coinbase, Wallet } from "@coinbase/coinbase-sdk";
+import { Coinbase, Wallet } from "../lib/coinbase-sdk";
 import { ethers } from "ethers";
 import config from "../config";
 import logger from "../utils/logger";
