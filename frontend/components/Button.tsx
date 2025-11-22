@@ -7,6 +7,7 @@ interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'nav';
   size?: 'sm' | 'md' | 'lg';
   onClick?: () => void;
+  disabled?: boolean;
   className?: string;
 }
 
@@ -15,9 +16,13 @@ export function Button({
   variant = 'primary', 
   size = 'md',
   onClick,
+  disabled = false,
   className = ''
 }: ButtonProps) {
-  const baseStyles = "font-display font-bold rounded-full transition-all transform hover:-translate-y-0.5";
+  const baseStyles = "font-display font-bold rounded-full transition-all transform";
+  const interactiveStyles = disabled 
+    ? "opacity-50 cursor-not-allowed" 
+    : "hover:-translate-y-0.5";
   
   const variants = {
     primary: "bg-pink-500 hover:bg-pink-400 text-white shadow-ac-sm hover:shadow-ac border-3 border-brown-500",
@@ -34,7 +39,8 @@ export function Button({
   return (
     <button 
       onClick={onClick}
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
+      disabled={disabled}
+      className={`${baseStyles} ${interactiveStyles} ${variants[variant]} ${sizes[size]} ${className}`}
     >
       {children}
     </button>
