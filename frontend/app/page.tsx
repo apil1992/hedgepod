@@ -151,8 +151,8 @@ export default function Home() {
         </Card>
 
         {/* Learn More CTA */}
-        <div className="text-center space-y-3">
-          <p className="text-sm text-green-700 font-body">
+        <div className="text-center space-y-3 mb-2">
+          <p className="text-sm text-green-700 font-body mb-2">
             Want to learn more about how HedgePod works?
           </p>
           <Link href="/about">

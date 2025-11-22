@@ -72,6 +72,8 @@ export default function Portfolio() {
   const [agents, setAgents] = useState<Agent[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [activating, setActivating] = useState<string | null>(null);
 
   useEffect(() => {
     fetchAgents();
@@ -132,7 +134,7 @@ export default function Portfolio() {
   };
 
   const handleActivate = async (agentId: string) => {
-    if (!confirm('Activate this agent? It will start monitoring and rebalancing.')) return;
+    setActivating(agentId);
 
     try {
       const response = await fetch(`/api/agents/${agentId}`, {
@@ -144,13 +146,46 @@ export default function Portfolio() {
       const data = await response.json();
 
       if (data.success) {
-        alert('✅ Agent activated successfully!');
+        setSuccessMessage('✅ Agent activated successfully! It will start monitoring and rebalancing.');
         fetchAgents();
+        setTimeout(() => setSuccessMessage(null), 5000); // Auto-hide after 5 seconds
       } else {
-        alert(`❌ Error: ${data.error}`);
+        setError(data.error);
+        setTimeout(() => setError(null), 5000);
       }
     } catch (err: any) {
-      alert(`❌ Error: ${err.message}`);
+      setError(err.message);
+      setTimeout(() => setError(null), 5000);
+    } finally {
+      setActivating(null);
+    }
+  };
+
+  const handlePause = async (agentId: string) => {
+    setActivating(agentId);
+
+    try {
+      const response = await fetch(`/api/agents/${agentId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'pause' }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSuccessMessage('⏸️ Agent paused successfully! Monitoring stopped.');
+        fetchAgents();
+        setTimeout(() => setSuccessMessage(null), 5000);
+      } else {
+        setError(data.error);
+        setTimeout(() => setError(null), 5000);
+      }
+    } catch (err: any) {
+      setError(err.message);
+      setTimeout(() => setError(null), 5000);
+    } finally {
+      setActivating(null);
     }
   };
 
@@ -188,6 +223,30 @@ export default function Portfolio() {
               Your portfolio is managed by autonomous AI agents working 24/7 to maximize your yields across all chains
             </p>
           </div>
+
+          {/* Success Message */}
+          {successMessage && (
+            <Card variant="dialogue" className="bg-green-100 border-green-500">
+              <div className="flex items-center justify-between">
+                <p className="text-green-800 font-body">{successMessage}</p>
+                <button onClick={() => setSuccessMessage(null)} className="text-green-800 hover:text-green-900 font-bold">
+                  ✕
+                </button>
+              </div>
+            </Card>
+          )}
+
+          {/* Error Message */}
+          {error && (
+            <Card variant="dialogue" className="bg-red-100 border-red-500">
+              <div className="flex items-center justify-between">
+                <p className="text-red-800 font-body">❌ {error}</p>
+                <button onClick={() => setError(null)} className="text-red-800 hover:text-red-900 font-bold">
+                  ✕
+                </button>
+              </div>
+            </Card>
+          )}
 
         {/* Agent Stats Overview */}
         <div className="grid md:grid-cols-4 gap-4">
@@ -392,8 +451,19 @@ export default function Portfolio() {
                             variant="primary"
                             size="sm"
                             onClick={() => handleActivate(agent.agent_id)}
+                            disabled={activating === agent.agent_id}
                           >
-                            ✅ Activate
+                            {activating === agent.agent_id ? '⏳ Activating...' : '✅ Activate'}
+                          </Button>
+                        )}
+                        {agent.status === 'active' && (
+                          <Button
+                            variant="secondary"
+                            size="sm"
+                            onClick={() => handlePause(agent.agent_id)}
+                            disabled={activating === agent.agent_id}
+                          >
+                            {activating === agent.agent_id ? '⏳ Pausing...' : '⏸️ Pause'}
                           </Button>
                         )}
                       </div>

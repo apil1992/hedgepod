@@ -43,7 +43,7 @@ export function Sidebar() {
         </div>
 
         {/* Profile Card */}
-        <Card variant="dialogue" className="text-center space-y-3 relative" style={{ zIndex: 2 }}>
+        <Card variant="dialogue" className="text-center space-y-3 relative ml-2" style={{ zIndex: 2 }}>
         <Avatar size="lg" />
         
         {isConnected && address ? (
@@ -82,7 +82,7 @@ export function Sidebar() {
 
       {/* Quick Stats Widget */}
       {isConnected && (
-        <Card variant="default" className="space-y-3 relative" style={{ zIndex: 2 }}>
+        <Card variant="default" className="space-y-3 relative ml-2" style={{ zIndex: 2 }}>
           <h3 className="font-display font-bold text-green-700 text-sm flex items-center gap-2">
             <span>📈</span> Your Stats
           </h3>
@@ -104,7 +104,7 @@ export function Sidebar() {
       )}
 
       {/* Quick Actions Widget */}
-      <Card variant="default" className="space-y-3 relative" style={{ zIndex: 2 }}>
+      <Card variant="default" className="space-y-3 relative ml-2" style={{ zIndex: 2 }}>
         <h3 className="font-display font-bold text-green-700 text-sm flex items-center gap-2">
           <span>⚡</span> Quick Actions
         </h3>
@@ -123,7 +123,7 @@ export function Sidebar() {
       </Card>
 
       {/* Market Info Widget */}
-      <Card variant="default" className="space-y-3 relative" style={{ zIndex: 2 }}>
+      <Card variant="default" className="space-y-3 relative ml-2" style={{ zIndex: 2 }}>
         <h3 className="font-display font-bold text-green-700 text-sm flex items-center gap-2">
           <span>🌐</span> Top APRs
         </h3>
@@ -151,7 +151,7 @@ export function Sidebar() {
       </Card>
 
       {/* Help Widget */}
-      <Card variant="dialogue" className="space-y-2 bg-gradient-to-br from-pink-50 to-purple-50 relative" style={{ zIndex: 2 }}>
+      <Card variant="dialogue" className="space-y-2 bg-gradient-to-br from-pink-50 to-purple-50 relative ml-2" style={{ zIndex: 2 }}>
         <div className="text-center space-y-3">
           <div className="text-3xl">💡</div>
           <p className="text-xs font-body text-green-700">

@@ -33,8 +33,8 @@ export function Navigation() {
         {/* Logo */}
         <Link href="/">
           <div className="flex items-center gap-2 cursor-pointer">
-            <Image src="/hedgepod-logo.png" alt="HedgePod" width={48} height={48} className="w-12 h-12 rounded-full" />
-            <span className="font-display font-bold text-2xl text-green-600 hidden md:block">
+            <Image src="/hedgepod-logo.png" alt="HedgePod" width={48} height={48} className="w-12 h-12 rounded-full border-3 border-brown-500" />
+            <span className="font-display font-bold text-2xl text-green-800 hidden md:block">
               HedgePod
             </span>
           </div>
