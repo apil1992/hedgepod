@@ -16,19 +16,33 @@ export function Navigation() {
   const [isMoreDropdownOpen, setIsMoreDropdownOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center mb-8">
-      {/* Logo */}
-      <Link href="/">
-        <div className="flex items-center gap-2 cursor-pointer">
-          <Image src="/hedgepod-logo.png" alt="HedgePod" width={48} height={48} className="w-12 h-12 rounded-full" />
-          <span className="font-display font-bold text-2xl text-green-600 hidden md:block">
-            HedgePod
-          </span>
-        </div>
-      </Link>
+    <nav 
+      className="flex justify-between items-center mb-8 p-4 rounded-2xl shadow-ac border-3 border-brown-500 relative overflow-hidden"
+      style={{
+        backgroundImage: 'url(/greenleaves_header.png)',
+        backgroundRepeat: 'repeat-x',
+        backgroundSize: 'auto 100%',
+        backgroundPosition: 'center',
+      }}
+    >
+      {/* Background overlay for better text readability */}
+      <div className="absolute inset-0 bg-cream/40 backdrop-blur-[1px]" />
+      
+      {/* Content wrapper with z-index to be above overlay */}
+      <div className="relative z-10 flex items-center gap-2">
+        {/* Logo */}
+        <Link href="/">
+          <div className="flex items-center gap-2 cursor-pointer">
+            <Image src="/hedgepod-logo.png" alt="HedgePod" width={48} height={48} className="w-12 h-12 rounded-full" />
+            <span className="font-display font-bold text-2xl text-green-600 hidden md:block">
+              HedgePod
+            </span>
+          </div>
+        </Link>
+      </div>
 
       {/* Navigation Links */}
-      <div className="flex items-center gap-3">
+      <div className="relative z-10 flex items-center gap-3">
         <Link href="/portfolio">
           <button className="bg-pink-400 hover:bg-pink-300 text-white font-display font-bold py-2 px-4 md:px-6 rounded-full border-3 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all transform hover:-translate-y-0.5 text-sm md:text-base">
             📊 Portfolio
