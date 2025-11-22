@@ -9,4 +9,5 @@ export { Badge, BadgeGroup } from './Badge';
 export { Avatar } from './Avatar';
 export { Navigation } from './Navigation';
 export { PageLayout } from './PageLayout';
+export { Providers } from './Providers';
 
