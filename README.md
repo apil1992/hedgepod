@@ -123,7 +123,7 @@ npx hardhat run scripts/deploy.ts --network worldchain
 
 ```bash
 # Development server
-cd app
+cd frontend
 npm run dev
 # Open http://localhost:3000
 ```
