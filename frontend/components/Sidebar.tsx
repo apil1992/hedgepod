@@ -13,8 +13,8 @@ export function Sidebar() {
 
   return (
     <>
-      {/* Sidebar with Trunk Background - Scrolls with page */}
-      <aside className="hidden lg:flex flex-col w-72 space-y-4 sticky top-4 self-start py-4 relative" style={{ zIndex: 10 }}>
+      {/* Sidebar with Trunk Background - At left edge of page */}
+      <aside className="hidden lg:flex flex-col w-72 space-y-4 py-4 relative" style={{ zIndex: 10 }}>
         {/* Tree Trunk Background - WIDER than sidebar to show edges, BEHIND cards */}
         <div className="absolute left-1/2 top-0 -translate-x-1/2 w-96 h-full pointer-events-none" style={{ zIndex: -2 }}>
           <Image
@@ -162,6 +162,16 @@ export function Sidebar() {
           </Link>
         </div>
       </Card>
+
+      {/* Additional Tree Trunk - Fills gap below sidebar */}
+      <div className="absolute left-1/2 top-full -translate-x-1/2 w-96 h-[500px] pointer-events-none" style={{ zIndex: -2 }}>
+        <Image
+          src="/cherryblossom_tree_sidebarlogo_just_the_trunk.png"
+          alt="Tree Trunk Extension"
+          fill
+          className="object-cover object-top"
+        />
+      </div>
     </aside>
     </>
   );
