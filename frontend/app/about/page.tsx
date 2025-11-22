@@ -28,7 +28,7 @@ export default function About() {
       <div className="space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-6 pt-6">
             <div className="relative rounded-2xl overflow-hidden shadow-ac border-4 border-brown-500">
               <Image
                 src="/hedge_pod_world_mini_app_image.png"
