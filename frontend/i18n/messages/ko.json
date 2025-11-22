@@ -1,0 +1,162 @@
+{
+  "common": {
+    "appName": "HedgePod Agent",
+    "tagline": "2300만 World App 사용자를 위한 자율 크로스체인 DeFi 헤지펀드",
+    "learnMore": "더 알아보기",
+    "getStarted": "시작하기",
+    "connect": "지갑 연결",
+    "deposit": "입금",
+    "withdraw": "출금",
+    "portfolio": "포트폴리오",
+    "agents": "에이전트",
+    "about": "소개",
+    "home": "홈"
+  },
+  "hero": {
+    "title": "AI 기반 크로스체인 헤지펀드",
+    "subtitle": "한 번 입금하세요. AI 에이전트가 최적의 수익을 위해 8개 이상의 체인에서 자동으로 리밸런싱합니다. 가스 무료. 체인 추상화. 읽기 쉬운 거래.",
+    "depositButton": "지금 입금",
+    "viewPortfolio": "포트폴리오 보기"
+  },
+  "features": {
+    "title": "HedgePod를 선택하는 이유",
+    "crossChain": {
+      "title": "크로스체인 마법",
+      "description": "어떤 체인에서든 입금하고 출금하세요. 브리지가 필요 없습니다."
+    },
+    "aiPowered": {
+      "title": "AI 기반 에이전트",
+      "description": "자율 에이전트가 24시간 수익을 모니터링하고 최적의 수익을 위해 리밸런싱합니다."
+    },
+    "gasless": {
+      "title": "가스 무료 거래",
+      "description": "가스 수수료 없음. 영원히. Privy 후원으로 제공됩니다."
+    },
+    "worldApp": {
+      "title": "World App 네이티브",
+      "description": "2300만 World App 사용자를 위해 제작되었습니다. 원탭 입금, 암호화폐 전문 용어 없음."
+    }
+  },
+  "integrations": {
+    "title": "제공 기술",
+    "layerzero": "LayerZero",
+    "world": "World",
+    "coinbase": "Coinbase CDP",
+    "pyth": "Pyth Network",
+    "uniswap": "Uniswap v4",
+    "chainlink": "Chainlink"
+  },
+  "portfolio": {
+    "title": "내 포트폴리오",
+    "totalValue": "총 가치",
+    "totalDeposits": "총 입금액",
+    "totalYield": "총 수익",
+    "apr": "현재 APR",
+    "agentStatus": "에이전트 상태",
+    "activeAgents": "활성 에이전트",
+    "rebalances": "총 리밸런싱",
+    "lastRebalance": "마지막 리밸런싱",
+    "chains": "체인",
+    "chainBreakdown": "체인별 분석"
+  },
+  "agents": {
+    "title": "내 AI 에이전트",
+    "status": {
+      "active": "활성",
+      "monitoring": "모니터링 중",
+      "rebalancing": "리밸런싱 중",
+      "idle": "대기 중"
+    },
+    "stats": {
+      "totalAgents": "총 에이전트",
+      "activeNow": "현재 활성",
+      "totalRebalances": "총 리밸런싱",
+      "avgYield": "평균 수익 증가"
+    },
+    "agentCard": {
+      "managed": "관리 중",
+      "yield": "생성된 수익",
+      "rebalances": "리밸런싱",
+      "pause": "에이전트 일시정지",
+      "resume": "에이전트 재개"
+    }
+  },
+  "about": {
+    "title": "HedgePod 소개",
+    "mission": {
+      "title": "우리의 미션",
+      "description": "HedgePod는 모든 사람이 DeFi에 접근할 수 있도록 합니다. 더 이상 체인을 저글링하거나, 수익을 찾거나, 가스 수수료를 지불할 필요가 없습니다. 한 번 입금하고 AI 에이전트에게 맡기세요."
+    },
+    "features": {
+      "title": "주요 기능",
+      "autonomous": {
+        "title": "자율 리밸런싱",
+        "description": "AI 에이전트가 8개 이상의 체인에서 수익을 모니터링하고 최적의 수익을 위해 자동으로 자금을 이동합니다."
+      },
+      "crossChain": {
+        "title": "진정한 크로스체인",
+        "description": "어떤 체인에서든 입금하고 출금하세요. LayerZero OFT가 모든 복잡성을 처리합니다."
+      },
+      "gasless": {
+        "title": "모든 것이 가스 무료",
+        "description": "Privy 가스 후원은 가스 수수료를 지불하지 않는다는 것을 의미합니다. 영원히."
+      },
+      "worldApp": {
+        "title": "World App 네이티브",
+        "description": "원탭 입금과 읽기 쉬운 거래로 2300만 World App 사용자를 위해 제작되었습니다."
+      }
+    },
+    "howItWorks": {
+      "title": "작동 방식",
+      "step1": {
+        "title": "1. 입금",
+        "description": "지갑을 연결하고 지원되는 체인에서 USDC, ETH 또는 USDT를 입금하세요."
+      },
+      "step2": {
+        "title": "2. AI 모니터링",
+        "description": "AI 에이전트가 Pyth 및 Chainlink 오라클을 사용하여 모든 체인에서 수익을 지속적으로 모니터링합니다."
+      },
+      "step3": {
+        "title": "3. 자동 리밸런싱",
+        "description": "더 나은 수익이 발견되면 에이전트가 자동으로 LayerZero를 통해 자금을 이동합니다."
+      },
+      "step4": {
+        "title": "4. 더 많은 수익",
+        "description": "편안하게 앉아서 포트폴리오가 성장하는 것을 지켜보세요. 언제든지 가스 무료로 어떤 체인으로든 출금하세요."
+      }
+    },
+    "chains": {
+      "title": "지원 체인",
+      "worldChain": "World Chain",
+      "base": "Base",
+      "celo": "Celo",
+      "zircuit": "Zircuit",
+      "polygon": "Polygon",
+      "arbitrum": "Arbitrum",
+      "optimism": "Optimism",
+      "avalanche": "Avalanche"
+    },
+    "tech": {
+      "title": "기술 스택",
+      "contracts": "스마트 컨트랙트",
+      "contractsDesc": "Solidity 0.8.24, Hardhat 3, OpenZeppelin",
+      "frontend": "프론트엔드",
+      "frontendDesc": "Next.js 14, TypeScript, TailwindCSS",
+      "backend": "백엔드 에이전트",
+      "backendDesc": "Node.js, Coinbase CDP, Pyth Hermes API"
+    },
+    "contact": {
+      "title": "문의하기",
+      "email": "이메일",
+      "twitter": "Twitter",
+      "github": "GitHub",
+      "discord": "Discord"
+    }
+  },
+  "footer": {
+    "builtWith": "ETHGlobal Buenos Aires 2025에서 ❤️로 제작",
+    "tagline": "8개의 체인. 하나의 앱. 제로 마찰.",
+    "rights": "© 2025 HedgePod. MIT 라이선스."
+  }
+}
+

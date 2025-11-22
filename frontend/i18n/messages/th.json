@@ -1,0 +1,161 @@
+{
+  "common": {
+    "appName": "HedgePod Agent",
+    "tagline": "DeFi ข้ามเชนอัตโนมัติที่ทำให้ผู้ใช้ World App 23 ล้านคนมีกองทุนป้องกันความเสี่ยงของตนเอง",
+    "learnMore": "เรียนรู้เพิ่มเติม",
+    "getStarted": "เริ่มต้น",
+    "connect": "เชื่อมต่อกระเป๋า",
+    "deposit": "ฝาก",
+    "withdraw": "ถอน",
+    "portfolio": "พอร์ตโฟลิโอ",
+    "agents": "เอเจนต์",
+    "about": "เกี่ยวกับ",
+    "home": "หน้าหลัก"
+  },
+  "hero": {
+    "title": "กองทุนป้องกันความเสี่ยงข้ามเชนที่ขับเคลื่อนด้วย AI ของคุณ",
+    "subtitle": "ฝากครั้งเดียว เอเจนต์ AI จะปรับสมดุลอัตโนมัติข้ามเชนมากกว่า 8 เชนเพื่อผลตอบแทนที่เหมาะสมที่สุด ไม่มีค่าแก๊ส แยกเชน อ่านง่าย",
+    "depositButton": "ฝากตอนนี้",
+    "viewPortfolio": "ดูพอร์ตโฟลิโอ"
+  },
+  "features": {
+    "title": "ทำไมต้อง HedgePod?",
+    "crossChain": {
+      "title": "มนต์ข้ามเชน",
+      "description": "ฝากบนเชนใดก็ได้ ถอนบนเชนใดก็ได้ ไม่จำเป็นต้องมีบริดจ์"
+    },
+    "aiPowered": {
+      "title": "เอเจนต์ขับเคลื่อนด้วย AI",
+      "description": "เอเจนต์อัตโนมัติตรวจสอบผลตอบแทน 24/7 และปรับสมดุลเพื่อผลตอบแทนที่เหมาะสมที่สุด"
+    },
+    "gasless": {
+      "title": "ธุรกรรมไม่มีค่าแก๊ส",
+      "description": "ค่าแก๊สเป็นศูนย์ ตลอดไป ขับเคลื่อนโดยการสนับสนุน Privy"
+    },
+    "worldApp": {
+      "title": "เนทีฟ World App",
+      "description": "สร้างขึ้นสำหรับผู้ใช้ World App 23 ล้านคน ฝากด้วยการแตะครั้งเดียว ไม่มีศัพท์เฉพาะคริปโต"
+    }
+  },
+  "integrations": {
+    "title": "ขับเคลื่อนโดย",
+    "layerzero": "LayerZero",
+    "world": "World",
+    "coinbase": "Coinbase CDP",
+    "pyth": "Pyth Network",
+    "uniswap": "Uniswap v4",
+    "chainlink": "Chainlink"
+  },
+  "portfolio": {
+    "title": "พอร์ตโฟลิโอของคุณ",
+    "totalValue": "มูลค่ารวม",
+    "totalDeposits": "เงินฝากทั้งหมด",
+    "totalYield": "ผลตอบแทนรวม",
+    "apr": "APR ปัจจุบัน",
+    "agentStatus": "สถานะเอเจนต์",
+    "activeAgents": "เอเจนต์ที่ใช้งาน",
+    "rebalances": "การปรับสมดุลทั้งหมด",
+    "lastRebalance": "การปรับสมดุลล่าสุด",
+    "chains": "เชน",
+    "chainBreakdown": "แยกตามเชน"
+  },
+  "agents": {
+    "title": "เอเจนต์ AI ของคุณ",
+    "status": {
+      "active": "ใช้งาน",
+      "monitoring": "กำลังตรวจสอบ",
+      "rebalancing": "กำลังปรับสมดุล",
+      "idle": "ไม่ได้ใช้งาน"
+    },
+    "stats": {
+      "totalAgents": "เอเจนต์ทั้งหมด",
+      "activeNow": "ใช้งานอยู่ตอนนี้",
+      "totalRebalances": "การปรับสมดุลทั้งหมด",
+      "avgYield": "การเพิ่มผลตอบแทนเฉลี่ย"
+    },
+    "agentCard": {
+      "managed": "จัดการ",
+      "yield": "ผลตอบแทนที่สร้าง",
+      "rebalances": "การปรับสมดุล",
+      "pause": "หยุดชั่วคราว",
+      "resume": "ดำเนินการต่อ"
+    }
+  },
+  "about": {
+    "title": "เกี่ยวกับ HedgePod",
+    "mission": {
+      "title": "ภารกิจของเรา",
+      "description": "HedgePod ทำให้ DeFi เข้าถึงได้สำหรับทุกคน ไม่ต้องสลับเชน ตามหาผลตอบแทน หรือจ่ายค่าแก๊สอีกต่อไป เพียงฝากครั้งเดียวและปล่อยให้เอเจนต์ AI ทำงานที่เหลือ"
+    },
+    "features": {
+      "title": "คุณสมบัติหลัก",
+      "autonomous": {
+        "title": "การปรับสมดุลอัตโนมัติ",
+        "description": "เอเจนต์ AI ตรวจสอบผลตอบแทนข้ามเชนมากกว่า 8 เชนและย้ายเงินของคุณอัตโนมัติเพื่อผลตอบแทนที่เหมาะสมที่สุด"
+      },
+      "crossChain": {
+        "title": "ข้ามเชนที่แท้จริง",
+        "description": "ฝากบนเชนใดก็ได้ ถอนบนเชนใดก็ได้ LayerZero OFT จัดการความซับซ้อนทั้งหมด"
+      },
+      "gasless": {
+        "title": "ทุกอย่างไม่มีค่าแก๊ส",
+        "description": "การสนับสนุนค่าแก๊ส Privy หมายความว่าคุณไม่ต้องจ่ายค่าแก๊สเลย ตลอดไป"
+      },
+      "worldApp": {
+        "title": "เนทีฟ World App",
+        "description": "สร้างขึ้นสำหรับผู้ใช้ World App 23 ล้านคนด้วยการฝากด้วยการแตะครั้งเดียวและธุรกรรมที่อ่านง่าย"
+      }
+    },
+    "howItWorks": {
+      "title": "วิธีการทำงาน",
+      "step1": {
+        "title": "1. ฝาก",
+        "description": "เชื่อมต่อกระเป๋าของคุณและฝาก USDC, ETH หรือ USDT บนเชนที่รองรับ"
+      },
+      "step2": {
+        "title": "2. AI ตรวจสอบ",
+        "description": "เอเจนต์ AI ตรวจสอบผลตอบแทนอย่างต่อเนื่องข้ามทุกเชนโดยใช้ออราเคิล Pyth และ Chainlink"
+      },
+      "step3": {
+        "title": "3. ปรับสมดุลอัตโนมัติ",
+        "description": "เมื่อพบผลตอบแทนที่ดีกว่า เอเจนต์จะย้ายเงินของคุณอัตโนมัติผ่าน LayerZero"
+      },
+      "step4": {
+        "title": "4. สร้างรายได้มากขึ้น",
+        "description": "นั่งเอนหลังและดูพอร์ตโฟลิโอของคุณเติบโต ถอนได้ทุกเมื่อ บนเชนใดก็ได้ ไม่มีค่าแก๊ส"
+      }
+    },
+    "chains": {
+      "title": "เชนที่รองรับ",
+      "worldChain": "World Chain",
+      "base": "Base",
+      "celo": "Celo",
+      "zircuit": "Zircuit",
+      "polygon": "Polygon",
+      "arbitrum": "Arbitrum",
+      "optimism": "Optimism",
+      "avalanche": "Avalanche"
+    },
+    "tech": {
+      "title": "เทคโนโลยีที่ใช้",
+      "contracts": "สมาร์ทคอนแทรกต์",
+      "contractsDesc": "Solidity 0.8.24, Hardhat 3, OpenZeppelin",
+      "frontend": "ฟรอนท์เอนด์",
+      "frontendDesc": "Next.js 14, TypeScript, TailwindCSS",
+      "backend": "เอเจนต์แบ็กเอนด์",
+      "backendDesc": "Node.js, Coinbase CDP, Pyth Hermes API"
+    },
+    "contact": {
+      "title": "ติดต่อเรา",
+      "email": "อีเมล",
+      "twitter": "Twitter",
+      "github": "GitHub",
+      "discord": "Discord"
+    }
+  },
+  "footer": {
+    "builtWith": "สร้างด้วย ❤️ ที่ ETHGlobal Buenos Aires 2025",
+    "tagline": "แปดเชน แอปเดียว ความเสียดทานเป็นศูนย์",
+    "rights": "© 2025 HedgePod ใบอนุญาต MIT"
+  }
+}

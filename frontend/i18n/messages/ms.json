@@ -1,0 +1,161 @@
+{
+  "common": {
+    "appName": "HedgePod Agent",
+    "tagline": "DeFi merentas rantai autonomi yang menjadikan 23J pengguna World App sebagai dana lindung nilai mereka sendiri",
+    "learnMore": "Ketahui Lebih Lanjut",
+    "getStarted": "Mulakan",
+    "connect": "Sambung Dompet",
+    "deposit": "Deposit",
+    "withdraw": "Keluarkan",
+    "portfolio": "Portfolio",
+    "agents": "Ejen",
+    "about": "Tentang",
+    "home": "Utama"
+  },
+  "hero": {
+    "title": "Dana Lindung Nilai Merentas Rantai Berkuasa AI Anda",
+    "subtitle": "Deposit sekali. Ejen AI secara automatik mengimbangi semula merentasi lebih 8 rantai untuk hasil optimum. Tanpa gas. Abstraksi rantai. Boleh dibaca manusia.",
+    "depositButton": "Deposit Sekarang",
+    "viewPortfolio": "Lihat Portfolio"
+  },
+  "features": {
+    "title": "Mengapa HedgePod?",
+    "crossChain": {
+      "title": "Sihir Merentas Rantai",
+      "description": "Deposit pada mana-mana rantai, keluarkan pada mana-mana rantai. Tiada jambatan diperlukan."
+    },
+    "aiPowered": {
+      "title": "Ejen Berkuasa AI",
+      "description": "Ejen autonomi memantau hasil 24/7 dan mengimbangi semula untuk pulangan optimum."
+    },
+    "gasless": {
+      "title": "Transaksi Tanpa Gas",
+      "description": "Tiada bayaran gas. Selama-lamanya. Dikuasakan oleh tajaan Privy."
+    },
+    "worldApp": {
+      "title": "Asli World App",
+      "description": "Dibina untuk 23J pengguna World App. Deposit satu-ketuk, tiada jargon kripto."
+    }
+  },
+  "integrations": {
+    "title": "Dikuasakan Oleh",
+    "layerzero": "LayerZero",
+    "world": "World",
+    "coinbase": "Coinbase CDP",
+    "pyth": "Pyth Network",
+    "uniswap": "Uniswap v4",
+    "chainlink": "Chainlink"
+  },
+  "portfolio": {
+    "title": "Portfolio Anda",
+    "totalValue": "Jumlah Nilai",
+    "totalDeposits": "Jumlah Deposit",
+    "totalYield": "Jumlah Hasil",
+    "apr": "APR Semasa",
+    "agentStatus": "Status Ejen",
+    "activeAgents": "Ejen Aktif",
+    "rebalances": "Jumlah Pengimbangan Semula",
+    "lastRebalance": "Pengimbangan Semula Terakhir",
+    "chains": "Rantai",
+    "chainBreakdown": "Pecahan Rantai"
+  },
+  "agents": {
+    "title": "Ejen AI Anda",
+    "status": {
+      "active": "Aktif",
+      "monitoring": "Memantau",
+      "rebalancing": "Mengimbangi Semula",
+      "idle": "Terbiar"
+    },
+    "stats": {
+      "totalAgents": "Jumlah Ejen",
+      "activeNow": "Aktif Sekarang",
+      "totalRebalances": "Jumlah Pengimbangan Semula",
+      "avgYield": "Purata Peningkatan Hasil"
+    },
+    "agentCard": {
+      "managed": "Diuruskan",
+      "yield": "Hasil Dijana",
+      "rebalances": "Pengimbangan Semula",
+      "pause": "Jeda Ejen",
+      "resume": "Sambung Semula Ejen"
+    }
+  },
+  "about": {
+    "title": "Tentang HedgePod",
+    "mission": {
+      "title": "Misi Kami",
+      "description": "HedgePod menjadikan DeFi boleh diakses oleh semua orang. Tiada lagi jongleri rantai, memburu hasil, atau membayar bayaran gas. Hanya deposit sekali dan biarkan ejen AI melakukan selebihnya."
+    },
+    "features": {
+      "title": "Ciri Utama",
+      "autonomous": {
+        "title": "Pengimbangan Semula Autonomi",
+        "description": "Ejen AI memantau hasil merentasi lebih 8 rantai dan secara automatik memindahkan dana anda untuk pulangan optimum."
+      },
+      "crossChain": {
+        "title": "Merentas Rantai Sebenar",
+        "description": "Deposit pada mana-mana rantai, keluarkan pada mana-mana rantai. LayerZero OFT mengendalikan semua kerumitan."
+      },
+      "gasless": {
+        "title": "Semuanya Tanpa Gas",
+        "description": "Tajaan gas Privy bermakna anda tidak pernah membayar bayaran gas. Selama-lamanya."
+      },
+      "worldApp": {
+        "title": "Asli World App",
+        "description": "Dibina untuk 23J pengguna World App dengan deposit satu-ketuk dan transaksi yang boleh dibaca manusia."
+      }
+    },
+    "howItWorks": {
+      "title": "Bagaimana Ia Berfungsi",
+      "step1": {
+        "title": "1. Deposit",
+        "description": "Sambungkan dompet anda dan deposit USDC, ETH, atau USDT pada mana-mana rantai yang disokong."
+      },
+      "step2": {
+        "title": "2. AI Memantau",
+        "description": "Ejen AI secara berterusan memantau hasil merentasi semua rantai menggunakan oracle Pyth dan Chainlink."
+      },
+      "step3": {
+        "title": "3. Pengimbangan Semula Auto",
+        "description": "Apabila hasil yang lebih baik dijumpai, ejen secara automatik memindahkan dana anda melalui LayerZero."
+      },
+      "step4": {
+        "title": "4. Dapati Lebih Banyak",
+        "description": "Duduk santai dan lihat portfolio anda berkembang. Keluarkan bila-bila masa, ke mana-mana rantai, tanpa gas."
+      }
+    },
+    "chains": {
+      "title": "Rantai Yang Disokong",
+      "worldChain": "World Chain",
+      "base": "Base",
+      "celo": "Celo",
+      "zircuit": "Zircuit",
+      "polygon": "Polygon",
+      "arbitrum": "Arbitrum",
+      "optimism": "Optimism",
+      "avalanche": "Avalanche"
+    },
+    "tech": {
+      "title": "Susun Teknologi",
+      "contracts": "Kontrak Pintar",
+      "contractsDesc": "Solidity 0.8.24, Hardhat 3, OpenZeppelin",
+      "frontend": "Frontend",
+      "frontendDesc": "Next.js 14, TypeScript, TailwindCSS",
+      "backend": "Ejen Backend",
+      "backendDesc": "Node.js, Coinbase CDP, Pyth Hermes API"
+    },
+    "contact": {
+      "title": "Hubungi Kami",
+      "email": "E-mel",
+      "twitter": "Twitter",
+      "github": "GitHub",
+      "discord": "Discord"
+    }
+  },
+  "footer": {
+    "builtWith": "Dibina dengan ❤️ di ETHGlobal Buenos Aires 2025",
+    "tagline": "Lapan rantai. Satu aplikasi. Tiada geseran.",
+    "rights": "© 2025 HedgePod. Lesen MIT."
+  }
+}

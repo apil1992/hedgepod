@@ -1,6 +1,6 @@
 # 🌍 HedgePod Localisations
 
-App content in all 10 supported languages for World App submission.
+App content in all 19 supported languages for World App submission.
 
 ---
 
@@ -373,4 +373,311 @@ Für die 23 Millionen World App-Benutzer, die nicht wissen, was ein RPC ist—un
 ---
 
 **🦔 Ready for World App submission!**
+
+
+---
+
+## 🇮🇳 Hindi (hi)
+
+### App Name
+```
+HedgePod
+```
+
+### Short Name
+```
+HedgePod
+```
+
+### App Tagline (40 characters)
+```
+अपना खुद का AI संचालित हेज फंड बनाएं
+```
+
+### Overview
+```
+HedgePod Agent एक World मिनी ऐप है जो क्रिप्टो की सबसे बड़ी UX समस्या को हल करता है: चेन विखंडन
+
+उपयोगकर्ता एक बार USDC/ETH/USDT जमा करते हैं, और स्वायत्त AI एजेंट:
+
+- रियल-टाइम में 8+ चेन में उपज की निगरानी करते हैं
+- इष्टतम स्थिति के लिए LayerZero के माध्यम से फंड स्थानांतरित करते हैं
+- लाभदायक होने पर 1inch के माध्यम से स्वैप निष्पादित करते हैं
+- वोलैटिलिटी के अनुसार समायोजित होने वाले गतिशील Uniswap v4 hooks का उपयोग करते हैं
+- सभी गैस-मुक्त, सभी पारदर्शी, सभी स्वचालित
+
+23M World App उपयोगकर्ताओं के लिए जो नहीं जानते कि RPC क्या है—और कभी जानने की जरूरत नहीं है।
+```
+
+---
+
+## 🇰🇷 Korean (ko)
+
+### App Name
+```
+HedgePod
+```
+
+### Short Name
+```
+HedgePod
+```
+
+### App Tagline (40 characters)
+```
+AI 기반 헤지펀드를 직접 만드세요
+```
+
+### Overview
+```
+HedgePod Agent는 암호화폐의 가장 큰 UX 문제인 체인 분할을 해결하는 World 미니 앱입니다
+
+사용자는 USDC/ETH/USDT를 한 번 입금하면 자율 AI 에이전트가:
+
+- 실시간으로 8개 이상의 체인에서 수익을 모니터링
+- 최적의 포지셔닝을 위해 LayerZero를 통해 자금 이동
+- 수익성이 있을 때 1inch를 통해 스왑 실행
+- 변동성에 따라 조정되는 동적 Uniswap v4 hooks 사용
+- 모두 가스 무료, 모두 투명, 모두 자동화
+
+RPC가 무엇인지 모르는 2300만 World App 사용자를 위해 만들어졌습니다.
+```
+
+---
+
+## 🇵🇱 Polish (pl)
+
+### App Name
+```
+HedgePod
+```
+
+### Short Name
+```
+HedgePod
+```
+
+### App Tagline (40 characters)
+```
+Stwórz własny fundusz hedgingowy AI
+```
+
+### Overview
+```
+HedgePod Agent to mini aplikacja World, która rozwiązuje największy problem UX w krypto: fragmentację łańcuchów
+
+Użytkownicy wpłacają USDC/ETH/USDT raz, a autonomiczni agenci AI:
+
+- Monitorują zyski na ponad 8 łańcuchach w czasie rzeczywistym
+- Przenoszą środki przez LayerZero dla optymalnego pozycjonowania
+- Wykonują swapy przez 1inch, gdy jest to opłacalne
+- Używają dynamicznych hooków Uniswap v4, które dostosowują się do zmienności
+- Wszystko bez opłat za gaz, wszystko przejrzyste, wszystko zautomatyzowane
+
+Dla 23M użytkowników World App, którzy nie wiedzą, czym jest RPC—i nigdy nie będą musieli wiedzieć.
+```
+
+---
+
+## 🇪🇸 Catalan (ca)
+
+### App Name
+```
+HedgePod
+```
+
+### Short Name
+```
+HedgePod
+```
+
+### App Tagline (40 characters)
+```
+Crea el teu propi fons de cobertura amb IA
+```
+
+### Overview
+```
+HedgePod Agent és una mini app de World que resol el major problema d'UX en cripto: la fragmentació de cadenes
+
+Els usuaris dipositen USDC/ETH/USDT una vegada, i els agents d'IA autònoms:
+
+- Monitoritzen rendiments en més de 8 cadenes en temps real
+- Mouen fons via LayerZero per posicionament òptim
+- Executen intercanvis a través d'1inch quan és rendible
+- Utilitzen ganxos dinàmics Uniswap v4 que s'ajusten a la volatilitat
+- Tot sense gas, tot transparent, tot automatitzat
+
+Per als 23M usuaris de World App que no saben què és un RPC—i mai ho hauran de saber.
+```
+
+---
+
+## 🇲🇾 Malay (ms)
+
+### App Name
+```
+HedgePod
+```
+
+### Short Name
+```
+HedgePod
+```
+
+### App Tagline (40 characters)
+```
+Bina dana lindung nilai berkuasa AI anda
+```
+
+### Overview
+```
+HedgePod Agent ialah aplikasi mini World yang menyelesaikan masalah UX terbesar dalam kripto: pemecahan rantai
+
+Pengguna deposit USDC/ETH/USDT sekali, dan ejen AI autonomi:
+
+- Memantau hasil merentas lebih 8 rantai dalam masa nyata
+- Memindahkan dana melalui LayerZero untuk kedudukan optimum
+- Melaksanakan pertukaran melalui 1inch apabila menguntungkan
+- Menggunakan hook dinamik Uniswap v4 yang menyesuaikan dengan volatiliti
+- Semua tanpa gas, semua telus, semua automatik
+
+Untuk 23J pengguna World App yang tidak tahu apa itu RPC—dan tidak sepatutnya perlu tahu.
+```
+
+---
+
+## 🇹🇭 Thai (th)
+
+### App Name
+```
+HedgePod
+```
+
+### Short Name
+```
+HedgePod
+```
+
+### App Tagline (40 characters)
+```
+สร้างกองทุนป้องกันความเสี่ยง AI ของคุณเอง
+```
+
+### Overview
+```
+HedgePod Agent เป็นแอปมินิ World ที่แก้ปัญหา UX ที่ใหญ่ที่สุดในคริปโต: การแยกส่วนเชน
+
+ผู้ใช้ฝาก USDC/ETH/USDT ครั้งเดียว และเอเจนต์ AI อัตโนมัติจะ:
+
+- ตรวจสอบผลตอบแทนข้ามเชนมากกว่า 8 เชนแบบเรียลไทม์
+- ย้ายเงินผ่าน LayerZero เพื่อตำแหน่งที่เหมาะสมที่สุด
+- ดำเนินการสว็อปผ่าน 1inch เมื่อมีกำไร
+- ใช้ฮุค Uniswap v4 แบบไดนามิกที่ปรับตามความผันผวน
+- ทั้งหมดไม่มีค่าแก๊ส โปร่งใส เป็นอัตโนมัติ
+
+สำหรับผู้ใช้ World App 23 ล้านคนที่ไม่รู้ว่า RPC คืออะไร และไม่จำเป็นต้องรู้
+```
+
+---
+
+## 🇹🇼 Traditional Chinese - Taiwan (zh-TW)
+
+### App Name
+```
+HedgePod
+```
+
+### Short Name
+```
+HedgePod
+```
+
+### App Tagline (40 characters)
+```
+建立您自己的 AI 驅動對沖基金
+```
+
+### Overview
+```
+HedgePod Agent 是一個 World 迷你應用程序，解決了加密貨幣最大的 UX 問題：鏈碎片化
+
+用戶只需存入一次 USDC/ETH/USDT，自主 AI 代理會：
+
+- 即時監控 8 條以上鏈上的收益
+- 通過 LayerZero 移動資金以獲得最佳定位
+- 在有利可圖時通過 1inch 執行交換
+- 使用根據波動性調整的動態 Uniswap v4 鉤子
+- 全部無燃氣費、全部透明、全部自動化
+
+為 2300 萬 World App 用戶打造，他們不知道什麼是 RPC——也永遠不需要知道。
+```
+
+---
+
+## 🇳🇱 Dutch (nl)
+
+### App Name
+```
+HedgePod
+```
+
+### Short Name
+```
+HedgePod
+```
+
+### App Tagline (40 characters)
+```
+Bouw je eigen AI-aangedreven hedgefonds
+```
+
+### Overview
+```
+HedgePod Agent is een World mini-app die het grootste UX-probleem van crypto oplost: chain-fragmentatie
+
+Gebruikers storten één keer USDC/ETH/USDT, en autonome AI-agents:
+
+- Monitoren rendementen over meer dan 8 chains in real-time
+- Verplaatsen fondsen via LayerZero voor optimale positionering
+- Voeren swaps uit via 1inch wanneer winstgevend
+- Gebruiken dynamische Uniswap v4 hooks die zich aanpassen aan volatiliteit
+- Alles gasloos, alles transparant, alles geautomatiseerd
+
+Voor de 23M World App-gebruikers die niet weten wat een RPC is—en dat nooit zouden moeten weten.
+```
+
+---
+
+## 🇲🇽 Spanish - Latin America (es-419)
+
+### App Name
+```
+HedgePod
+```
+
+### Short Name
+```
+HedgePod
+```
+
+### App Tagline (40 characters)
+```
+Crea tu propio fondo de cobertura con IA
+```
+
+### Overview
+```
+HedgePod Agent es una mini app de World que resuelve el mayor problema de UX en cripto: la fragmentación de cadenas
+
+Los usuarios depositan USDC/ETH/USDT una vez, y los agentes de IA autónomos:
+
+- Monitorean rendimientos en más de 8 cadenas en tiempo real
+- Mueven fondos vía LayerZero para posicionamiento óptimo
+- Ejecutan intercambios a través de 1inch cuando es rentable
+- Usan hooks dinámicos de Uniswap v4 que se ajustan a la volatilidad
+- Todo sin gas, todo transparente, todo automatizado
+
+Para los 23M de usuarios de World App que no saben qué es un RPC—y nunca deberían saberlo.
+```
 

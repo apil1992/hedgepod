@@ -1,0 +1,161 @@
+{
+  "common": {
+    "appName": "HedgePod Agent",
+    "tagline": "自主跨鏈 DeFi，讓 2300 萬 World App 用戶擁有自己的對沖基金",
+    "learnMore": "了解更多",
+    "getStarted": "開始使用",
+    "connect": "連接錢包",
+    "deposit": "存款",
+    "withdraw": "提款",
+    "portfolio": "投資組合",
+    "agents": "代理",
+    "about": "關於",
+    "home": "首頁"
+  },
+  "hero": {
+    "title": "您的 AI 驅動跨鏈對沖基金",
+    "subtitle": "存款一次。AI 代理自動在 8+ 條鏈上重新平衡以獲得最佳收益。無燃氣費。鏈抽象化。人類可讀。",
+    "depositButton": "立即存款",
+    "viewPortfolio": "查看投資組合"
+  },
+  "features": {
+    "title": "為什麼選擇 HedgePod？",
+    "crossChain": {
+      "title": "跨鏈魔法",
+      "description": "在任何鏈上存款，在任何鏈上提款。不需要橋接。"
+    },
+    "aiPowered": {
+      "title": "AI 驅動代理",
+      "description": "自主代理全天候監控收益並重新平衡以獲得最佳回報。"
+    },
+    "gasless": {
+      "title": "無燃氣費交易",
+      "description": "零燃氣費。永遠。由 Privy 贊助提供支持。"
+    },
+    "worldApp": {
+      "title": "World App 原生",
+      "description": "為 2300 萬 World App 用戶打造。一鍵存款，無加密貨幣術語。"
+    }
+  },
+  "integrations": {
+    "title": "技術支持",
+    "layerzero": "LayerZero",
+    "world": "World",
+    "coinbase": "Coinbase CDP",
+    "pyth": "Pyth Network",
+    "uniswap": "Uniswap v4",
+    "chainlink": "Chainlink"
+  },
+  "portfolio": {
+    "title": "您的投資組合",
+    "totalValue": "總價值",
+    "totalDeposits": "總存款",
+    "totalYield": "總收益",
+    "apr": "當前 APR",
+    "agentStatus": "代理狀態",
+    "activeAgents": "活躍代理",
+    "rebalances": "總重新平衡",
+    "lastRebalance": "最後重新平衡",
+    "chains": "鏈",
+    "chainBreakdown": "鏈分解"
+  },
+  "agents": {
+    "title": "您的 AI 代理",
+    "status": {
+      "active": "活躍",
+      "monitoring": "監控中",
+      "rebalancing": "重新平衡中",
+      "idle": "閒置"
+    },
+    "stats": {
+      "totalAgents": "總代理",
+      "activeNow": "目前活躍",
+      "totalRebalances": "總重新平衡",
+      "avgYield": "平均收益提升"
+    },
+    "agentCard": {
+      "managed": "管理中",
+      "yield": "產生的收益",
+      "rebalances": "重新平衡",
+      "pause": "暫停代理",
+      "resume": "恢復代理"
+    }
+  },
+  "about": {
+    "title": "關於 HedgePod",
+    "mission": {
+      "title": "我們的使命",
+      "description": "HedgePod 讓每個人都能訪問 DeFi。不再需要在鏈之間切換、尋找收益或支付燃氣費。只需存款一次，讓 AI 代理完成其餘工作。"
+    },
+    "features": {
+      "title": "主要特點",
+      "autonomous": {
+        "title": "自主重新平衡",
+        "description": "AI 代理監控 8+ 條鏈上的收益，並自動移動您的資金以獲得最佳回報。"
+      },
+      "crossChain": {
+        "title": "真正的跨鏈",
+        "description": "在任何鏈上存款，在任何鏈上提款。LayerZero OFT 處理所有複雜性。"
+      },
+      "gasless": {
+        "title": "一切無燃氣費",
+        "description": "Privy 燃氣費贊助意味著您永遠不需要支付燃氣費。永遠。"
+      },
+      "worldApp": {
+        "title": "World App 原生",
+        "description": "為 2300 萬 World App 用戶打造，具有一鍵存款和人類可讀的交易。"
+      }
+    },
+    "howItWorks": {
+      "title": "如何運作",
+      "step1": {
+        "title": "1. 存款",
+        "description": "連接您的錢包並在任何支持的鏈上存入 USDC、ETH 或 USDT。"
+      },
+      "step2": {
+        "title": "2. AI 監控",
+        "description": "AI 代理使用 Pyth 和 Chainlink 預言機持續監控所有鏈上的收益。"
+      },
+      "step3": {
+        "title": "3. 自動重新平衡",
+        "description": "當找到更好的收益時，代理會通過 LayerZero 自動移動您的資金。"
+      },
+      "step4": {
+        "title": "4. 賺取更多",
+        "description": "坐下來觀看您的投資組合增長。隨時提款，到任何鏈，無燃氣費。"
+      }
+    },
+    "chains": {
+      "title": "支持的鏈",
+      "worldChain": "World Chain",
+      "base": "Base",
+      "celo": "Celo",
+      "zircuit": "Zircuit",
+      "polygon": "Polygon",
+      "arbitrum": "Arbitrum",
+      "optimism": "Optimism",
+      "avalanche": "Avalanche"
+    },
+    "tech": {
+      "title": "技術堆棧",
+      "contracts": "智能合約",
+      "contractsDesc": "Solidity 0.8.24, Hardhat 3, OpenZeppelin",
+      "frontend": "前端",
+      "frontendDesc": "Next.js 14, TypeScript, TailwindCSS",
+      "backend": "後端代理",
+      "backendDesc": "Node.js, Coinbase CDP, Pyth Hermes API"
+    },
+    "contact": {
+      "title": "聯繫我們",
+      "email": "電子郵件",
+      "twitter": "Twitter",
+      "github": "GitHub",
+      "discord": "Discord"
+    }
+  },
+  "footer": {
+    "builtWith": "在 ETHGlobal Buenos Aires 2025 用 ❤️ 打造",
+    "tagline": "八條鏈。一個應用程序。零摩擦。",
+    "rights": "© 2025 HedgePod。MIT 許可證。"
+  }
+}

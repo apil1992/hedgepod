@@ -1,0 +1,162 @@
+{
+  "common": {
+    "appName": "HedgePod Agent",
+    "tagline": "स्वायत्त क्रॉस-चेन DeFi जो 23M World App उपयोगकर्ताओं को अपना हेज फंड बनाता है",
+    "learnMore": "और जानें",
+    "getStarted": "शुरू करें",
+    "connect": "वॉलेट कनेक्ट करें",
+    "deposit": "जमा करें",
+    "withdraw": "निकालें",
+    "portfolio": "पोर्टफोलियो",
+    "agents": "एजेंट",
+    "about": "के बारे में",
+    "home": "होम"
+  },
+  "hero": {
+    "title": "आपका AI-संचालित क्रॉस-चेन हेज फंड",
+    "subtitle": "एक बार जमा करें। AI एजेंट स्वचालित रूप से इष्टतम उपज के लिए 8+ चेन में पुनर्संतुलन करते हैं। गैस-मुक्त। चेन-अमूर्त। मानव-पठनीय।",
+    "depositButton": "अभी जमा करें",
+    "viewPortfolio": "पोर्टफोलियो देखें"
+  },
+  "features": {
+    "title": "HedgePod क्यों?",
+    "crossChain": {
+      "title": "क्रॉस-चेन जादू",
+      "description": "किसी भी चेन पर जमा करें, किसी भी चेन पर निकालें। कोई ब्रिज की जरूरत नहीं।"
+    },
+    "aiPowered": {
+      "title": "AI-संचालित एजेंट",
+      "description": "स्वायत्त एजेंट 24/7 उपज की निगरानी करते हैं और इष्टतम रिटर्न के लिए पुनर्संतुलन करते हैं।"
+    },
+    "gasless": {
+      "title": "गैस-मुक्त लेनदेन",
+      "description": "शून्य गैस शुल्क। कभी भी। Privy प्रायोजन द्वारा संचालित।"
+    },
+    "worldApp": {
+      "title": "World App देशी",
+      "description": "23M World App उपयोगकर्ताओं के लिए बनाया गया। एक-टैप जमा, कोई क्रिप्टो शब्दावली नहीं।"
+    }
+  },
+  "integrations": {
+    "title": "द्वारा संचालित",
+    "layerzero": "LayerZero",
+    "world": "World",
+    "coinbase": "Coinbase CDP",
+    "pyth": "Pyth Network",
+    "uniswap": "Uniswap v4",
+    "chainlink": "Chainlink"
+  },
+  "portfolio": {
+    "title": "आपका पोर्टफोलियो",
+    "totalValue": "कुल मूल्य",
+    "totalDeposits": "कुल जमा",
+    "totalYield": "कुल उपज",
+    "apr": "वर्तमान APR",
+    "agentStatus": "एजेंट स्थिति",
+    "activeAgents": "सक्रिय एजेंट",
+    "rebalances": "कुल पुनर्संतुलन",
+    "lastRebalance": "अंतिम पुनर्संतुलन",
+    "chains": "चेन",
+    "chainBreakdown": "चेन विवरण"
+  },
+  "agents": {
+    "title": "आपके AI एजेंट",
+    "status": {
+      "active": "सक्रिय",
+      "monitoring": "निगरानी",
+      "rebalancing": "पुनर्संतुलन",
+      "idle": "निष्क्रिय"
+    },
+    "stats": {
+      "totalAgents": "कुल एजेंट",
+      "activeNow": "अभी सक्रिय",
+      "totalRebalances": "कुल पुनर्संतुलन",
+      "avgYield": "औसत उपज बढ़ावा"
+    },
+    "agentCard": {
+      "managed": "प्रबंधित",
+      "yield": "उपज उत्पन्न",
+      "rebalances": "पुनर्संतुलन",
+      "pause": "एजेंट रोकें",
+      "resume": "एजेंट पुनः आरंभ करें"
+    }
+  },
+  "about": {
+    "title": "HedgePod के बारे में",
+    "mission": {
+      "title": "हमारा मिशन",
+      "description": "HedgePod DeFi को सभी के लिए सुलभ बनाता है। अब और चेन जगलिंग, उपज खोज, या गैस शुल्क का भुगतान नहीं। बस एक बार जमा करें और AI एजेंटों को बाकी काम करने दें।"
+    },
+    "features": {
+      "title": "मुख्य विशेषताएं",
+      "autonomous": {
+        "title": "स्वायत्त पुनर्संतुलन",
+        "description": "AI एजेंट 8+ चेन में उपज की निगरानी करते हैं और इष्टतम रिटर्न के लिए स्वचालित रूप से आपके फंड को स्थानांतरित करते हैं।"
+      },
+      "crossChain": {
+        "title": "सच्चा क्रॉस-चेन",
+        "description": "किसी भी चेन पर जमा करें, किसी भी चेन पर निकालें। LayerZero OFT सभी जटिलता को संभालता है।"
+      },
+      "gasless": {
+        "title": "सब कुछ गैस-मुक्त",
+        "description": "Privy गैस प्रायोजन का मतलब है कि आप कभी भी गैस शुल्क का भुगतान नहीं करते हैं। कभी भी।"
+      },
+      "worldApp": {
+        "title": "World App देशी",
+        "description": "23M World App उपयोगकर्ताओं के लिए एक-टैप जमा और मानव-पठनीय लेनदेन के साथ बनाया गया।"
+      }
+    },
+    "howItWorks": {
+      "title": "यह कैसे काम करता है",
+      "step1": {
+        "title": "1. जमा करें",
+        "description": "अपना वॉलेट कनेक्ट करें और किसी भी समर्थित चेन पर USDC, ETH, या USDT जमा करें।"
+      },
+      "step2": {
+        "title": "2. AI निगरानी",
+        "description": "AI एजेंट Pyth और Chainlink ओरेकल का उपयोग करके सभी चेन में उपज की निरंतर निगरानी करते हैं।"
+      },
+      "step3": {
+        "title": "3. स्वत: पुनर्संतुलन",
+        "description": "जब बेहतर उपज मिलती है, तो एजेंट स्वचालित रूप से LayerZero के माध्यम से आपके फंड को स्थानांतरित करते हैं।"
+      },
+      "step4": {
+        "title": "4. अधिक कमाएं",
+        "description": "आराम से बैठें और अपने पोर्टफोलियो को बढ़ते देखें। कभी भी, किसी भी चेन पर, गैस-मुक्त निकालें।"
+      }
+    },
+    "chains": {
+      "title": "समर्थित चेन",
+      "worldChain": "World Chain",
+      "base": "Base",
+      "celo": "Celo",
+      "zircuit": "Zircuit",
+      "polygon": "Polygon",
+      "arbitrum": "Arbitrum",
+      "optimism": "Optimism",
+      "avalanche": "Avalanche"
+    },
+    "tech": {
+      "title": "तकनीकी स्टैक",
+      "contracts": "स्मार्ट कॉन्ट्रैक्ट",
+      "contractsDesc": "Solidity 0.8.24, Hardhat 3, OpenZeppelin",
+      "frontend": "फ्रंटएंड",
+      "frontendDesc": "Next.js 14, TypeScript, TailwindCSS",
+      "backend": "बैकएंड एजेंट",
+      "backendDesc": "Node.js, Coinbase CDP, Pyth Hermes API"
+    },
+    "contact": {
+      "title": "संपर्क करें",
+      "email": "ईमेल",
+      "twitter": "Twitter",
+      "github": "GitHub",
+      "discord": "Discord"
+    }
+  },
+  "footer": {
+    "builtWith": "ETHGlobal Buenos Aires 2025 में ❤️ के साथ बनाया गया",
+    "tagline": "आठ चेन। एक ऐप। शून्य घर्षण।",
+    "rights": "© 2025 HedgePod। MIT लाइसेंस।"
+  }
+}
+

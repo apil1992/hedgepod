@@ -38,7 +38,7 @@ export const viewport: Viewport = {
   themeColor: '#299f29',
 }
 
-const locales = ['en', 'zh', 'es', 'ar', 'pt', 'id', 'fr', 'ja', 'ru', 'de'];
+const locales = ['en', 'zh', 'es', 'ar', 'pt', 'id', 'fr', 'ja', 'ru', 'de', 'hi', 'ko', 'pl', 'ca', 'ms', 'th', 'zh-TW', 'nl', 'es-419'];
 
 export default async function LocaleLayout({
   children,

@@ -1,0 +1,161 @@
+{
+  "common": {
+    "appName": "HedgePod Agent",
+    "tagline": "Autonome cross-chain DeFi die 23M World App-gebruikers hun eigen hedgefonds maakt",
+    "learnMore": "Meer informatie",
+    "getStarted": "Aan de slag",
+    "connect": "Wallet verbinden",
+    "deposit": "Storten",
+    "withdraw": "Opnemen",
+    "portfolio": "Portfolio",
+    "agents": "Agents",
+    "about": "Over",
+    "home": "Home"
+  },
+  "hero": {
+    "title": "Uw AI-aangedreven cross-chain hedgefonds",
+    "subtitle": "Eén keer storten. AI-agents herbalanceren automatisch over 8+ chains voor optimaal rendement. Gasloos. Chain-geabstraheerd. Menselijk leesbaar.",
+    "depositButton": "Nu storten",
+    "viewPortfolio": "Bekijk portfolio"
+  },
+  "features": {
+    "title": "Waarom HedgePod?",
+    "crossChain": {
+      "title": "Cross-chain magie",
+      "description": "Stort op elke chain, neem op van elke chain. Geen bridges nodig."
+    },
+    "aiPowered": {
+      "title": "AI-aangedreven agents",
+      "description": "Autonome agents monitoren 24/7 rendementen en herbalanceren voor optimale returns."
+    },
+    "gasless": {
+      "title": "Gasloze transacties",
+      "description": "Nul gaskosten. Altijd. Mogelijk gemaakt door Privy-sponsoring."
+    },
+    "worldApp": {
+      "title": "World App native",
+      "description": "Gebouwd voor 23M World App-gebruikers. Eén-tap storten, geen crypto-jargon."
+    }
+  },
+  "integrations": {
+    "title": "Mogelijk gemaakt door",
+    "layerzero": "LayerZero",
+    "world": "World",
+    "coinbase": "Coinbase CDP",
+    "pyth": "Pyth Network",
+    "uniswap": "Uniswap v4",
+    "chainlink": "Chainlink"
+  },
+  "portfolio": {
+    "title": "Uw portfolio",
+    "totalValue": "Totale waarde",
+    "totalDeposits": "Totale stortingen",
+    "totalYield": "Totaal rendement",
+    "apr": "Huidige APR",
+    "agentStatus": "Agent status",
+    "activeAgents": "Actieve agents",
+    "rebalances": "Totale herbalanceringen",
+    "lastRebalance": "Laatste herbalancering",
+    "chains": "Chains",
+    "chainBreakdown": "Chain-verdeling"
+  },
+  "agents": {
+    "title": "Uw AI-agents",
+    "status": {
+      "active": "Actief",
+      "monitoring": "Monitoren",
+      "rebalancing": "Herbalanceren",
+      "idle": "Inactief"
+    },
+    "stats": {
+      "totalAgents": "Totaal agents",
+      "activeNow": "Nu actief",
+      "totalRebalances": "Totale herbalanceringen",
+      "avgYield": "Gem. rendementsstijging"
+    },
+    "agentCard": {
+      "managed": "Beheerd",
+      "yield": "Gegenereerd rendement",
+      "rebalances": "Herbalanceringen",
+      "pause": "Agent pauzeren",
+      "resume": "Agent hervatten"
+    }
+  },
+  "about": {
+    "title": "Over HedgePod",
+    "mission": {
+      "title": "Onze missie",
+      "description": "HedgePod maakt DeFi toegankelijk voor iedereen. Geen chains meer jongleren, rendementen zoeken of gaskosten betalen. Gewoon één keer storten en de AI-agents de rest laten doen."
+    },
+    "features": {
+      "title": "Belangrijkste kenmerken",
+      "autonomous": {
+        "title": "Autonome herbalancering",
+        "description": "AI-agents monitoren rendementen over 8+ chains en verplaatsen automatisch uw fondsen voor optimale returns."
+      },
+      "crossChain": {
+        "title": "Echte cross-chain",
+        "description": "Stort op elke chain, neem op van elke chain. LayerZero OFT handelt alle complexiteit af."
+      },
+      "gasless": {
+        "title": "Alles gasloos",
+        "description": "Privy-gassponsoring betekent dat u nooit gaskosten betaalt. Nooit."
+      },
+      "worldApp": {
+        "title": "World App native",
+        "description": "Gebouwd voor 23M World App-gebruikers met één-tap stortingen en menselijk leesbare transacties."
+      }
+    },
+    "howItWorks": {
+      "title": "Hoe het werkt",
+      "step1": {
+        "title": "1. Storten",
+        "description": "Verbind uw wallet en stort USDC, ETH of USDT op elke ondersteunde chain."
+      },
+      "step2": {
+        "title": "2. AI monitort",
+        "description": "AI-agents monitoren continu rendementen over alle chains met Pyth- en Chainlink-oracles."
+      },
+      "step3": {
+        "title": "3. Auto-herbalancering",
+        "description": "Wanneer een beter rendement wordt gevonden, verplaatsen agents automatisch uw fondsen via LayerZero."
+      },
+      "step4": {
+        "title": "4. Verdien meer",
+        "description": "Leun achterover en zie uw portfolio groeien. Neem op wanneer u wilt, naar elke chain, gasloos."
+      }
+    },
+    "chains": {
+      "title": "Ondersteunde chains",
+      "worldChain": "World Chain",
+      "base": "Base",
+      "celo": "Celo",
+      "zircuit": "Zircuit",
+      "polygon": "Polygon",
+      "arbitrum": "Arbitrum",
+      "optimism": "Optimism",
+      "avalanche": "Avalanche"
+    },
+    "tech": {
+      "title": "Tech stack",
+      "contracts": "Smart contracts",
+      "contractsDesc": "Solidity 0.8.24, Hardhat 3, OpenZeppelin",
+      "frontend": "Frontend",
+      "frontendDesc": "Next.js 14, TypeScript, TailwindCSS",
+      "backend": "Backend agents",
+      "backendDesc": "Node.js, Coinbase CDP, Pyth Hermes API"
+    },
+    "contact": {
+      "title": "Neem contact op",
+      "email": "E-mail",
+      "twitter": "Twitter",
+      "github": "GitHub",
+      "discord": "Discord"
+    }
+  },
+  "footer": {
+    "builtWith": "Gebouwd met ❤️ bij ETHGlobal Buenos Aires 2025",
+    "tagline": "Acht chains. Één app. Nul wrijving.",
+    "rights": "© 2025 HedgePod. MIT-licentie."
+  }
+}

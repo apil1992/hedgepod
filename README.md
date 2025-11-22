@@ -24,7 +24,7 @@
 ## 📚 Table of Contents
 
 - [What Is HedgePod?](#-what-is-hedgepod-agent)
-- [Multi-Language Support](#-multi-language-support) 🌍 **10 languages**
+- [Multi-Language Support](#-multi-language-support) 🌍 **19 languages**
 - [Architecture](#️-architecture)
 - [Quick Start](#-quick-start)
   - [Prerequisites](#prerequisites)
@@ -56,12 +56,12 @@ Users deposit USDC/ETH/USDT once, and autonomous AI agents:
 
 ## 🌍 Multi-Language Support
 
-HedgePod is available in **10 languages** to serve users worldwide:
+HedgePod is available in **19 languages** to serve users worldwide (all World Coin supported languages):
 
 | Language | Code | Status |
 |----------|------|--------|
 | 🇬🇧 **English** | `en` | ✅ Complete |
-| 🇨🇳 **中文 (Chinese)** | `zh` | ✅ Complete |
+| 🇨🇳 **中文 (简体) (Chinese Simplified)** | `zh` | ✅ Complete |
 | 🇪🇸 **Español (Spanish)** | `es` | ✅ Complete |
 | 🇸🇦 **العربية (Arabic)** | `ar` | ✅ Complete |
 | 🇧🇷 **Português (Portuguese)** | `pt` | ✅ Complete |
@@ -70,6 +70,15 @@ HedgePod is available in **10 languages** to serve users worldwide:
 | 🇯🇵 **日本語 (Japanese)** | `ja` | ✅ Complete |
 | 🇷🇺 **Русский (Russian)** | `ru` | ✅ Complete |
 | 🇩🇪 **Deutsch (German)** | `de` | ✅ Complete |
+| 🇮🇳 **हिन्दी (Hindi)** | `hi` | ✅ Complete |
+| 🇰🇷 **한국어 (Korean)** | `ko` | ✅ Complete |
+| 🇵🇱 **Polski (Polish)** | `pl` | ✅ Complete |
+| 🇪🇸 **Català (Catalan)** | `ca` | ✅ Complete |
+| 🇲🇾 **Bahasa Melayu (Malay)** | `ms` | ✅ Complete |
+| 🇹🇭 **ไทย (Thai)** | `th` | ✅ Complete |
+| 🇹🇼 **中文 (繁體) (Chinese Traditional - Taiwan)** | `zh-TW` | ✅ Complete |
+| 🇳🇱 **Nederlands (Dutch)** | `nl` | ✅ Complete |
+| 🇲🇽 **Español (América Latina) (Spanish - Latin America)** | `es-419` | ✅ Complete |
 
 **Language auto-detection**: The app automatically detects your browser's preferred language and displays content accordingly.
 
