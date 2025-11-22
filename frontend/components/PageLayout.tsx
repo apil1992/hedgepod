@@ -27,7 +27,7 @@ export function PageLayout({
       {showNavigation && <Navigation />}
       
       <main 
-        className="relative flex-1 flex flex-col min-h-[calc(100vh+200px)]"
+        className="relative flex-1 flex flex-col min-h-[calc(100vh+200px)] pb-4"
         style={showBackground ? {
           backgroundImage: 'url(/hedgepod_cherryblossmbackground.png)',
           backgroundSize: 'cover',

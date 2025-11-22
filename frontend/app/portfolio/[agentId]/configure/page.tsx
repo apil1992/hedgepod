@@ -308,7 +308,7 @@ export default function AgentConfigPage() {
           <Button
             variant="nav"
             size="md"
-            onClick={() => router.push(`/agents/${agentId}/history`)}
+            onClick={() => router.push(`/portfolio/${agentId}/history`)}
           >
             📜 View History
           </Button>

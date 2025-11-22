@@ -111,7 +111,7 @@ export default function DeployAgentPage() {
 
       if (data.success) {
         alert(`✅ ${data.message}\n\nAgent ID: ${data.agent.agent_id}`);
-        router.push('/agents');
+        router.push('/portfolio');
       } else {
         setError(data.error);
       }
@@ -134,7 +134,7 @@ export default function DeployAgentPage() {
               <p className="text-green-800 font-body">
                 Please connect your wallet to deploy a new agent.
               </p>
-              <Button variant="primary" size="md" onClick={() => router.push('/agents')}>
+              <Button variant="primary" size="md" onClick={() => router.push('/portfolio')}>
                 Go Back
               </Button>
             </div>

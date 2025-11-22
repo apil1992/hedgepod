@@ -72,11 +72,6 @@ export function Navigation() {
           
           {isMoreDropdownOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-cream rounded-2xl border-3 border-brown-500 shadow-ac-lg overflow-hidden z-[100]">
-              <Link href="/agents" onClick={() => setIsMoreDropdownOpen(false)}>
-                <div className="px-4 py-3 hover:bg-green-100 transition-colors cursor-pointer border-b-2 border-brown-200">
-                  <p className="font-display font-bold text-green-700 text-sm">🤖 Agents</p>
-                </div>
-              </Link>
               <Link href="/about" onClick={() => setIsMoreDropdownOpen(false)}>
                 <div className="px-4 py-3 hover:bg-green-100 transition-colors cursor-pointer border-b-2 border-brown-200">
                   <p className="font-display font-bold text-green-700 text-sm">📖 About</p>

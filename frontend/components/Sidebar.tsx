@@ -58,7 +58,7 @@ export function Sidebar() {
                   📊 Portfolio
                 </Button>
               </Link>
-              <Link href="/agents">
+              <Link href="/portfolio">
                 <Button variant="secondary" size="sm" className="w-full text-xs">
                   🤖 My Agents
                 </Button>
@@ -106,7 +106,7 @@ export function Sidebar() {
           <span>⚡</span> Quick Actions
         </h3>
         <div className="space-y-4">
-          <Link href="/agents/deploy">
+          <Link href="/portfolio/deploy">
             <Button variant="primary" size="sm" className="w-full text-xs">
               🤖 Deploy Agent
             </Button>
