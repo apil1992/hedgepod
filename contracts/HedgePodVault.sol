@@ -53,9 +53,9 @@ contract HedgePodVault is IHedgePodVault, AccessControl, ReentrancyGuard {
 
     /**
      * @notice Initialize the HedgePod Vault
-     * @param _depositToken Address of the deposit token (USDC/USDT/ETH)
+     * @param _depositToken Address of the deposit token (can be zero for local testing)
      * @param _autoYieldToken Address of the AutoYield token (LayerZero OFT)
-     * @param _pyth Address of the Pyth oracle
+     * @param _pyth Address of the Pyth oracle (can be zero for local testing)
      * @param _ethPriceId Pyth price ID for ETH/USD
      * @param _usdcPriceId Pyth price ID for USDC/USD
      */
@@ -66,13 +66,17 @@ contract HedgePodVault is IHedgePodVault, AccessControl, ReentrancyGuard {
         bytes32 _ethPriceId,
         bytes32 _usdcPriceId
     ) {
-        require(_depositToken != address(0), "Invalid deposit token");
+        // Allow zero addresses for local development/testing
         require(_autoYieldToken != address(0), "Invalid AutoYield token");
-        require(_pyth != address(0), "Invalid Pyth oracle");
 
-        depositToken = IERC20(_depositToken);
+        // Handle zero addresses for local testing
+        if (_depositToken != address(0)) {
+            depositToken = IERC20(_depositToken);
+        }
         autoYieldToken = IAutoYieldToken(_autoYieldToken);
-        pyth = IPyth(_pyth);
+        if (_pyth != address(0)) {
+            pyth = IPyth(_pyth);
+        }
         ETH_PRICE_ID = _ethPriceId;
         USDC_PRICE_ID = _usdcPriceId;
 
