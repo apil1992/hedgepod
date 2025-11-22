@@ -80,17 +80,14 @@ contract VolatilityFeeHook is IVolatilityFeeHook {
     /**
      * @notice Hook called before each swap
      * @dev This is the core Uniswap v4 hook function
-     * @param sender The address initiating the swap
      * @param key The pool key
-     * @param params Swap parameters
-     * @param hookData Additional hook data
      * @return bytes4 Function selector for validation
      */
     function beforeSwap(
-        address sender,
+        address /* sender */,
         PoolKey calldata key,
-        SwapParams calldata params,
-        bytes calldata hookData
+        SwapParams calldata /* params */,
+        bytes calldata /* hookData */
     ) external onlyPoolManager returns (bytes4) {
         bytes32 poolId = keccak256(abi.encode(key));
         

@@ -2,26 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --font-inter: 'Inter', system-ui, sans-serif;
+    --font-nunito: 'Nunito', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-cream text-green-900;
+  }
+  
+  /* Custom scrollbar for AC theme */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #c8ebc8;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #299f29;
+    border-radius: 10px;
+    border: 2px solid #c8ebc8;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1f7f1f;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer utilities {
+  /* Animal Crossing-style text shadow */
+  .text-ac-shadow {
+    text-shadow: 2px 2px 0px #815534;
+  }
+  
+  /* Pixel-perfect rounded corners */
+  .rounded-ac {
+    border-radius: 1.5rem;
+  }
+  
+  /* AC dialogue box effect */
+  .dialogue-box {
+    @apply bg-cream border-4 border-brown-500 rounded-3xl shadow-ac p-6;
+  }
 }
