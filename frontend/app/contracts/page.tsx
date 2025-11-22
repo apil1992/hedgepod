@@ -164,7 +164,7 @@ export default function Contracts() {
             </p>
             <div className="flex justify-center gap-3 pt-2">
               <a
-                href="https://github.com/beachmolly/hedgepod/tree/master/contracts"
+                href="https://github.com/mollybeach/hedgepod/tree/master/contracts"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-400 text-white font-display font-bold py-2 px-4 rounded-full border-3 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all text-sm"

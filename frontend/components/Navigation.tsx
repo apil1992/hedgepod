@@ -68,7 +68,7 @@ export function Navigation() {
                   <p className="font-display font-bold text-green-700 text-sm">📖 About</p>
                 </div>
               </Link>
-              <a href="https://github.com/beachmolly/hedgepod" target="_blank" rel="noopener noreferrer" onClick={() => setIsMoreDropdownOpen(false)}>
+              <a href="https://github.com/mollybeach/hedgepod" target="_blank" rel="noopener noreferrer" onClick={() => setIsMoreDropdownOpen(false)}>
                 <div className="px-4 py-3 hover:bg-green-100 transition-colors cursor-pointer border-b-2 border-brown-200">
                   <p className="font-display font-bold text-green-700 text-sm">💻 GitHub</p>
                 </div>
