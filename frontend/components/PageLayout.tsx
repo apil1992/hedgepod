@@ -34,8 +34,8 @@ export function PageLayout({
           <div className="absolute inset-0 bg-cream/30 backdrop-blur-[2px]" />
         )}
         
-        <div className="relative w-full max-w-7xl mx-auto px-4 md:px-8 flex-1" style={{ zIndex: 1 }}>
-          <div className="flex gap-6 overflow-hidden">
+        <div className="relative w-full max-w-7xl mx-auto flex-1" style={{ zIndex: 1 }}>
+          <div className="flex gap-6 overflow-hidden px-4 md:px-8">
             {/* Sidebar */}
             {showSidebar && <Sidebar />}
             

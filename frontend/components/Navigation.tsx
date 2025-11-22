@@ -17,15 +17,20 @@ export function Navigation() {
 
   return (
     <nav 
-      className="flex justify-between items-center mb-8 py-4 px-4 md:px-24 shadow-ac-lg border-b-3 border-brown-500 relative overflow-hidden"
+      className="flex justify-between items-center mb-8 py-4 shadow-ac-lg border-b-3 border-brown-500 relative overflow-hidden"
       style={{
         backgroundImage: 'url(/greenleaves_header.png)',
         backgroundRepeat: 'repeat-x',
         backgroundSize: 'auto 100%',
         backgroundPosition: 'center',
+        position: 'relative',
+        left: '50%',
+        right: '50%',
+        marginLeft: '-50vw',
+        marginRight: '-50vw',
         width: '100vw',
-        marginLeft: 'calc(-50vw + 50%)',
-        marginRight: 'calc(-50vw + 50%)',
+        paddingLeft: 'max(1rem, calc((100vw - 1280px) / 2))',
+        paddingRight: 'max(1rem, calc((100vw - 1280px) / 2))',
       }}
     >
       {/* Background overlay for better text readability */}
