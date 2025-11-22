@@ -86,7 +86,7 @@ export function Navigation() {
         <div className="relative z-[9999]">
           <button 
             onClick={() => setIsMoreDropdownOpen(!isMoreDropdownOpen)}
-            className="bg-brown-400 hover:bg-brown-300 text-white font-display font-bold py-2 px-4 md:px-6 rounded-full border-3 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all transform hover:-translate-y-0.5 text-sm md:text-base flex items-center gap-2"
+            className="bg-pink-500 hover:bg-pink-400 text-white font-display font-bold py-2 px-4 md:px-6 rounded-full border-3 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all transform hover:-translate-y-0.5 text-sm md:text-base flex items-center gap-2"
           >
             <span className="hidden md:inline">More</span>
             <span className="transform transition-transform" style={{ transform: isMoreDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>▼</span>
@@ -175,10 +175,10 @@ export function Navigation() {
                     }
 
                     return (
-                      <div className="flex gap-2">
+                      <div className="flex gap-2 items-start">
                         <button
                           onClick={openChainModal}
-                          className="bg-brown-400 hover:bg-brown-300 text-white font-display font-bold py-2 px-3 md:px-4 rounded-full border-3 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all text-sm md:text-base flex items-center gap-2"
+                          className="bg-brown-400 hover:bg-brown-300 text-white font-display font-bold py-2 px-3 md:px-4 rounded-full border-3 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all transform hover:-translate-y-0.5 text-sm md:text-base flex items-center gap-2 flex-shrink-0"
                         >
                           {/* Custom World Chain logo or default chain icon */}
                           {chain.name === 'World Chain' ? (
