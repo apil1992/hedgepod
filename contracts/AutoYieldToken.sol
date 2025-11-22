@@ -47,15 +47,14 @@ contract AutoYieldToken is ERC20, AccessControl, IAutoYieldToken {
 
     /**
      * @notice Initialize AutoYield Token
-     * @param _lzEndpoint LayerZero endpoint address
+     * @param _lzEndpoint LayerZero endpoint address (can be zero for local testing)
      * @param _initialAPRThreshold Initial APR threshold (basis points)
      */
     constructor(
         address _lzEndpoint,
         uint256 _initialAPRThreshold
     ) ERC20("HedgePod AutoYield Token", "HAYT") {
-        require(_lzEndpoint != address(0), "Invalid LZ endpoint");
-        
+        // Allow zero address for local development/testing
         lzEndpoint = _lzEndpoint;
         aprThreshold = _initialAPRThreshold;
         
