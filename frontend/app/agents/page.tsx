@@ -43,8 +43,8 @@ export default function Agents() {
   const fetchAgents = async () => {
     try {
       setLoading(true);
-      const url = address ? `/api/agents?wallet=${address}` : '/api/agents';
-      const response = await fetch(url);
+      // TODO: Filter by wallet address once owner_wallet column is added to DB
+      const response = await fetch('/api/agents');
       const data = await response.json();
 
       if (data.success) {

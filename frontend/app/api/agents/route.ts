@@ -9,20 +9,12 @@ import { supabase } from '@/lib/supabase';
 // GET /api/agents - List all agents
 export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url);
-    const walletAddress = searchParams.get('wallet');
-
-    let query = supabase
+    // TODO: Add owner_wallet column to database schema for multi-user support
+    // For now, fetch all agents (single-user mode)
+    const { data, error } = await supabase
       .from('agent_performance')
       .select('*')
       .order('created_at', { ascending: false });
-
-    // Filter by wallet if provided
-    if (walletAddress) {
-      query = query.eq('owner_wallet', walletAddress);
-    }
-
-    const { data, error } = await query;
 
     if (error) throw error;
 
@@ -57,12 +49,12 @@ export async function POST(request: NextRequest) {
     const agentId = `agent_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
     // Create agent record in Supabase
+    // TODO: Add owner_wallet to schema and store walletAddress
     const { data: newAgent, error: dbError } = await supabase
       .from('agent_performance')
       .insert({
         agent_id: agentId,
         agent_name: agentName || `HedgePod Agent #${Date.now().toString().slice(-4)}`,
-        owner_wallet: walletAddress,
         total_value_managed: depositAmount || 0,
         current_apr: 0,
         total_rebalances: 0,
