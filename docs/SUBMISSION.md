@@ -2,6 +2,8 @@
 
 > **🦔 Autonomous cross-chain DeFi for 23M World App users**
 
+**📄 Partner Prize Submission Form**: See [PARTNER_PRIZE_SUBMISSION.md](./PARTNER_PRIZE_SUBMISSION.md) for the completed form ready to copy/paste into ETHGlobal.
+
 ---
 
 ## 📋 Submission Checklist
