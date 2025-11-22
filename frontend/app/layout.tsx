@@ -15,6 +15,22 @@ const nunito = Nunito({
 export const metadata: Metadata = {
   title: 'HedgePod Agent | Autonomous Cross-Chain DeFi',
   description: 'Deposit once. AI agents automatically rebalance across 8+ chains for optimal yield.',
+  icons: {
+    icon: '/hedgepod-logo.png',
+    shortcut: '/hedgepod-logo.png',
+    apple: '/hedgepod-logo.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/hedgepod-logo.png',
+    },
+  },
+  manifest: '/site.webmanifest',
+  themeColor: '#299f29',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
 }
 
 export default function RootLayout({

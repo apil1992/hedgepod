@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+:root {
     --font-inter: 'Inter', system-ui, sans-serif;
     --font-nunito: 'Nunito', system-ui, sans-serif;
   }
@@ -11,8 +11,8 @@
   body {
     background-color: #f3e8d8;
     color: #082808;
-  }
-  
+}
+
   /* Custom scrollbar for AC theme */
   ::-webkit-scrollbar {
     width: 12px;
