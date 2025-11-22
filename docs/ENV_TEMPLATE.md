@@ -162,6 +162,18 @@ GAS_MULTIPLIER=1.2
 CONFIRMATIONS=2
 
 # =====================================================
+# SUPABASE (Database - REQUIRED for agent tracking)
+# =====================================================
+# Get from: https://supabase.com/ → Your Project → Settings → API
+# Frontend variables (public)
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
+
+# Backend variables (private - service key)
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_KEY=your-service-role-key-here
+
+# =====================================================
 # ADDITIONAL SERVICES (Optional)
 # =====================================================
 

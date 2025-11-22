@@ -230,7 +230,13 @@ make verify-base-sepolia
 ```bash
 # frontend/.env.local
 NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_walletconnect_project_id_here
+
+# Supabase (for agent performance tracking - optional for local dev)
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
 ```
+
+📚 **Database setup**: See [docs/DATABASE_SETUP.md](./docs/DATABASE_SETUP.md) for Supabase configuration (5 min setup)
 
 Then start the development server:
 
@@ -241,7 +247,7 @@ npm install
 
 # Start development server
 npm run dev
-# Open http://localhost:3000
+# Open http://localhost:3000/en (or your locale)
 ```
 
 Your frontend will automatically connect to deployed contracts using data from:
