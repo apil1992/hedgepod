@@ -149,7 +149,7 @@ export function Sidebar() {
 
       {/* Help Widget */}
       <Card variant="dialogue" className="space-y-2 bg-gradient-to-br from-pink-50 to-purple-50 relative" style={{ zIndex: 2 }}>
-        <div className="text-center space-y-2">
+        <div className="text-center space-y-3">
           <div className="text-3xl">💡</div>
           <p className="text-xs font-body text-green-700">
             <span className="font-bold">New to HedgePod?</span><br />
