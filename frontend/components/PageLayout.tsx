@@ -43,14 +43,14 @@ export function PageLayout({
         <div className="relative w-full flex-1" style={{ zIndex: 1 }}>
           {/* Sidebar - Fixed to left edge */}
           {showSidebar && (
-            <div className="fixed left-0 top-[72px] h-[calc(100vh-72px)] z-20 hidden lg:block">
+            <div className="fixed left-0 top-[72px] h-[calc(100vh-72px)] z-[5] hidden lg:block overflow-visible">
               <Sidebar />
             </div>
           )}
           
           {/* Main Content - With left margin for sidebar */}
           <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:pl-80">
-            <div className="flex-1 min-w-0 relative" style={{ zIndex: 15 }}>
+            <div className="flex-1 min-w-0 relative" style={{ zIndex: 30 }}>
               {children}
             </div>
           </div>

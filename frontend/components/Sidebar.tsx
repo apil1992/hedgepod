@@ -15,8 +15,8 @@ export function Sidebar() {
     <>
       {/* Sidebar with Trunk Background - Full Height */}
       <aside className="hidden lg:flex flex-col w-72 space-y-4 sticky top-0 min-h-screen py-4 relative" style={{ zIndex: 10 }}>
-        {/* Tree Trunk Background - WIDER than sidebar to show edges */}
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-96 h-full pointer-events-none" style={{ zIndex: 0 }}>
+        {/* Tree Trunk Background - WIDER than sidebar to show edges, BEHIND cards */}
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-96 h-full pointer-events-none" style={{ zIndex: -2 }}>
           <Image
             src="/cherryblossom_tree_sidebarlogo_just_the_trunk.png"
             alt="Tree Trunk"
@@ -26,8 +26,8 @@ export function Sidebar() {
           />
         </div>
 
-        {/* Cherry Blossom Flowers - Extends to RIGHT of sidebar, WIDER to show full flowers */}
-        <div className="absolute left-full top-0 w-[500px] h-full pointer-events-none" style={{ zIndex: 0 }}>
+        {/* Cherry Blossom Flowers - Extends to RIGHT of sidebar, BEHIND main content */}
+        <div className="absolute left-full top-0 w-[500px] h-full pointer-events-none" style={{ zIndex: -1 }}>
           <Image
             src="/cherryblossom_tree_sidebarlogo_just_the_flowers.png"
             alt="Cherry Blossoms"

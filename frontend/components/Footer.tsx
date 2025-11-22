@@ -17,7 +17,7 @@ export function Footer() {
 
   return (
     <footer 
-      className="py-8 border-t-3 border-brown-500 relative overflow-hidden mt-auto"
+      className="py-8 border-t-3 border-brown-500 relative overflow-hidden mt-auto z-40"
       style={{
         backgroundImage: 'url(/greenleaves_header.png)',
         backgroundRepeat: 'repeat-x',

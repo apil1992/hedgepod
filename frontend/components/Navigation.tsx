@@ -17,7 +17,7 @@ export function Navigation() {
 
   return (
     <nav 
-      className="w-full py-4 px-8 md:px-16 lg:px-24 shadow-ac-lg border-b-3 border-brown-500 relative overflow-visible"
+      className="w-full py-4 px-8 md:px-16 lg:px-24 shadow-ac-lg border-b-3 border-brown-500 relative overflow-visible z-50"
       style={{
         backgroundImage: 'url(/greenleaves_header.png)',
         backgroundRepeat: 'repeat-x',
