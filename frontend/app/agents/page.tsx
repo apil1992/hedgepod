@@ -9,7 +9,6 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAccount } from 'wagmi';
 import { PageLayout } from '@/components/PageLayout';
-import { Navigation } from '@/components/Navigation';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { Avatar } from '@/components/Avatar';
@@ -130,8 +129,6 @@ export default function Agents() {
 
   return (
     <PageLayout>
-      <Navigation />
-
       {!isConnected ? (
         <WalletPrompt 
           title="Connect to Manage Agents"

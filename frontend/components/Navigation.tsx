@@ -55,7 +55,7 @@ export function Navigation() {
         </Link>
         
         {/* More Dropdown */}
-        <div className="relative">
+        <div className="relative z-50">
           <button 
             onClick={() => setIsMoreDropdownOpen(!isMoreDropdownOpen)}
             className="bg-brown-400 hover:bg-brown-300 text-white font-display font-bold py-2 px-4 md:px-6 rounded-full border-3 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all transform hover:-translate-y-0.5 text-sm md:text-base flex items-center gap-2"
@@ -65,7 +65,7 @@ export function Navigation() {
           </button>
           
           {isMoreDropdownOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-cream rounded-2xl border-3 border-brown-500 shadow-ac-lg overflow-hidden z-50">
+            <div className="absolute right-0 mt-2 w-48 bg-cream rounded-2xl border-3 border-brown-500 shadow-ac-lg overflow-hidden z-[100]">
               <Link href="/agents" onClick={() => setIsMoreDropdownOpen(false)}>
                 <div className="px-4 py-3 hover:bg-green-100 transition-colors cursor-pointer border-b-2 border-brown-200">
                   <p className="font-display font-bold text-green-700 text-sm">🤖 Agents</p>
@@ -103,8 +103,8 @@ export function Navigation() {
         {/* Language Switcher - DISABLED TEMPORARILY */}
         {/* <LanguageSwitcher /> */}
 
-        {/* Connect Wallet Button with Custom Styling */}
-        <div className="connect-wallet-wrapper">
+        {/* Connect Wallet Button with Custom Styling - Far Right */}
+        <div className="connect-wallet-wrapper ml-auto">
           <ConnectButton.Custom>
             {({
               account,

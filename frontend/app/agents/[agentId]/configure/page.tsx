@@ -8,7 +8,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { PageLayout } from '@/components/PageLayout';
-import { Navigation } from '@/components/Navigation';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 

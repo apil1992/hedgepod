@@ -5,7 +5,6 @@
 
 import Image from 'next/image';
 import { PageLayout } from '@/components/PageLayout';
-import { Navigation } from '@/components/Navigation';
 import { Card, FeatureCard } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { Avatar } from '@/components/Avatar';
@@ -25,7 +24,6 @@ export default function About() {
 
   return (
     <PageLayout>
-      <Navigation />
       
       <div className="space-y-8">
         {/* Header */}

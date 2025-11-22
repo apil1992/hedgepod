@@ -3,7 +3,6 @@
  */
 
 import { PageLayout } from '@/components/PageLayout';
-import { Navigation } from '@/components/Navigation';
 import { Card } from '@/components/Card';
 import { Badge } from '@/components/Badge';
 

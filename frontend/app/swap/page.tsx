@@ -6,7 +6,6 @@
 'use client';
 
 import { PageLayout } from '@/components/PageLayout';
-import { Navigation } from '@/components/Navigation';
 import { UniswapPoolStats } from '@/components/UniswapPoolStats';
 import { WalletPrompt } from '@/components/WalletPrompt';
 import { useAccount } from 'wagmi';
@@ -16,7 +15,6 @@ export default function SwapPage() {
 
   return (
     <PageLayout>
-      <Navigation />
       
       {!isConnected ? (
         <WalletPrompt 

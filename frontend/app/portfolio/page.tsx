@@ -5,7 +5,6 @@
 'use client';
 
 import { PageLayout } from '@/components/PageLayout';
-import { Navigation } from '@/components/Navigation';
 import { PortfolioStats } from '@/components/PortfolioStats';
 import { WalletPrompt } from '@/components/WalletPrompt';
 import { useAccount } from 'wagmi';
@@ -15,7 +14,6 @@ export default function Portfolio() {
 
   return (
     <PageLayout>
-      <Navigation />
       
       {!isConnected ? (
         <WalletPrompt 
