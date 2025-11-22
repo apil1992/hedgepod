@@ -54,7 +54,7 @@ export default function Portfolio() {
         {/* Agent Status */}
         <Card variant="dialogue">
           <div className="flex items-center gap-6">
-            <Avatar emoji="🤖" size="md" />
+            <Avatar size="md" />
             <div className="flex-1">
               <h3 className="text-xl font-display font-bold text-green-700 mb-2">
                 Your Agent

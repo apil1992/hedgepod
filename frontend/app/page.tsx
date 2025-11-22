@@ -34,7 +34,7 @@ export default function Home() {
 
         {/* Hero Card with Hedgehog */}
         <HeroCard>
-          <Avatar emoji="🦔" size="lg" />
+          <Avatar size="lg" />
           
           <h2 className="text-3xl md:text-4xl font-display font-bold text-green-700 text-center">
             HedgePod Agent

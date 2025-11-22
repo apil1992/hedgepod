@@ -10,12 +10,25 @@ import { Button } from '@/components/Button';
 import { Avatar } from '@/components/Avatar';
 import { Badge } from '@/components/Badge';
 
+interface Agent {
+  id: number;
+  name: string;
+  logo?: boolean;
+  emoji?: string;
+  status: 'active' | 'standby' | 'inactive';
+  chains: string[];
+  lastRebalance: string;
+  totalRebalances: number;
+  apr: string;
+  tvl: string;
+}
+
 export default function Agents() {
-  const agents = [
+  const agents: Agent[] = [
     {
       id: 1,
       name: 'HedgePod Agent #1',
-      emoji: '🦔',
+      logo: true, // Use HedgePod logo
       status: 'active',
       chains: ['World Chain', 'Base', 'Celo'],
       lastRebalance: '2 hours ago',
@@ -26,7 +39,7 @@ export default function Agents() {
     {
       id: 2,
       name: 'HedgePod Agent #2',
-      emoji: '🌿',
+      logo: true, // Use HedgePod logo
       status: 'standby',
       chains: ['Polygon', 'Arbitrum'],
       lastRebalance: '1 day ago',
@@ -37,7 +50,7 @@ export default function Agents() {
     {
       id: 3,
       name: 'HedgePod Agent #3',
-      emoji: '🤖',
+      logo: true, // Use HedgePod logo
       status: 'inactive',
       chains: ['Optimism', 'Avalanche'],
       lastRebalance: 'Never',
@@ -110,7 +123,11 @@ export default function Agents() {
                 <div className="flex flex-col md:flex-row gap-6">
                   {/* Agent Avatar */}
                   <div className="flex-shrink-0">
-                    <Avatar emoji={agent.emoji} size="lg" />
+                    {agent.logo ? (
+                      <Avatar size="lg" />
+                    ) : (
+                      <Avatar emoji={agent.emoji} size="lg" />
+                    )}
                   </div>
 
                   {/* Agent Info */}

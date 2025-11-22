@@ -30,7 +30,7 @@ export default function About() {
         {/* Header */}
         <div className="text-center space-y-4">
           <div className="flex justify-center mb-6">
-            <Avatar emoji="🦔" size="xl" />
+            <Avatar size="xl" />
           </div>
           <h1 className="text-4xl md:text-6xl font-display font-bold text-green-700 drop-shadow-lg">
             About HedgePod
