@@ -10,6 +10,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { PageLayout } from '@/components/PageLayout';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
+import Image from 'next/image';
 
 interface Agent {
   agent_id: string;
@@ -20,16 +21,44 @@ interface Agent {
   current_apr: number;
 }
 
-const AVAILABLE_CHAINS = [
-  'World Chain',
-  'Base',
-  'Celo',
-  'Zircuit',
-  'Polygon',
-  'Arbitrum',
-  'Optimism',
-  'Avalanche',
-];
+// Chain configuration with logos
+const CHAIN_CONFIG: Record<string, { name: string; logo: string; isImage?: boolean }> = {
+  'World Chain': { 
+    name: 'World Chain', 
+    logo: '/worldchain_logo_white_pixelated.png',
+    isImage: true
+  },
+  'Base': { 
+    name: 'Base', 
+    logo: '🔵',
+  },
+  'Celo': { 
+    name: 'Celo', 
+    logo: '🌱',
+  },
+  'Zircuit': { 
+    name: 'Zircuit', 
+    logo: '⚡',
+  },
+  'Polygon': { 
+    name: 'Polygon', 
+    logo: '🟣',
+  },
+  'Arbitrum': { 
+    name: 'Arbitrum', 
+    logo: '🔷',
+  },
+  'Optimism': { 
+    name: 'Optimism', 
+    logo: '🔴',
+  },
+  'Avalanche': { 
+    name: 'Avalanche', 
+    logo: '🔺',
+  },
+};
+
+const AVAILABLE_CHAINS = Object.keys(CHAIN_CONFIG);
 
 export default function AgentConfigPage() {
   const params = useParams();
@@ -239,19 +268,36 @@ export default function AgentConfigPage() {
             Select which chains this agent should monitor and rebalance across
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {AVAILABLE_CHAINS.map((chain) => (
-              <button
-                key={chain}
-                onClick={() => handleChainToggle(chain)}
-                className={`px-4 py-3 rounded-lg border-3 font-display transition-all ${
-                  selectedChains.includes(chain)
-                    ? 'bg-green-500 text-white border-green-700 shadow-ac'
-                    : 'bg-cream-50 text-green-700 border-brown-500 hover:bg-cream-100'
-                }`}
-              >
-                {chain}
-              </button>
-            ))}
+            {AVAILABLE_CHAINS.map((chain) => {
+              const config = CHAIN_CONFIG[chain];
+              return (
+                <button
+                  key={chain}
+                  onClick={() => handleChainToggle(chain)}
+                  className={`px-4 py-3 rounded-lg border-3 font-display transition-all flex items-center justify-center gap-2 ${
+                    selectedChains.includes(chain)
+                      ? 'bg-green-500 text-white border-green-700 shadow-ac'
+                      : 'bg-cream-50 text-green-700 border-brown-500 hover:bg-cream-100'
+                  }`}
+                >
+                  {/* Chain Logo/Icon */}
+                  {config.isImage ? (
+                    <Image 
+                      src={config.logo} 
+                      alt={config.name}
+                      width={20}
+                      height={20}
+                      className="flex-shrink-0"
+                    />
+                  ) : (
+                    <span className="text-lg">{config.logo}</span>
+                  )}
+                  
+                  {/* Chain Name - Hidden on mobile, shown on larger screens */}
+                  <span className="hidden sm:inline">{config.name}</span>
+                </button>
+              );
+            })}
           </div>
         </Card>
 

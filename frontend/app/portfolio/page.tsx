@@ -14,6 +14,7 @@ import { Button } from '@/components/Button';
 import { Avatar } from '@/components/Avatar';
 import { Badge } from '@/components/Badge';
 import { WalletPrompt } from '@/components/WalletPrompt';
+import Image from 'next/image';
 
 interface Agent {
   id: number;
@@ -26,6 +27,43 @@ interface Agent {
   current_apr: number;
   total_value_managed: number;
 }
+
+// Chain configuration with logos
+const CHAIN_CONFIG: Record<string, { name: string; logo: string; isImage?: boolean }> = {
+  'World Chain': { 
+    name: 'World Chain', 
+    logo: '/worldchain_logo_white_pixelated.png',
+    isImage: true
+  },
+  'Base': { 
+    name: 'Base', 
+    logo: '🔵',
+  },
+  'Celo': { 
+    name: 'Celo', 
+    logo: '🌱',
+  },
+  'Zircuit': { 
+    name: 'Zircuit', 
+    logo: '⚡',
+  },
+  'Polygon': { 
+    name: 'Polygon', 
+    logo: '🟣',
+  },
+  'Arbitrum': { 
+    name: 'Arbitrum', 
+    logo: '🔷',
+  },
+  'Optimism': { 
+    name: 'Optimism', 
+    logo: '🔴',
+  },
+  'Avalanche': { 
+    name: 'Avalanche', 
+    logo: '🔺',
+  },
+};
 
 export default function Portfolio() {
   const router = useRouter();
@@ -305,11 +343,29 @@ export default function Portfolio() {
                           <div>
                             <p className="text-xs text-green-600 font-body mb-2">Active Chains:</p>
                             <div className="flex flex-wrap gap-2">
-                              {activeChains.map((chain) => (
-                                <Badge key={chain} variant="green">
-                                  {chain}
-                                </Badge>
-                              ))}
+                              {activeChains.map((chain) => {
+                                const config = CHAIN_CONFIG[chain];
+                                return (
+                                  <Badge key={chain} variant="green">
+                                    <span className="flex items-center gap-1.5">
+                                      {/* Chain Logo/Icon */}
+                                      {config?.isImage ? (
+                                        <Image 
+                                          src={config.logo} 
+                                          alt={config.name}
+                                          width={16}
+                                          height={16}
+                                          className="flex-shrink-0"
+                                        />
+                                      ) : (
+                                        <span className="text-sm">{config?.logo}</span>
+                                      )}
+                                      {/* Chain Name - Always shown in badges */}
+                                      <span>{chain}</span>
+                                    </span>
+                                  </Badge>
+                                );
+                              })}
                             </div>
                           </div>
                         )}

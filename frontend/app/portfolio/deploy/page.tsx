@@ -11,17 +11,46 @@ import { useAccount } from 'wagmi';
 import { PageLayout } from '@/components/PageLayout';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
+import Image from 'next/image';
 
-const AVAILABLE_CHAINS = [
-  'World Chain',
-  'Base',
-  'Celo',
-  'Zircuit',
-  'Polygon',
-  'Arbitrum',
-  'Optimism',
-  'Avalanche',
-];
+// Chain configuration with logos
+const CHAIN_CONFIG: Record<string, { name: string; logo: string; isImage?: boolean }> = {
+  'World Chain': { 
+    name: 'World Chain', 
+    logo: '/worldchain_logo_white_pixelated.png',
+    isImage: true
+  },
+  'Base': { 
+    name: 'Base', 
+    logo: '🔵', // Replace with /base-logo.png when available
+  },
+  'Celo': { 
+    name: 'Celo', 
+    logo: '🌱', // Replace with /celo-logo.png when available
+  },
+  'Zircuit': { 
+    name: 'Zircuit', 
+    logo: '⚡', // Replace with /zircuit-logo.png when available
+  },
+  'Polygon': { 
+    name: 'Polygon', 
+    logo: '🟣', // Replace with /polygon-logo.png when available
+  },
+  'Arbitrum': { 
+    name: 'Arbitrum', 
+    logo: '🔷', // Replace with /arbitrum-logo.png when available
+  },
+  'Optimism': { 
+    name: 'Optimism', 
+    logo: '🔴', // Replace with /optimism-logo.png when available
+  },
+  'Avalanche': { 
+    name: 'Avalanche', 
+    logo: '🔺', // Replace with /avalanche-logo.png when available
+  },
+};
+
+const AVAILABLE_CHAINS = Object.keys(CHAIN_CONFIG);
 
 export default function DeployAgentPage() {
   const router = useRouter();
@@ -205,19 +234,36 @@ export default function DeployAgentPage() {
             Choose which chains your agent should monitor and rebalance across
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {AVAILABLE_CHAINS.map((chain) => (
-              <button
-                key={chain}
-                onClick={() => handleChainToggle(chain)}
-                className={`px-4 py-3 rounded-lg border-3 font-display transition-all ${
-                  selectedChains.includes(chain)
-                    ? 'bg-green-500 text-white border-green-700 shadow-ac'
-                    : 'bg-cream-50 text-green-700 border-brown-500 hover:bg-cream-100'
-                }`}
-              >
-                {chain}
-              </button>
-            ))}
+            {AVAILABLE_CHAINS.map((chain) => {
+              const config = CHAIN_CONFIG[chain];
+              return (
+                <button
+                  key={chain}
+                  onClick={() => handleChainToggle(chain)}
+                  className={`px-4 py-3 rounded-lg border-3 font-display transition-all flex items-center justify-center gap-2 ${
+                    selectedChains.includes(chain)
+                      ? 'bg-green-500 text-white border-green-700 shadow-ac'
+                      : 'bg-cream-50 text-green-700 border-brown-500 hover:bg-cream-100'
+                  }`}
+                >
+                  {/* Chain Logo/Icon */}
+                  {config.isImage ? (
+                    <Image 
+                      src={config.logo} 
+                      alt={config.name}
+                      width={20}
+                      height={20}
+                      className="flex-shrink-0"
+                    />
+                  ) : (
+                    <span className="text-lg">{config.logo}</span>
+                  )}
+                  
+                  {/* Chain Name - Hidden on mobile, shown on larger screens */}
+                  <span className="hidden sm:inline">{config.name}</span>
+                </button>
+              );
+            })}
           </div>
           <p className="text-xs text-green-600 mt-4">
             Selected: {selectedChains.length} chain{selectedChains.length !== 1 ? 's' : ''}
