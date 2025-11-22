@@ -27,7 +27,7 @@ export function Providers({ children }: { children: ReactNode }) {
           })}
           appInfo={{
             appName: 'HedgePod Agent',
-            learnMoreUrl: 'https://hedgepod.vercel.app/about',
+            learnMoreUrl: 'https://hedgepod.app/about',
           }}
         >
           {children}

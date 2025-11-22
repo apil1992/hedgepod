@@ -38,7 +38,7 @@
 
 **Key Evidence**:
 - `frontend/app/page.tsx` - MiniKit integration
-- Deployed at: https://hedgepod.vercel.app
+- Deployed at: https://hedgepod.app
 - Target audience: Non-crypto World App users
 
 ---
@@ -112,7 +112,7 @@
 **How to Capture**:
 1. Use browser full-page screenshot extensions
 2. Ensure 1920x1080 or higher resolution
-3. Show actual deployed site (https://hedgepod.vercel.app)
+3. Show actual deployed site (https://hedgepod.app)
 4. Crop to focus on key features
 
 ---
@@ -192,7 +192,7 @@ HedgePod Agent is built as a full-stack autonomous DeFi platform:
 - Animal Crossing UI theme extracted from pixel art hedgehog logo
 
 **Infrastructure**:
-- Frontend: Vercel (https://hedgepod.vercel.app)
+- Frontend: Vercel (https://hedgepod.app)
 - RPC: Alchemy for all chain connections
 - Version Control: GitHub with frequent commits (see repository)
 
@@ -304,7 +304,7 @@ All AI-generated code was reviewed, tested, modified, and understood by human de
 ## 🔗 Important Links
 
 ### **Live Demo**
-- **Website**: https://hedgepod.vercel.app
+- **Website**: https://hedgepod.app
 - **GitHub**: https://github.com/mollybeach/hedgepod
 
 ### **Documentation**
@@ -414,7 +414,7 @@ All AI-generated code was reviewed, tested, modified, and understood by human de
 - [ ] GitHub repository linked
 
 ### **Testing**
-- [ ] Website is live and accessible (https://hedgepod.vercel.app)
+- [ ] Website is live and accessible (https://hedgepod.app)
 - [ ] All pages load correctly
 - [ ] Mobile responsive
 - [ ] No console errors

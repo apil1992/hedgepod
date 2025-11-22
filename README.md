@@ -4,7 +4,7 @@
 
 **TL;DR**: Deposit once. AI agents automatically rebalance across 8+ chains for optimal yield. Gasless. Chain-abstracted. Human-readable. Built for non-crypto users.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-green)](https://hedgepod.vercel.app)
+[![Live Demo](https://img.shields.io/badge/demo-live-green)](https://hedgepod.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 📚 Table of Contents
@@ -300,7 +300,7 @@ hedgepod/
 ## 📞 Contact
 
 - **GitHub**: [github.com/mollybeach/hedgepod](https://github.com/mollybeach/hedgepod)
-- **Live Demo**: [hedgepod.vercel.app](https://hedgepod.vercel.app)
+- **Live Demo**: [hedgepod.app](https://hedgepod.app)
 
 ---
 
