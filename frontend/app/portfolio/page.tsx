@@ -224,7 +224,7 @@ export default function Portfolio() {
 
         {/* All Agents Section */}
         <div>
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-4 p-4 bg-cream-100 rounded-2xl border-3 border-brown-400">
             <div className="flex items-center gap-3">
               <h2 className="text-3xl font-display font-bold text-green-700">
                 All Agents
@@ -291,7 +291,7 @@ export default function Portfolio() {
                     <div className="flex flex-col md:flex-row md:items-center gap-6">
                       {/* Avatar */}
                       <div className="flex-shrink-0">
-                        <Avatar size="xl" logo={true} />
+                        <Avatar size="xl" />
                       </div>
 
                       {/* Agent Info */}
