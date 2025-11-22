@@ -3,6 +3,7 @@
  * Learn about HedgePod Agent project
  */
 
+import Image from 'next/image';
 import { PageLayout } from '@/components/PageLayout';
 import { Navigation } from '@/components/Navigation';
 import { Card, FeatureCard } from '@/components/Card';
@@ -30,7 +31,16 @@ export default function About() {
         {/* Header */}
         <div className="text-center space-y-4">
           <div className="flex justify-center mb-6">
-            <Avatar size="xl" />
+            <div className="relative rounded-2xl overflow-hidden shadow-ac border-4 border-brown-500">
+              <Image
+                src="/hedge_pod_world_mini_app_image.png"
+                alt="HedgePod World Mini App"
+                width={345}
+                height={240}
+                priority
+                className="object-cover"
+              />
+            </div>
           </div>
           <h1 className="text-4xl md:text-6xl font-display font-bold text-green-700 drop-shadow-lg">
             About HedgePod
