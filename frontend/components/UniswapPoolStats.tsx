@@ -21,6 +21,9 @@ export function UniswapPoolStats() {
   const [loading, setLoading] = useState(true);
   const [swapModalOpen, setSwapModalOpen] = useState(false);
   const [selectedPool, setSelectedPool] = useState<PoolStat | null>(null);
+  const [inputAmount, setInputAmount] = useState('');
+  const [outputAmount, setOutputAmount] = useState('');
+  const [isReversed, setIsReversed] = useState(false);
 
   useEffect(() => {
     // Mock data for now - in production, fetch from backend/contracts
@@ -70,12 +73,57 @@ export function UniswapPoolStats() {
   const handleSwap = (pool: PoolStat) => {
     setSelectedPool(pool);
     setSwapModalOpen(true);
+    setInputAmount('');
+    setOutputAmount('');
+    setIsReversed(false);
   };
 
   const handleAddLiquidity = (pool: PoolStat) => {
     setSelectedPool(pool);
     // In production: open add liquidity modal
     alert(`Add liquidity to ${pool.pair}\n\nThis will:\n• Earn trading fees (currently ${pool.currentFee})\n• Fees adjust with volatility\n• Powered by Pyth price feeds`);
+  };
+
+  const calculateOutputAmount = (input: string, reversed: boolean) => {
+    if (!input || !selectedPool) return '';
+    
+    const amount = parseFloat(input);
+    if (isNaN(amount)) return '';
+
+    // Mock exchange rates (in production, fetch from Uniswap pool)
+    const rates: { [key: string]: number } = {
+      'USDC/ETH': 0.00033, // 1 USDC = 0.00033 ETH (~$3000 ETH)
+      'USDC/WBTC': 0.000015, // 1 USDC = 0.000015 WBTC (~$67000 BTC)
+      'ETH/USDT': 3000, // 1 ETH = 3000 USDT
+    };
+
+    let rate = rates[selectedPool.pair] || 1;
+    
+    // If reversed, use inverse rate
+    if (reversed) {
+      rate = 1 / rate;
+    }
+
+    // Apply fee (convert percentage to decimal)
+    const feePercentage = parseFloat(selectedPool.currentFee) / 100;
+    const output = amount * rate * (1 - feePercentage);
+
+    return output.toFixed(6);
+  };
+
+  const handleInputChange = (value: string) => {
+    setInputAmount(value);
+    const output = calculateOutputAmount(value, isReversed);
+    setOutputAmount(output);
+  };
+
+  const handleFlipTokens = () => {
+    setIsReversed(!isReversed);
+    // Swap input/output amounts
+    const newInput = outputAmount;
+    const newOutput = inputAmount;
+    setInputAmount(newInput);
+    setOutputAmount(newOutput);
   };
 
   if (loading) {
@@ -272,15 +320,28 @@ export function UniswapPoolStats() {
                     <input 
                       type="text" 
                       placeholder="0.00" 
+                      value={inputAmount}
+                      onChange={(e) => handleInputChange(e.target.value)}
                       className="text-2xl font-display font-bold bg-transparent outline-none flex-1"
                     />
                     <span className="px-3 py-1 bg-green-100 border border-green-400 rounded-full text-sm font-body font-bold">
-                      {selectedPool.token0}
+                      {isReversed ? selectedPool.token1 : selectedPool.token0}
                     </span>
                   </div>
                 </div>
 
-                <div className="text-center text-2xl">🔄</div>
+                <div className="flex justify-center">
+                  <button
+                    onClick={handleFlipTokens}
+                    className="p-3 bg-pink-500 hover:bg-pink-600 border-3 border-brown-500 rounded-full shadow-ac transition-all hover:scale-110 active:scale-95"
+                    title="Swap token positions"
+                  >
+                    <div className="flex flex-col items-center text-white">
+                      <span className="text-lg leading-none">↑</span>
+                      <span className="text-lg leading-none">↓</span>
+                    </div>
+                  </button>
+                </div>
 
                 <div className="p-4 bg-cream-50 rounded-lg border-2 border-green-300">
                   <p className="text-sm text-green-600 font-body mb-2">You Receive</p>
@@ -288,11 +349,12 @@ export function UniswapPoolStats() {
                     <input 
                       type="text" 
                       placeholder="0.00" 
-                      className="text-2xl font-display font-bold bg-transparent outline-none flex-1"
-                      disabled
+                      value={outputAmount}
+                      readOnly
+                      className="text-2xl font-display font-bold bg-transparent outline-none flex-1 text-green-700"
                     />
                     <span className="px-3 py-1 bg-green-100 border border-green-400 rounded-full text-sm font-body font-bold">
-                      {selectedPool.token1}
+                      {isReversed ? selectedPool.token0 : selectedPool.token1}
                     </span>
                   </div>
                 </div>

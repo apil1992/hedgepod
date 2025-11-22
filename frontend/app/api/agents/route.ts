@@ -9,6 +9,20 @@ import { supabase } from '@/lib/supabase';
 // GET /api/agents - List all agents
 export async function GET(request: NextRequest) {
   try {
+    // Check if Supabase is properly configured
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+    if (!supabaseUrl || supabaseUrl.includes('placeholder') || !supabaseKey || supabaseKey.includes('placeholder')) {
+      console.warn('⚠️ Supabase not configured - returning empty agent list');
+      return NextResponse.json({
+        success: true,
+        agents: [],
+        count: 0,
+        warning: 'Database not configured. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in your environment.'
+      });
+    }
+
     // TODO: Add owner_wallet column to database schema for multi-user support
     // For now, fetch all agents (single-user mode)
     const { data, error } = await supabase
