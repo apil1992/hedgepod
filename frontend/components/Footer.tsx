@@ -40,7 +40,7 @@ export function Footer() {
             Eight chains. One app. Zero friction.
           </p>
           <p className="text-sm text-green-700 font-body">
-            For 23M World App users who don't know what an RPC is—and never should.
+            For 23M World App users who don&apos;t know what an RPC is—and never should.
           </p>
         </div>
 

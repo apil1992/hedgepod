@@ -88,7 +88,7 @@ export default function Home() {
         {/* CTA Section */}
         <div className="text-center space-y-4">
           <p className="text-sm text-green-700 font-body italic">
-            For 23M World App users who don't know what an RPC is—and never should.
+            For 23M World App users who don&apos;t know what an RPC is—and never should.
           </p>
         </div>
 

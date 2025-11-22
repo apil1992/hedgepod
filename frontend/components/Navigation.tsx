@@ -5,6 +5,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -17,7 +18,7 @@ export function Navigation() {
       {/* Logo */}
       <Link href="/">
         <div className="flex items-center gap-2 cursor-pointer">
-          <img src="/hedgepod-logo.png" alt="HedgePod" className="w-12 h-12 rounded-full" />
+          <Image src="/hedgepod-logo.png" alt="HedgePod" width={48} height={48} className="w-12 h-12 rounded-full" />
           <span className="font-display font-bold text-2xl text-green-600 hidden md:block">
             HedgePod
           </span>
@@ -117,9 +118,11 @@ export function Navigation() {
                               }}
                             >
                               {chain.iconUrl && (
-                                <img
+                                <Image
                                   alt={chain.name ?? 'Chain icon'}
                                   src={chain.iconUrl}
+                                  width={16}
+                                  height={16}
                                   className="w-4 h-4"
                                 />
                               )}
