@@ -17,12 +17,15 @@ export function Navigation() {
 
   return (
     <nav 
-      className="flex justify-between items-center mb-8 p-4 rounded-2xl shadow-ac border-3 border-brown-500 relative overflow-hidden"
+      className="flex justify-between items-center mb-8 p-4 md:px-24 shadow-ac-lg border-b-3 border-brown-500 relative overflow-hidden"
       style={{
         backgroundImage: 'url(/greenleaves_header.png)',
         backgroundRepeat: 'repeat-x',
         backgroundSize: 'auto 100%',
         backgroundPosition: 'center',
+        width: '100vw',
+        marginLeft: '50%',
+        transform: 'translateX(-50%)',
       }}
     >
       {/* Background overlay for better text readability */}
