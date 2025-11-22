@@ -1,30 +1,55 @@
 /**
  * HedgePod Agent - Main Landing Page
- * World Mini App for autonomous cross-chain DeFi
+ * Animal Crossing-inspired World Mini App for autonomous cross-chain DeFi
  */
 
+import { Button } from '@/components/Button';
+import { FeatureCard, HeroCard } from '@/components/Card';
+import { BadgeGroup } from '@/components/Badge';
+import { Avatar } from '@/components/Avatar';
+import { Navigation } from '@/components/Navigation';
+import { PageLayout } from '@/components/PageLayout';
+
 export default function Home() {
+  const integrations = [
+    'LayerZero', 'Pyth Network', '1inch', 'Uniswap v4', 
+    'Chainlink', 'World', 'Privy', 'Coinbase CDP', 
+    'ENS', 'Octav'
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
-      <div className="max-w-5xl w-full space-y-8">
+    <PageLayout>
+      <div className="space-y-8">
+        <Navigation />
+
         {/* Header */}
         <div className="text-center space-y-4">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-display font-bold text-green-700 drop-shadow-lg">
             HedgePod Agent
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-lg md:text-xl text-green-800 font-body max-w-2xl mx-auto">
             Autonomous cross-chain DeFi that makes 23M World App users their own hedge fund
           </p>
         </div>
 
-        {/* TL;DR Section */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-gray-700">
-          <p className="text-lg text-center">
-            <span className="font-semibold">TL;DR:</span> Deposit once. AI agents automatically
+        {/* Hero Card with Hedgehog */}
+        <HeroCard>
+          <Avatar emoji="🦔" size="lg" />
+          
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-green-700 text-center">
+            HedgePod Agent
+          </h2>
+          
+          <p className="text-center text-green-800 font-body text-lg leading-relaxed">
+            <span className="font-bold text-pink-600">TL;DR:</span> Deposit once. AI agents automatically
             rebalance across 8+ chains for optimal yield. Gasless. Chain-abstracted. Human-readable.
             Built for non-crypto users.
           </p>
-        </div>
+          
+          <Button variant="primary" size="lg">
+            Get Started
+          </Button>
+        </HeroCard>
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-6">
@@ -62,52 +87,20 @@ export default function Home() {
 
         {/* CTA Section */}
         <div className="text-center space-y-4">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors">
-            Open in World App
-          </button>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-green-700 font-body italic">
             For 23M World App users who don't know what an RPC is—and never should.
           </p>
         </div>
 
         {/* Integration Badges */}
-        <div className="flex flex-wrap justify-center gap-3">
-          <Badge text="LayerZero" />
-          <Badge text="Pyth Network" />
-          <Badge text="1inch" />
-          <Badge text="Uniswap v4" />
-          <Badge text="Chainlink" />
-          <Badge text="World" />
-          <Badge text="Privy" />
-          <Badge text="Coinbase CDP" />
-          <Badge text="ENS" />
-          <Badge text="Octav" />
-        </div>
+        <BadgeGroup badges={integrations} />
 
         {/* Footer */}
-        <footer className="text-center text-sm text-gray-500 pt-8">
+        <footer className="text-center text-sm text-green-700 pt-8 font-body">
           <p>Built with ❤️ at ETHGlobal Buenos Aires 2025</p>
-          <p className="mt-2">Eight chains. One app. Zero friction.</p>
+          <p className="mt-2 font-display font-bold text-pink-600">Eight chains. One app. Zero friction.</p>
         </footer>
       </div>
-    </main>
-  );
-}
-
-function FeatureCard({ icon, title, description }: { icon: string; title: string; description: string }) {
-  return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow">
-      <div className="text-4xl mb-3">{icon}</div>
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-400 text-sm">{description}</p>
-    </div>
-  );
-}
-
-function Badge({ text }: { text: string }) {
-  return (
-    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-xs font-medium">
-      {text}
-    </span>
+    </PageLayout>
   );
 }
