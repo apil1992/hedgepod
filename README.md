@@ -1,4 +1,4 @@
-# HedgePod Agent
+# 🦔🫛 HedgePod Agent
 
 > **Autonomous cross-chain DeFi that makes 23M World App users their own hedge fund.**
 
