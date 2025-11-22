@@ -164,7 +164,7 @@ export function Sidebar() {
       </Card>
 
       {/* Additional Tree Trunk - Fills gap below sidebar */}
-      <div className="absolute left-1/2 top-full -translate-x-1/2 w-96 h-[500px] pointer-events-none" style={{ zIndex: -2 }}>
+      <div className="absolute left-1/2 -translate-x-1/2 w-96 h-[500px] pointer-events-none -mt-1" style={{ top: '100%', zIndex: -2 }}>
         <Image
           src="/cherryblossom_tree_sidebarlogo_just_the_trunk.png"
           alt="Tree Trunk Extension"
