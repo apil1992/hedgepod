@@ -164,13 +164,13 @@ export function Sidebar() {
       </Card>
 
       {/* Additional Tree Trunk - Fills gap below sidebar, max height to not extend past footer */}
-      <div className="absolute left-1/2 -translate-x-1/2 w-96 max-h-[calc(100vh-100%)] pointer-events-none -mt-1 overflow-hidden border-b-4 border-brown-500 rounded-b-3xl" style={{ top: '100%', bottom: 0, zIndex: -2 }}>
+      <div className="absolute left-1/2 -translate-x-1/2 w-96 max-h-[calc(100vh-100%)] pointer-events-none -mt-1 overflow-hidden border-b-[12px] border-brown-500 rounded-b-[32px] pb-0" style={{ top: '100%', bottom: 0, zIndex: -2 }}>
         <Image
           src="/cherryblossom_tree_sidebarlogo_just_the_trunk.png"
           alt="Tree Trunk Extension"
           width={384}
           height={500}
-          className="object-cover object-top w-full"
+          className="object-cover object-top w-full h-full block"
         />
       </div>
     </aside>
