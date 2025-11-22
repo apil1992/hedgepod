@@ -43,20 +43,21 @@ export function Navigation() {
         {/* Navigation Links */}
         <div className="flex items-center gap-3">
         <Link href="/portfolio">
-          <button className="bg-pink-400 hover:bg-pink-300 text-white font-display font-bold py-2 px-4 md:px-6 rounded-full border-3 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all transform hover:-translate-y-0.5 text-sm md:text-base">
-            📊 Portfolio
+          <button className="bg-pink-400 hover:bg-pink-300 text-white font-display font-bold py-2 px-4 md:px-6 rounded-full border-3 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all transform hover:-translate-y-0.5 text-sm md:text-base flex items-center gap-1">
+            <span>📊</span>
+            <span className="hidden md:inline">Portfolio</span>
           </button>
         </Link>
         <Link href="/swap">
           <button className="bg-purple-400 hover:bg-purple-300 text-white font-display font-bold py-2 px-4 md:px-6 rounded-full border-3 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all transform hover:-translate-y-0.5 text-sm md:text-base flex items-center gap-1">
             <span>🦄</span>
-            <span className="hidden sm:inline">Swap</span>
+            <span className="hidden md:inline">Swap</span>
           </button>
         </Link>
         <Link href="/contracts">
           <button className="bg-green-500 hover:bg-green-400 text-white font-display font-bold py-2 px-4 md:px-6 rounded-full border-3 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all transform hover:-translate-y-0.5 text-sm md:text-base flex items-center gap-1">
             <span>📜</span>
-            <span className="hidden sm:inline">Contracts</span>
+            <span className="hidden md:inline">Contracts</span>
           </button>
         </Link>
         
@@ -66,7 +67,7 @@ export function Navigation() {
             onClick={() => setIsMoreDropdownOpen(!isMoreDropdownOpen)}
             className="bg-brown-400 hover:bg-brown-300 text-white font-display font-bold py-2 px-4 md:px-6 rounded-full border-3 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all transform hover:-translate-y-0.5 text-sm md:text-base flex items-center gap-2"
           >
-            <span>More</span>
+            <span className="hidden md:inline">More</span>
             <span className="transform transition-transform" style={{ transform: isMoreDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>▼</span>
           </button>
           
@@ -158,7 +159,16 @@ export function Navigation() {
                           onClick={openChainModal}
                           className="bg-brown-400 hover:bg-brown-300 text-white font-display font-bold py-2 px-3 md:px-4 rounded-full border-3 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all text-sm md:text-base flex items-center gap-2"
                         >
-                          {chain.hasIcon && (
+                          {/* Custom World Chain logo or default chain icon */}
+                          {chain.name === 'World Chain' ? (
+                            <Image
+                              alt="World Chain"
+                              src="/worldchain_white.png"
+                              width={16}
+                              height={16}
+                              className="w-4 h-4"
+                            />
+                          ) : chain.hasIcon && (
                             <div
                               className="w-4 h-4 rounded-full overflow-hidden"
                               style={{
@@ -177,6 +187,7 @@ export function Navigation() {
                             </div>
                           )}
                           <span className="hidden md:inline">{chain.name}</span>
+                          <span className="md:hidden">{chain.name === 'World Chain' ? <Image src="/worldchain_white.png" alt="World Chain" width={16} height={16} className="w-4 h-4" /> : chain.name}</span>
                         </button>
 
                         <button

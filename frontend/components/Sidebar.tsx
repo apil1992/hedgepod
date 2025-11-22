@@ -62,18 +62,11 @@ export function Sidebar() {
               </p>
             </div>
             
-            <div className="grid grid-cols-2 gap-2">
-              <Link href="/portfolio">
-                <Button variant="secondary" size="sm" className="w-full text-xs">
-                  📊 Portfolio
-                </Button>
-              </Link>
-              <Link href="/portfolio">
-                <Button variant="secondary" size="sm" className="w-full text-xs">
-                  🤖 My Agents
-                </Button>
-              </Link>
-            </div>
+            <Link href="/portfolio">
+              <Button variant="secondary" size="sm" className="w-full text-xs mt-2">
+                📊 Portfolio
+              </Button>
+            </Link>
           </>
         ) : (
           <div className="space-y-2">

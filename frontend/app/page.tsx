@@ -91,7 +91,7 @@ export default function Home() {
                 <div className="text-5xl">🤖</div>
                 <div>
                   <h3 className="text-2xl font-display font-bold text-green-700">Deploy an Agent</h3>
-                  <p className="text-sm text-green-600 font-body">Let AI optimize your yields automatically</p>
+                  <p className="text-sm text-green-600 font-body mb-2">Let AI optimize your yields automatically</p>
                 </div>
               </div>
               <Link href="/agents/deploy">
@@ -108,7 +108,7 @@ export default function Home() {
                 <div className="text-5xl">🦄</div>
                 <div>
                   <h3 className="text-2xl font-display font-bold text-green-700">Swap Tokens</h3>
-                  <p className="text-sm text-green-600 font-body">Trade with dynamic fees on Uniswap v4</p>
+                  <p className="text-sm text-green-600 font-body mb-2">Trade with dynamic fees on Uniswap v4</p>
                 </div>
               </div>
               <Link href="/swap">

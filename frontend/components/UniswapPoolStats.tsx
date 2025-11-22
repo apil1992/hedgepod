@@ -28,6 +28,9 @@ export function UniswapPoolStats() {
   const [liquidityToken0Amount, setLiquidityToken0Amount] = useState('');
   const [liquidityToken1Amount, setLiquidityToken1Amount] = useState('');
   const [addingLiquidity, setAddingLiquidity] = useState(false);
+  const [successModalOpen, setSuccessModalOpen] = useState(false);
+  const [txHash, setTxHash] = useState('');
+  const [swapping, setSwapping] = useState(false);
 
   useEffect(() => {
     // Mock data for now - in production, fetch from backend/contracts
@@ -126,15 +129,49 @@ export function UniswapPoolStats() {
       // Simulate API call to add liquidity
       await new Promise(resolve => setTimeout(resolve, 2000));
 
-      alert(`✅ Liquidity Added Successfully!\n\n${liquidityToken0Amount} ${selectedPool.token0} + ${liquidityToken1Amount} ${selectedPool.token1}\n\nYou will earn ${selectedPool.currentFee} fees on all trades!`);
+      // Generate mock transaction hash
+      const mockTxHash = '0x' + Array.from({length: 64}, () => 
+        Math.floor(Math.random() * 16).toString(16)
+      ).join('');
       
+      setTxHash(mockTxHash);
       setLiquidityModalOpen(false);
+      setSuccessModalOpen(true);
       setLiquidityToken0Amount('');
       setLiquidityToken1Amount('');
     } catch (error) {
       alert('❌ Error adding liquidity. Please try again.');
     } finally {
       setAddingLiquidity(false);
+    }
+  };
+
+  const submitSwap = async () => {
+    if (!selectedPool || !inputAmount || !outputAmount) {
+      alert('Please enter an amount to swap');
+      return;
+    }
+
+    setSwapping(true);
+
+    try {
+      // Simulate API call to execute swap
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      // Generate mock transaction hash
+      const mockTxHash = '0x' + Array.from({length: 64}, () => 
+        Math.floor(Math.random() * 16).toString(16)
+      ).join('');
+      
+      setTxHash(mockTxHash);
+      setSwapModalOpen(false);
+      setSuccessModalOpen(true);
+      setInputAmount('');
+      setOutputAmount('');
+    } catch (error) {
+      alert('❌ Error executing swap. Please try again.');
+    } finally {
+      setSwapping(false);
     }
   };
 
@@ -427,13 +464,15 @@ export function UniswapPoolStats() {
                   </p>
                 </div>
 
-                <Button variant="primary" size="lg" className="w-full">
-                  🔄 Swap Now
+                <Button 
+                  variant="primary" 
+                  size="lg" 
+                  className="w-full"
+                  onClick={submitSwap}
+                  disabled={swapping || !inputAmount || !outputAmount}
+                >
+                  {swapping ? '⏳ Swapping...' : '🔄 Swap Now'}
                 </Button>
-
-                <p className="text-xs text-center text-green-600 font-body">
-                  Coming soon: Connect your wallet to trade
-                </p>
               </div>
             </div>
           </div>
@@ -467,7 +506,7 @@ export function UniswapPoolStats() {
                 {/* Token 0 Input */}
                 <div className="p-4 bg-cream-50 rounded-lg border-2 border-green-300">
                   <p className="text-sm text-green-600 font-body mb-2">{selectedPool.token0} Amount</p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-3">
                     <input 
                       type="text" 
                       placeholder="0.00" 
@@ -475,6 +514,26 @@ export function UniswapPoolStats() {
                       onChange={(e) => handleLiquidityToken0Change(e.target.value)}
                       className="text-2xl font-display font-bold bg-transparent outline-none flex-1"
                     />
+                    <div className="flex flex-col gap-1">
+                      <button
+                        onClick={() => {
+                          const current = parseFloat(liquidityToken0Amount) || 0;
+                          handleLiquidityToken0Change((current + 10).toString());
+                        }}
+                        className="px-2 py-1 bg-green-500 hover:bg-green-600 text-white rounded border border-green-700 text-xs font-bold transition-colors"
+                      >
+                        ▲
+                      </button>
+                      <button
+                        onClick={() => {
+                          const current = parseFloat(liquidityToken0Amount) || 0;
+                          handleLiquidityToken0Change(Math.max(0, current - 10).toString());
+                        }}
+                        className="px-2 py-1 bg-green-500 hover:bg-green-600 text-white rounded border border-green-700 text-xs font-bold transition-colors"
+                      >
+                        ▼
+                      </button>
+                    </div>
                     <span className="px-3 py-1 bg-green-100 border border-green-400 rounded-full text-sm font-body font-bold">
                       {selectedPool.token0}
                     </span>
@@ -531,10 +590,70 @@ export function UniswapPoolStats() {
                 >
                   {addingLiquidity ? '⏳ Adding Liquidity...' : '💰 Add Liquidity'}
                 </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
-                <p className="text-xs text-center text-green-600 font-body">
-                  Mock transaction - wallet connection coming soon
+      {/* Success Modal */}
+      {successModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-cream w-full max-w-md rounded-3xl border-3 border-brown-500 shadow-ac-lg overflow-hidden">
+            <div className="p-6 space-y-6">
+              {/* Success Header */}
+              <div className="text-center space-y-3">
+                <div className="text-6xl">✅</div>
+                <h3 className="text-2xl font-display font-bold text-green-700">
+                  Liquidity Added!
+                </h3>
+                <p className="text-green-800 font-body">
+                  Your transaction was successful
                 </p>
+              </div>
+
+              {/* Transaction Details */}
+              <div className="space-y-3">
+                <div className="p-4 bg-cream-100 rounded-xl border-2 border-green-300">
+                  <p className="text-xs text-green-600 font-body mb-1">Transaction Hash</p>
+                  <p className="text-xs font-mono text-green-800 break-all">
+                    {txHash}
+                  </p>
+                </div>
+
+                <div className="p-4 bg-pink-50 rounded-xl border-2 border-pink-300">
+                  <p className="text-sm font-display font-bold text-green-700 mb-2">
+                    🎉 You&apos;ll now earn fees on this pool!
+                  </p>
+                  <p className="text-xs text-green-800 font-body">
+                    Your liquidity is actively earning trading fees. You can withdraw anytime.
+                  </p>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="space-y-2">
+                <a
+                  href={`https://sepolia.basescan.org/tx/${txHash}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Button variant="primary" size="lg" className="w-full">
+                    🔍 View on Explorer
+                  </Button>
+                </a>
+                <Button 
+                  variant="secondary" 
+                  size="lg" 
+                  className="w-full"
+                  onClick={() => {
+                    setSuccessModalOpen(false);
+                    setTxHash('');
+                  }}
+                >
+                  Close
+                </Button>
               </div>
             </div>
           </div>
