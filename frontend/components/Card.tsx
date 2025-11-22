@@ -6,9 +6,11 @@ interface CardProps {
   children: React.ReactNode;
   variant?: 'default' | 'dialogue' | 'feature';
   className?: string;
+  onClick?: (e: React.MouseEvent) => void;
+  style?: React.CSSProperties;
 }
 
-export function Card({ children, variant = 'default', className = '' }: CardProps) {
+export function Card({ children, variant = 'default', className = '', onClick, style }: CardProps) {
   const variants = {
     default: "bg-cream border-3 border-brown-400 rounded-2xl shadow-ac-sm hover:shadow-ac p-4 sm:p-6",
     dialogue: "bg-cream border-4 border-brown-500 rounded-3xl shadow-ac p-6 sm:p-8",
@@ -16,7 +18,11 @@ export function Card({ children, variant = 'default', className = '' }: CardProp
   };
   
   return (
-    <div className={`${variants[variant]} ${className}`}>
+    <div 
+      className={`${variants[variant]} ${className}`}
+      onClick={onClick}
+      style={style}
+    >
       {children}
     </div>
   );
