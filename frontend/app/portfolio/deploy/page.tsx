@@ -11,6 +11,7 @@ import { useAccount } from 'wagmi';
 import { PageLayout } from '@/components/PageLayout';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
+import { WorldIDVerify } from '@/components/WorldIDVerify';
 import Image from 'next/image';
 
 // Chain configuration with logos
@@ -61,6 +62,8 @@ export default function DeployAgentPage() {
   const [depositAmount, setDepositAmount] = useState('');
   const [deploying, setDeploying] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [worldIdVerified, setWorldIdVerified] = useState(false);
+  const [worldIdProof, setWorldIdProof] = useState<any>(null);
 
   // Random agent name generator
   const generateRandomName = () => {
@@ -111,6 +114,11 @@ export default function DeployAgentPage() {
       return;
     }
 
+    if (!worldIdVerified) {
+      setError('Please verify your humanity with World ID first');
+      return;
+    }
+
     if (!agentName.trim()) {
       setError('Please enter an agent name');
       return;
@@ -133,6 +141,7 @@ export default function DeployAgentPage() {
           agentName: agentName.trim(),
           chains: selectedChains,
           depositAmount: depositAmount ? parseFloat(depositAmount) : 0,
+          worldIdProof: worldIdProof, // Include World ID proof
         }),
       });
 
@@ -198,10 +207,37 @@ export default function DeployAgentPage() {
           </Card>
         )}
 
+        {/* World ID Verification - Step 0 */}
+        <Card variant="dialogue">
+          <h3 className="text-xl font-display font-bold text-green-700 mb-4">
+            1. Verify Your Humanity 🔒
+          </h3>
+          <WorldIDVerify
+            onSuccess={(proof) => {
+              console.log('World ID verification successful:', proof);
+              setWorldIdVerified(true);
+              setWorldIdProof(proof);
+            }}
+            onError={(error) => {
+              console.error('World ID verification failed:', error);
+              setError('World ID verification failed. Please try again.');
+            }}
+            actionId="hedgepod-deploy-agent"
+            signal={address}
+          />
+          {worldIdVerified && (
+            <div className="mt-4 p-3 bg-green-100 border-2 border-green-500 rounded-lg">
+              <p className="text-sm text-green-800 font-body text-center">
+                ✅ Humanity verified! You can now proceed with deployment.
+              </p>
+            </div>
+          )}
+        </Card>
+
         {/* Agent Name */}
         <Card variant="dialogue">
           <h3 className="text-xl font-display font-bold text-green-700 mb-4">
-            1. Name Your Agent
+            2. Name Your Agent
           </h3>
           <div className="flex gap-2">
             <input
@@ -228,7 +264,7 @@ export default function DeployAgentPage() {
         {/* Select Chains */}
         <Card variant="dialogue">
           <h3 className="text-xl font-display font-bold text-green-700 mb-4">
-            2. Select Active Chains
+            3. Select Active Chains
           </h3>
           <p className="text-sm text-green-600 mb-4">
             Choose which chains your agent should monitor and rebalance across
@@ -273,7 +309,7 @@ export default function DeployAgentPage() {
         {/* Initial Deposit (Optional) */}
         <Card variant="dialogue">
           <h3 className="text-xl font-display font-bold text-green-700 mb-4">
-            3. Initial Deposit (Optional)
+            4. Initial Deposit (Optional)
           </h3>
           <p className="text-sm text-green-600 mb-4">
             You can fund your agent now or later
@@ -325,11 +361,20 @@ export default function DeployAgentPage() {
             variant="primary"
             size="lg"
             onClick={handleDeploy}
-            disabled={deploying || !agentName.trim() || selectedChains.length === 0}
+            disabled={deploying || !worldIdVerified || !agentName.trim() || selectedChains.length === 0}
           >
             {deploying ? '🚀 Deploying...' : '🚀 Deploy Agent'}
           </Button>
         </div>
+
+        {/* World ID Required Notice */}
+        {!worldIdVerified && (
+          <Card variant="dialogue" className="bg-yellow-50 border-yellow-400">
+            <p className="text-sm text-yellow-800 font-body text-center">
+              🔒 Please verify your humanity with World ID above before deploying
+            </p>
+          </Card>
+        )}
 
         {/* Info Box */}
         <Card variant="dialogue">
