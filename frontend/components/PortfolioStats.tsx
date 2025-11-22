@@ -181,33 +181,40 @@ export function PortfolioStats() {
 
       {/* Chain Breakdown */}
       <div>
-        <h2 className="text-2xl font-display font-bold text-green-700 mb-4">
-          Chain Breakdown
-        </h2>
         {Object.keys(latestAPRs).length === 0 ? (
           <Card variant="dialogue">
-            <p className="text-center text-green-700 font-body">
-              No chain data available yet. Deploy agents to start tracking!
-            </p>
+            <div className="space-y-3">
+              <h2 className="text-2xl font-display font-bold text-green-700 text-center">
+                Chain Breakdown
+              </h2>
+              <p className="text-center text-green-700 font-body">
+                No chain data available yet. Deploy agents to start tracking!
+              </p>
+            </div>
           </Card>
         ) : (
-          <div className="grid md:grid-cols-2 gap-4">
-            {Object.entries(latestAPRs).map(([chain, data]) => (
-              <Card key={chain} variant="default">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="font-display font-bold text-green-700 capitalize">{chain}</p>
-                    <p className="text-sm text-green-600">
-                      TVL: ${data.tvl?.toLocaleString() || 'N/A'}
+          <>
+            <h2 className="text-2xl font-display font-bold text-green-700 mb-4">
+              Chain Breakdown
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {Object.entries(latestAPRs).map(([chain, data]) => (
+                <Card key={chain} variant="default">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <p className="font-display font-bold text-green-700 capitalize">{chain}</p>
+                      <p className="text-sm text-green-600">
+                        TVL: ${data.tvl?.toLocaleString() || 'N/A'}
+                      </p>
+                    </div>
+                    <p className="text-lg font-display font-bold text-pink-600">
+                      {data.apr.toFixed(2)}% APR
                     </p>
                   </div>
-                  <p className="text-lg font-display font-bold text-pink-600">
-                    {data.apr.toFixed(2)}% APR
-                  </p>
-                </div>
-              </Card>
-            ))}
-          </div>
+                </Card>
+              ))}
+            </div>
+          </>
         )}
       </div>
 
