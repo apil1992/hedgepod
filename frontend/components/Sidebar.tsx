@@ -166,7 +166,7 @@ export function Sidebar() {
             Check out our guide!
           </p>
           <Link href="/about">
-            <Button variant="primary" size="sm" className="w-full text-xs">
+            <Button variant="primary" size="sm" className="w-full text-xs mt-2">
               Learn More
             </Button>
           </Link>
