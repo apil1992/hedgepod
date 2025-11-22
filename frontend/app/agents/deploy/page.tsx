@@ -121,7 +121,7 @@ export default function DeployAgentPage() {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-green-700 drop-shadow-lg">
+            <h1 className="text-4xl md:text-5xl font-display font-bold text-green-700 drop-shadow-lg pt-8">
               Deploy New Agent
             </h1>
             <p className="text-lg text-green-800 font-body mt-2">

@@ -138,7 +138,7 @@ export default function Agents() {
         <div className="space-y-8">
           {/* Header */}
           <div className="text-center space-y-4">
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-green-700 drop-shadow-lg">
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-green-700 drop-shadow-lg pt-8">
               Your Agents
             </h1>
             <p className="text-lg text-green-800 font-body max-w-2xl mx-auto">

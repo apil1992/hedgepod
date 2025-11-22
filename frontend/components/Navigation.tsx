@@ -17,7 +17,7 @@ export function Navigation() {
 
   return (
     <nav 
-      className="w-full py-4 px-8 md:px-16 lg:px-24 shadow-ac-lg border-b-3 border-brown-500 relative overflow-hidden"
+      className="w-full py-4 px-8 md:px-16 lg:px-24 shadow-ac-lg border-b-3 border-brown-500 relative overflow-visible"
       style={{
         backgroundImage: 'url(/greenleaves_header.png)',
         backgroundRepeat: 'repeat-x',
@@ -28,8 +28,8 @@ export function Navigation() {
       {/* Background overlay for better text readability */}
       <div className="absolute inset-0 bg-cream/40 backdrop-blur-[1px]" />
       
-      {/* Content wrapper with max-width and z-index */}
-      <div className="relative z-10 max-w-7xl mx-auto flex justify-between items-center">
+      {/* Content wrapper - no max-width, full flex */}
+      <div className="relative z-10 flex justify-between items-center w-full">
         {/* Logo */}
         <Link href="/">
           <div className="flex items-center gap-2 cursor-pointer">
@@ -55,7 +55,7 @@ export function Navigation() {
         </Link>
         
         {/* More Dropdown */}
-        <div className="relative z-50">
+        <div className="relative z-[9999]">
           <button 
             onClick={() => setIsMoreDropdownOpen(!isMoreDropdownOpen)}
             className="bg-brown-400 hover:bg-brown-300 text-white font-display font-bold py-2 px-4 md:px-6 rounded-full border-3 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all transform hover:-translate-y-0.5 text-sm md:text-base flex items-center gap-2"

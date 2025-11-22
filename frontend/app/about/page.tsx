@@ -40,7 +40,7 @@ export default function About() {
               />
             </div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-green-700 drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-display font-bold text-green-700 drop-shadow-lg pt-8">
             About HedgePod
           </h1>
           <p className="text-lg text-green-800 font-body max-w-2xl mx-auto">

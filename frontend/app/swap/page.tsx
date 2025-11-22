@@ -24,7 +24,7 @@ export default function SwapPage() {
       ) : (
         <div className="space-y-8">
           {/* Header */}
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-4 pt-8">
             <div className="flex justify-center items-center gap-3">
               <span className="text-6xl">🦄</span>
               <h1 className="text-5xl md:text-7xl font-display font-bold text-green-700 drop-shadow-lg">
