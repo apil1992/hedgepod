@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 interface WorldIDVerifyProps {
   onSuccess: (proof: ISuccessResult) => void;
-  onError?: (error: Error) => void;
+  onError?: (error: any) => void;
   actionId?: string;
   signal?: string;
 }
@@ -24,7 +24,7 @@ export function WorldIDVerify({ onSuccess, onError, actionId = 'hedgepod-deposit
     onSuccess(proof);
   };
 
-  const handleError = (error: Error) => {
+  const handleError = (error: any) => {
     console.error('World ID Error:', error);
     if (onError) {
       onError(error);
@@ -48,7 +48,7 @@ export function WorldIDVerify({ onSuccess, onError, actionId = 'hedgepod-deposit
       </div>
 
       <IDKitWidget
-        app_id={process.env.NEXT_PUBLIC_WORLD_APP_ID || 'app_staging_a1b2c3d4e5f6'}
+        app_id={(process.env.NEXT_PUBLIC_WORLD_APP_ID || 'app_staging_a1b2c3d4e5f6') as `app_${string}`}
         action={actionId}
         signal={signal}
         onSuccess={handleVerify}
