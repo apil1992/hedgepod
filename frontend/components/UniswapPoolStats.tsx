@@ -20,10 +20,14 @@ export function UniswapPoolStats() {
   const [pools, setPools] = useState<PoolStat[]>([]);
   const [loading, setLoading] = useState(true);
   const [swapModalOpen, setSwapModalOpen] = useState(false);
+  const [liquidityModalOpen, setLiquidityModalOpen] = useState(false);
   const [selectedPool, setSelectedPool] = useState<PoolStat | null>(null);
   const [inputAmount, setInputAmount] = useState('');
   const [outputAmount, setOutputAmount] = useState('');
   const [isReversed, setIsReversed] = useState(false);
+  const [liquidityToken0Amount, setLiquidityToken0Amount] = useState('');
+  const [liquidityToken1Amount, setLiquidityToken1Amount] = useState('');
+  const [addingLiquidity, setAddingLiquidity] = useState(false);
 
   useEffect(() => {
     // Mock data for now - in production, fetch from backend/contracts
@@ -80,8 +84,58 @@ export function UniswapPoolStats() {
 
   const handleAddLiquidity = (pool: PoolStat) => {
     setSelectedPool(pool);
-    // In production: open add liquidity modal
-    alert(`Add liquidity to ${pool.pair}\n\nThis will:\n• Earn trading fees (currently ${pool.currentFee})\n• Fees adjust with volatility\n• Powered by Pyth price feeds`);
+    setLiquidityModalOpen(true);
+    setLiquidityToken0Amount('');
+    setLiquidityToken1Amount('');
+  };
+
+  const calculateLiquidityToken1 = (token0Amount: string) => {
+    if (!token0Amount || !selectedPool) return '';
+    
+    const amount = parseFloat(token0Amount);
+    if (isNaN(amount)) return '';
+
+    // Mock exchange rates (maintain pool ratio)
+    const rates: { [key: string]: number } = {
+      'USDC/ETH': 0.00033,
+      'USDC/WBTC': 0.000015,
+      'ETH/USDT': 3000,
+    };
+
+    const rate = rates[selectedPool.pair] || 1;
+    const token1 = amount * rate;
+
+    return token1.toFixed(6);
+  };
+
+  const handleLiquidityToken0Change = (value: string) => {
+    setLiquidityToken0Amount(value);
+    const token1 = calculateLiquidityToken1(value);
+    setLiquidityToken1Amount(token1);
+  };
+
+  const submitAddLiquidity = async () => {
+    if (!selectedPool || !liquidityToken0Amount || !liquidityToken1Amount) {
+      alert('Please enter amounts for both tokens');
+      return;
+    }
+
+    setAddingLiquidity(true);
+
+    try {
+      // Simulate API call to add liquidity
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      alert(`✅ Liquidity Added Successfully!\n\n${liquidityToken0Amount} ${selectedPool.token0} + ${liquidityToken1Amount} ${selectedPool.token1}\n\nYou will earn ${selectedPool.currentFee} fees on all trades!`);
+      
+      setLiquidityModalOpen(false);
+      setLiquidityToken0Amount('');
+      setLiquidityToken1Amount('');
+    } catch (error) {
+      alert('❌ Error adding liquidity. Please try again.');
+    } finally {
+      setAddingLiquidity(false);
+    }
   };
 
   const calculateOutputAmount = (input: string, reversed: boolean) => {
@@ -379,6 +433,107 @@ export function UniswapPoolStats() {
 
                 <p className="text-xs text-center text-green-600 font-body">
                   Coming soon: Connect your wallet to trade
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Add Liquidity Modal */}
+      {liquidityModalOpen && selectedPool && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" onClick={() => setLiquidityModalOpen(false)}>
+          <div className="max-w-md w-full bg-cream border-3 border-brown-500 rounded-2xl p-6 shadow-ac-lg" onClick={(e) => e.stopPropagation()}>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <h4 className="text-2xl font-display font-bold text-green-700">
+                  💰 Add Liquidity
+                </h4>
+                <button onClick={() => setLiquidityModalOpen(false)} className="text-2xl text-green-600 hover:text-pink-600">
+                  ✕
+                </button>
+              </div>
+
+              <div className="p-3 bg-green-50 border-2 border-green-300 rounded-lg">
+                <p className="text-sm text-green-800 font-body">
+                  <strong>{selectedPool.pair}</strong> Pool
+                </p>
+                <p className="text-xs text-green-600 mt-1">
+                  Current Fee: {selectedPool.currentFee} • Volatility: {selectedPool.volatility}
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                {/* Token 0 Input */}
+                <div className="p-4 bg-cream-50 rounded-lg border-2 border-green-300">
+                  <p className="text-sm text-green-600 font-body mb-2">{selectedPool.token0} Amount</p>
+                  <div className="flex items-center justify-between">
+                    <input 
+                      type="text" 
+                      placeholder="0.00" 
+                      value={liquidityToken0Amount}
+                      onChange={(e) => handleLiquidityToken0Change(e.target.value)}
+                      className="text-2xl font-display font-bold bg-transparent outline-none flex-1"
+                    />
+                    <span className="px-3 py-1 bg-green-100 border border-green-400 rounded-full text-sm font-body font-bold">
+                      {selectedPool.token0}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Plus Sign */}
+                <div className="text-center text-2xl font-bold text-green-700">+</div>
+
+                {/* Token 1 Input (Auto-calculated) */}
+                <div className="p-4 bg-cream-50 rounded-lg border-2 border-green-300">
+                  <p className="text-sm text-green-600 font-body mb-2">{selectedPool.token1} Amount</p>
+                  <div className="flex items-center justify-between">
+                    <input 
+                      type="text" 
+                      placeholder="0.00" 
+                      value={liquidityToken1Amount}
+                      readOnly
+                      className="text-2xl font-display font-bold bg-transparent outline-none flex-1 text-green-700"
+                    />
+                    <span className="px-3 py-1 bg-green-100 border border-green-400 rounded-full text-sm font-body font-bold">
+                      {selectedPool.token1}
+                    </span>
+                  </div>
+                  <p className="text-xs text-green-600 mt-2 italic">
+                    💡 Amount calculated to maintain pool ratio
+                  </p>
+                </div>
+
+                {/* Info Card */}
+                <div className="p-3 bg-pink-50 border-2 border-pink-300 rounded-lg text-sm space-y-2">
+                  <h5 className="font-display font-bold text-green-700 mb-2">What You&apos;ll Earn:</h5>
+                  <div className="flex items-start gap-2 font-body text-green-800">
+                    <span>💰</span>
+                    <p><strong>{selectedPool.currentFee}</strong> fee on every trade</p>
+                  </div>
+                  <div className="flex items-start gap-2 font-body text-green-800">
+                    <span>⚡</span>
+                    <p>Fees <strong>increase</strong> during high volatility</p>
+                  </div>
+                  <div className="flex items-start gap-2 font-body text-green-800">
+                    <span>🔒</span>
+                    <p>Your liquidity is always <strong>withdrawable</strong></p>
+                  </div>
+                </div>
+
+                {/* Add Liquidity Button */}
+                <Button 
+                  variant="primary" 
+                  size="lg" 
+                  className="w-full"
+                  onClick={submitAddLiquidity}
+                  disabled={addingLiquidity || !liquidityToken0Amount || !liquidityToken1Amount}
+                >
+                  {addingLiquidity ? '⏳ Adding Liquidity...' : '💰 Add Liquidity'}
+                </Button>
+
+                <p className="text-xs text-center text-green-600 font-body">
+                  Mock transaction - wallet connection coming soon
                 </p>
               </div>
             </div>

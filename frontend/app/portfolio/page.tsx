@@ -32,7 +32,7 @@ interface Agent {
 const CHAIN_CONFIG: Record<string, { name: string; logo: string; isImage?: boolean }> = {
   'World Chain': { 
     name: 'World Chain', 
-    logo: '/worldchain_logo_white_pixelated.png',
+    logo: '/worldchain_white.png',
     isImage: true
   },
   'Base': { 
