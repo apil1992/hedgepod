@@ -1,6 +1,6 @@
 # HedgePod Agent - ETHGlobal Buenos Aires 2025 Submission Guide
 
-> **🦔 Autonomous cross-chain DeFi for 23M World App users**
+> **🦔 Create your own AI hedge fund! Made for 23M World users.**
 
 **📄 Partner Prize Submission Form**: See [PARTNER_PRIZE_SUBMISSION.md](./PARTNER_PRIZE_SUBMISSION.md) for the completed form ready to copy/paste into ETHGlobal.
 
@@ -32,7 +32,7 @@ https://hedgepod.app/
 
 **Short Description** (100 characters max) ↓
 ```
-Autonomous cross-chain DeFi for 23M World App users—deposit once, earn optimally everywhere.
+Create your own AI hedge fund! Made for 23M World users. Deposit once, earn optimally, gasless.
 ```
 
 **GitHub Repository** ↓
@@ -113,12 +113,12 @@ LayerZero V2 OFT, Pyth Network (Hermes API + Price Feeds), Pyth Entropy, The Gra
 - ✅ **MiniKit SDK Integration**: MiniKitProvider wraps entire app with appId configuration, SIWE wallet auth, and transaction commands
 - ✅ **World ID Verification**: IDKit with Orb-level verification for sybil resistance on agent deployment
 - ✅ **Consumer-Grade UX**: Animal Crossing-themed UI, ENS names everywhere, zero crypto jargon, 19-language support
-- ✅ **Gasless Transactions**: Privy sponsorship—users NEVER pay gas fees (maximizes accessibility for non-crypto natives)
+- ✅ **Gasless Transactions**: Privy sponsorship users NEVER pay gas fees (maximizes accessibility for non-crypto natives)
 - ✅ **World Chain Deployment**: All core contracts deployed to World Chain mainnet (chainId: 480) and Sepolia testnet (chainId: 4801)
-- ✅ **Real Problem Solved**: Chain fragmentation + DeFi complexity—deposit once, AI handles everything across 8 chains
+- ✅ **Real Problem Solved**: Chain fragmentation + DeFi complexity deposit once, AI handles everything across 8 chains
 - ✅ **Proof Validation**: SIWE messages verified in backend (not client-side), World ID proofs validated via IDKit
 - ✅ **Viral Mechanics**: "Create your own hedge fund" tagline + portfolio tracking = engagement loop for 23M users
-- ✅ **Practical Utility**: Autonomous yield optimization with real-time data (Pyth, The Graph, 1inch)—not a demo or toy
+- ✅ **Practical Utility**: Autonomous yield optimization with real-time data (Pyth, The Graph, 1inch) not a demo or toy
 
 **Key Evidence**:
 - `frontend/app/layout.tsx` - MiniKitProvider with `appId={process.env.NEXT_PUBLIC_WORLD_APP_ID}` wraps entire app
@@ -132,21 +132,21 @@ LayerZero V2 OFT, Pyth Network (Hermes API + Price Feeds), Pyth Entropy, The Gra
 - Mobile responsive with World App mini app image (345px × 240px) at `frontend/public/hedge_pod_world_mini_app_image.png`
 
 **Unique Selling Points**:
-- **Not Just Integration**: We don't just inherit MiniKit—we use MiniKitProvider, wallet auth commands, SIWE backend verification, and transaction utilities comprehensively
-- **World ID for Real Use Case**: Not decorative—actually prevents bots from deploying agents and claiming rewards
+- **Not Just Integration**: We don't just inherit MiniKit we use MiniKitProvider, wallet auth commands, SIWE backend verification, and transaction utilities comprehensively
+- **World ID for Real Use Case**: Not decorative actually prevents bots from deploying agents and claiming rewards
 - **Consumer-Quality Polish**: No 0x addresses visible (ENS everywhere), Animal Crossing theme, gasless UX, 19 languages
-- **23M User Target**: Built explicitly for World App's non-crypto user base—demonstrates understanding of user needs
+- **23M User Target**: Built explicitly for World App's non-crypto user base demonstrates understanding of user needs
 
 ---
 
 ### 2. ⛓️ **LayerZero** ($20,000)
-**Why**: Extended LayerZero V2 OFT with novel yield-aware routing—core cross-chain infrastructure
+**Why**: Extended LayerZero V2 OFT with novel yield-aware routing core cross-chain infrastructure
 
 **Qualifying Criteria Met**:
 - ✅ **Interact with LayerZero Endpoint**: Uses LayerZero Contracts Library OFT base + Endpoint V2 integration
-- ✅ **CRITICAL: Must EXTEND Base Contract Logic**: We override `_debit()` and `_credit()` with custom APR-checking logic (not just inherit OApp/OFT interfaces). This is TRUE extension—adds new functionality before calling parent.
-- ✅ **Create New Cross-Chain Use Cases**: First yield-aware LayerZero OFT—funds only move if APR improvement justifies gas costs. Novel use case.
-- ✅ **Demonstrate Advanced Understanding**: Batch send pattern, circuit breakers, gas tracking, analytics—beyond basic OFT tutorial
+- ✅ **CRITICAL: Must EXTEND Base Contract Logic**: We override `_debit()` and `_credit()` with custom APR-checking logic (not just inherit OApp/OFT interfaces). This is TRUE extension adds new functionality before calling parent.
+- ✅ **Create New Cross-Chain Use Cases**: First yield-aware LayerZero OFT funds only move if APR improvement justifies gas costs. Novel use case.
+- ✅ **Demonstrate Advanced Understanding**: Batch send pattern, circuit breakers, gas tracking, analytics beyond basic OFT tutorial
 - ✅ **Working Demo**: Deployed to 8 chains with automated peer configuration. Functional rebalancing with transaction hashes.
 - ✅ **Submit Feedback Form**: Will submit detailed feedback on LayerZero V2 development experience
 
@@ -171,10 +171,10 @@ LayerZero V2 OFT, Pyth Network (Hermes API + Price Feeds), Pyth Entropy, The Gra
 - On-chain analytics track totalCrossChainTransfers and totalGasSaved
 
 **Why We Should Win**:
-- **Extended Base Contracts**: Not just inherited—custom _debit() and _credit() with APR logic per mandatory requirement
+- **Extended Base Contracts**: Not just inherited custom _debit() and _credit() with APR logic per mandatory requirement
 - **Novel Use Case**: First yield-aware OFT. Solves real DeFi problem: optimal cross-chain positioning.
 - **Production Scale**: Deployed to 8 chains with automated peer config. Not just a testnet demo.
-- **Advanced Features**: Batch transfers, circuit breakers, gas tracking, custom events—all beyond standard OFT
+- **Advanced Features**: Batch transfers, circuit breakers, gas tracking, custom events all beyond standard OFT
 - **Real Autonomous Agents**: Backend agents actually trigger LayerZero transfers based on real-time Pyth yield data
 - **Deep Protocol Understanding**: Every line of LayerZero integration is custom, not boilerplate
 
@@ -184,12 +184,12 @@ LayerZero V2 OFT, Pyth Network (Hermes API + Price Feeds), Pyth Entropy, The Gra
 **Why**: Multi-tool CDP integration (Server Wallets + x402 + Data APIs) enables true 24/7 agent autonomy
 
 **Qualifying Criteria Met**:
-- ✅ **CDP Server Wallets**: Core autonomous agent infrastructure—operates 24/7 without user interaction
+- ✅ **CDP Server Wallets**: Core autonomous agent infrastructure operates 24/7 without user interaction
 - ✅ **x402 Authorization Pattern**: Users grant permission once via HedgePodVault, agents execute recurring rebalances forever
 - ✅ **Multiple CDP Tools**: Server Wallets + x402 + Data APIs (bonus points for multi-tool integration)
 - ✅ **True Autonomous Finance**: Agents monitor yields every 60 seconds, execute rebalances automatically when profitable
 - ✅ **Production Quality**: Functional agents with real transaction history, comprehensive error handling
-- ✅ **User Impact**: Enables truly passive DeFi income—"set it and forget it" UX for 23M World App users
+- ✅ **User Impact**: Enables truly passive DeFi income "set it and forget it" UX for 23M World App users
 
 **Key Evidence**:
 - `backend/src/agent/wallet.ts` - CDP Server Wallet initialization:
@@ -226,7 +226,7 @@ LayerZero V2 OFT, Pyth Network (Hermes API + Price Feeds), Pyth Entropy, The Gra
 - **Multiple CDP Tools**: Server Wallets + x402 + Data APIs = maximum integration bonus
 - **Novel Use Case**: First autonomous yield optimization agent using CDP for 24/7 operation
 - **Production Quality**: Actually deployed, functional agents, real transaction history, comprehensive monitoring
-- **User Impact**: Solves real problem—enables truly passive DeFi income without constant wallet popups
+- **User Impact**: Solves real problem enables truly passive DeFi income without constant wallet popups
 - **Would People Use This?**: Yes! Consumer-grade UX + autonomous agents = perfect for 23M World App user target market
 - **Developer Feedback Ready**: Extensive CDP integration experience to share with team
 
@@ -255,7 +255,7 @@ LayerZero V2 OFT, Pyth Network (Hermes API + Price Feeds), Pyth Entropy, The Gra
 - ✅ **Multi-Chain Subgraphs**: Ethereum, Base, Optimism, Arbitrum, Polygon with chain-specific endpoints
 - ✅ **Real Data, Not Mocks**: ETH/USDC pool shows real $245.8M TVL, $89.2M 24h volume, actual pool ID 0x88e6A0c2dDD26FEEb64F039a2c41296FcB3f5640
 - ✅ **API Integration**: Frontend API route combines The Graph liquidity/volume with Pyth volatility for complete pool stats
-- ✅ **Caching Strategy**: 60-second revalidation via Next.js ISR—fresh data without API rate limits
+- ✅ **Caching Strategy**: 60-second revalidation via Next.js ISR fresh data without API rate limits
 - ✅ **Error Handling**: Graceful fallback if subgraph unreachable, console logging for debugging
 - ✅ **User-Visible**: All data displayed live at https://hedgepod.app/swap with "📡 Pyth + The Graph" badge
 
@@ -299,7 +299,7 @@ query GetTopPools {
 **Why We Should Win**:
 - **Real Data, Not Mocks**: We actually query The Graph in production. Users see real TVL and volume from verified on-chain data.
 - **Multi-Chain Ready**: Infrastructure supports 5 chains via The Graph subgraphs, demonstrating scalability.
-- **Production Quality**: Custom GraphQL client, error handling, caching, data formatting—not just a demo integration.
+- **Production Quality**: Custom GraphQL client, error handling, caching, data formatting not just a demo integration.
 - **Clear User Benefit**: Users make informed trading decisions with verified on-chain data. No fake numbers.
 - **Verifiable**: All pool IDs are real Ethereum addresses. Judges can verify on Etherscan.
 - **Integrated with Pyth**: The Graph (liquidity/volume) + Pyth (volatility) = Complete data layer for DeFi decisions.
@@ -313,7 +313,7 @@ query GetTopPools {
 **What We Built**:
 - ✅ **On-Chain Integration**: VolatilityFeeHook.sol fetches Pyth prices via IPyth.getPriceNoOlderThan() on every Uniswap v4 swap
 - ✅ **Backend Agent Integration**: Autonomous agents query Pyth Hermes API (https://hermes.pyth.network/api/latest_price_feeds) for real-time yields
-- ✅ **Frontend Real-Time Display**: Swap page shows live Pyth prices, volatility %, and dynamic fees—auto-refreshes every 30 seconds
+- ✅ **Frontend Real-Time Display**: Swap page shows live Pyth prices, volatility %, and dynamic fees auto-refreshes every 30 seconds
 - ✅ **Novel Volatility Metric**: Uses Pyth confidence intervals (not historical variance) for instant volatility: volatility = (conf / price) × 100
 - ✅ **Dynamic Fee Adjustment**: Uniswap v4 hook adjusts fees 0.1%-0.3% based on real-time Pyth volatility to protect LPs from impermanent loss
 - ✅ **Multi-Asset**: Integrates 3 Pyth price feeds (ETH/USD, BTC/USD, USDC/USD) for comprehensive yield calculations
@@ -340,8 +340,8 @@ query GetTopPools {
 
 **Innovation Highlights** (Why This Wins "Most Innovative"):
 1. **Dynamic Fee Adjustment via Volatility**: Standard DeFi uses fixed fees. We calculate real-time volatility from Pyth confidence intervals and adjust Uniswap v4 fees dynamically. High volatility = higher fees to protect LPs.
-2. **Cross-Stack Integration**: Pyth powers contracts (fees), backend (rebalancing), and frontend (display)—full integration across 3 layers.
-3. **Autonomous Agent Decision-Making**: Agents don't just display Pyth prices—they ACT on them. When Pyth detects APR differential, agents trigger LayerZero cross-chain transfers. No human needed.
+2. **Cross-Stack Integration**: Pyth powers contracts (fees), backend (rebalancing), and frontend (display) full integration across 3 layers.
+3. **Autonomous Agent Decision-Making**: Agents don't just display Pyth prices they ACT on them. When Pyth detects APR differential, agents trigger LayerZero cross-chain transfers. No human needed.
 4. **Consumer-Grade Real-Time Display**: Most DeFi hides oracle data. We show live Pyth prices, volatility %, and how fees adjust in real-time with "📡 Pyth + The Graph" badge.
 5. **Multi-Asset Integration**: 3 Pyth price feeds with volatility calculations across pairs for optimal rebalancing strategies.
 
@@ -371,8 +371,8 @@ query GetTopPools {
 - **Full-Stack Integration**: Price feeds used in contracts + backend + frontend comprehensively
 - **Novel Use Case**: Dynamic fees based on volatility (not just standard price displays) + verifiable randomness for fair rewards
 - **Autonomous Actions**: Agents use Pyth data to automatically trigger rebalances based on real-time yields
-- **Consumer Visibility**: Users see live Pyth data with clear visual indicators—transparency in oracle usage
-- **Production-Ready**: Live website, deployed contracts, functional agents—all using Pyth right now
+- **Consumer Visibility**: Users see live Pyth data with clear visual indicators transparency in oracle usage
+- **Production-Ready**: Live website, deployed contracts, functional agents all using Pyth right now
 - **Multi-Asset Support**: 3 price feeds + entropy integration = comprehensive Pyth Network usage
 
 ### 🌈 **1inch** ($1,000 Pool Prize - "Utilize 1inch APIs")
@@ -409,7 +409,7 @@ query GetTopPools {
 
 **Why We Should Win**:
 - **Multiple APIs**: Using 4 different 1inch APIs (exceeds minimum requirement)
-- **Practical Integration**: Not decorative—1inch powers agent swap execution and price feeds
+- **Practical Integration**: Not decorative 1inch powers agent swap execution and price feeds
 - **Code Quality**: Clean TypeScript with proper error handling and type safety
 - **Synergies**: 1inch + Pyth (price validation) + World App (23M users) + CDP agents (autonomous execution)
 
@@ -420,7 +420,7 @@ query GetTopPools {
 - ✅ **VolatilityFeeHook.sol**: Uniswap v4 hook that adjusts fees (0.1%-0.3%) based on real-time market volatility
 - ✅ **Real-Time Volatility Tracking**: Fetches Pyth price confidence intervals on every swap
 - ✅ **Dynamic Fee Adjustment**: Automatically increases fees during high volatility to protect LPs from impermanent loss
-- ✅ **LVR Mitigation**: Higher fees reduce arbitrage opportunities—empirically reduces LVR by 40-60%
+- ✅ **LVR Mitigation**: Higher fees reduce arbitrage opportunities empirically reduces LVR by 40-60%
 - ✅ **Gas-Efficient**: Only queries Pyth on swaps (not adds/removes), caches volatility for 60 seconds
 - ✅ **Capital Efficiency**: Lower fees during stable periods increase volume, higher fees during volatility protect capital
 - ✅ **Production UI**: Beautiful swap interface with real-time volatility display and dynamic fee preview
@@ -443,7 +443,7 @@ query GetTopPools {
 1. **Novel Volatility Metric**: Uses Pyth confidence intervals (instant) instead of historical variance (lagging)
 2. **LVR Mitigation**: Dynamic fees during volatility protect LPs from impermanent loss (40-60% reduction)
 3. **Gas-Efficient Oracle**: Only queries Pyth on swaps with 60-second caching to reduce calls
-4. **Consumer UX**: Users see current volatility and how it affects fees BEFORE executing—transparent pricing
+4. **Consumer UX**: Users see current volatility and how it affects fees BEFORE executing transparent pricing
 
 **Real Data Examples** (Live on /swap):
 - **Low Vol**: ETH $2,500 ± $15 → 0.6% vol → 0.1% fee
@@ -513,13 +513,13 @@ DeFi
 
 ### **Tagline** (100 characters max)
 ```
-Autonomous cross-chain DeFi for 23M World App users—deposit once, earn optimally everywhere.
+Create your own AI hedge fund! Made for 23M World users. Deposit once, earn optimally, gasless.
 ```
-*(99 characters)*
+*(98 characters)*
 
 ### **Short Description**
 ```
-HedgePod Agent solves crypto's biggest UX problem: chain fragmentation. Deposit once, AI agents rebalance across 8+ chains for optimal yield—gasless, chain-abstracted, human-readable.
+HedgePod Agent solves crypto's biggest UX problem: chain fragmentation. Deposit once, AI agents rebalance across 8+ chains for optimal yield gasless, chain-abstracted, human-readable.
 ```
 
 ### **Full Description** (280+ characters)
@@ -531,12 +531,12 @@ Users deposit USDC/ETH/USDT once, and autonomous AI agents handle everything:
 
 📊 Real-Time Data:
 • Pyth Network price feeds (ETH/USD, BTC/USD, USDC/USD) via Hermes API for instant volatility detection
-• The Graph subgraphs query real Uniswap v3 liquidity ($245.8M+ TVL) and 24h volume across 5 chains—no mock data
+• The Graph subgraphs query real Uniswap v3 liquidity ($245.8M+ TVL) and 24h volume across 5 chains no mock data
 • 1inch APIs (Swap, Quote, Price, Liquidity Sources) for optimal routing across 50+ DEXs
 • Supabase PostgreSQL stores agent performance metrics and rebalance history for real-time portfolio analytics
 
 ⛓️ Cross-Chain Intelligence:
-• LayerZero V2 OFT with custom APR-checking logic—only moves funds if yield improvement exceeds threshold
+• LayerZero V2 OFT with custom APR-checking logic only moves funds if yield improvement exceeds threshold
 • Deployed across 8 chains (World Chain, Base, Celo, Zircuit, Polygon, Arbitrum, Optimism, Avalanche)
 • Batch transfers for gas optimization, emergency circuit breakers for safety
 
@@ -547,19 +547,19 @@ Users deposit USDC/ETH/USDT once, and autonomous AI agents handle everything:
 
 🤖 True Autonomy:
 • Coinbase CDP server wallets operate 24/7 without user interaction
-• x402 authorization pattern—users grant permission once, agents rebalance forever
+• x402 authorization pattern users grant permission once, agents rebalance forever
 • Pyth Entropy verifiable randomness for fair weekly reward lottery and MEV protection
 
 🌍 Built for Everyone:
 • World MiniKit SDK integration with SIWE authentication and transaction commands
-• World ID (Orb-level) verification for sybil resistance—no bots allowed
-• Privy gas sponsorship—users NEVER pay fees
-• ENS everywhere—human-readable addresses only (jane.eth not 0x...)
-• Animal Crossing UI—no crypto jargon, 19 languages, consumer-grade polish
+• World ID (Orb-level) verification for sybil resistance no bots allowed
+• Privy gas sponsorship users NEVER pay fees
+• ENS everywhere human-readable addresses only (jane.eth not 0x...)
+• Animal Crossing UI no crypto jargon, 19 languages, consumer-grade polish
 
 The result: Deposit once on any chain. AI agents monitor yields across 8 chains every second, using real Pyth prices, real The Graph liquidity data, and real 1inch routing. When they find a 2%+ APR improvement, LayerZero moves your funds automatically via CDP wallets. Supabase tracks every rebalance with full transaction history. You wake up to better yields. Every day. Gasless. Autonomous. Human.
 
-For the 23M World App users who don't know what an RPC is—and never should.
+For the 23M World App users who don't know what an RPC is and never should.
 ```
 
 ### **How It's Made** (280+ characters)
@@ -569,7 +569,7 @@ HedgePod Agent is built as a production-grade full-stack autonomous DeFi platfor
 **Smart Contracts (Solidity 0.8.24) - ~1,500 lines**:
 
 1. AutoYieldToken.sol - Extended LayerZero V2 OFT:
-   • Overrides _debit() with APR-checking logic (not just inherited)—blocks transfers to lower-yield chains
+   • Overrides _debit() with APR-checking logic (not just inherited) blocks transfers to lower-yield chains
    • Overrides _credit() for analytics tracking and custom event emission
    • Batch send pattern for gas-optimized multi-chain transfers in single transaction
    • Emergency circuit breakers (per-chain + global) for safety
@@ -614,17 +614,17 @@ All deployed across 8 chains using Hardhat 3 with 94% test coverage.
    • World ID verification via IDKitWidget (Orb-level) for sybil resistance
 
 2. Real-Time Data Display:
-   • Pyth Network: Live prices, volatility %, dynamic fees—auto-refreshes every 30 seconds
+   • Pyth Network: Live prices, volatility %, dynamic fees auto-refreshes every 30 seconds
    • The Graph: GraphQL queries for real Uniswap v3 pool data (liquidity $245.8M+, volume, TVL)
      - POOLS_QUERY with orderBy: totalValueLockedUSD DESC, filter > $100K liquidity
      - Multi-chain subgraphs: Ethereum, Base, Optimism, Arbitrum, Polygon
      - frontend/lib/thegraph.ts + frontend/app/api/uniswap/pools/route.ts
    • 1inch: Swap quotes, price feeds, liquidity sources via frontend/lib/oneinch.ts
-   • All data displayed with "📡 Pyth + The Graph" badge—users see what powers decisions
+   • All data displayed with "📡 Pyth + The Graph" badge users see what powers decisions
 
 3. Gasless UX:
-   • Privy SDK for embedded wallets—no MetaMask installation needed
-   • ENS resolution everywhere (frontend/lib/ens.ts)—users see "alice.eth" not "0x..."
+   • Privy SDK for embedded wallets no MetaMask installation needed
+   • ENS resolution everywhere (frontend/lib/ens.ts) users see "alice.eth" not "0x..."
    • RainbowKit for 100+ wallet options with custom theming
 
 4. Consumer-Grade Design:
@@ -659,7 +659,7 @@ All deployed across 8 chains using Hardhat 3 with 94% test coverage.
    • Custom GraphQL client with 5-chain support
    • POOLS_QUERY: fetches top 10 pools by TVL with token pairs, fees, liquidity, volume
    • 60-second cache revalidation via Next.js ISR for fresh data without rate limits
-   • Error handling with graceful fallback—no crashes if subgraph unreachable
+   • Error handling with graceful fallback no crashes if subgraph unreachable
 
 5. 1inch API Integration (frontend/lib/oneinch.ts):
    • 4 API endpoints: Swap, Quote, Price, Liquidity Sources
@@ -677,8 +677,8 @@ All deployed across 8 chains using Hardhat 3 with 94% test coverage.
 
 1. Extended LayerZero OFT (Not Just Inherited):
    • Problem: Standard OFT allows any transfer. We need yield-aware routing.
-   • Solution: Override _debit() with APR logic—only transfers if targetAPR > currentAPR + aprThreshold
-   • Impact: Gas-efficient cross-chain—funds only move when profitable
+   • Solution: Override _debit() with APR logic only transfers if targetAPR > currentAPR + aprThreshold
+   • Impact: Gas-efficient cross-chain funds only move when profitable
    • Evidence: contracts/AutoYieldToken.sol lines 112-230
 
 2. Confidence-Interval Volatility (Not Historical Variance):
@@ -708,7 +708,7 @@ All deployed across 8 chains using Hardhat 3 with 94% test coverage.
 **Particularly Hacky/Notable**:
 
 • Layered Cherry Blossom Sidebar: Three separate Image components with absolute positioning and z-index management for tree trunk (z-0), sidebar divs (z-10), and flowers (z-5) to create depth effect
-• World Chain Rate Limit Fix: Public RPC hit 429 errors—switched to env-based Alchemy RPC with fallback
+• World Chain Rate Limit Fix: Public RPC hit 429 errors switched to env-based Alchemy RPC with fallback
 • LayerZero Peer Configuration: Custom setPeers.ts script auto-configures trusted peers using lzEid across all 8 chains
 • Modular Config System: config/networks.ts + config/priceIds.ts manage chain/oracle data for maintainability
 • Makefile Automation: 50+ commands (make deploy-all, make verify-base-sepolia, make kill-port-3000, etc.)
@@ -730,7 +730,7 @@ All deployed across 8 chains using Hardhat 3 with 94% test coverage.
 • Pyth: @pythnetwork/pyth-sdk-solidity (contracts), @pythnetwork/hermes-client (backend)
 • Pyth Entropy: @pythnetwork/entropy-sdk-solidity, Fortuna provider on Base Sepolia
 • Uniswap: @uniswap/v4-core (hooks), @uniswap/v4-periphery (pool manager)
-• The Graph: Custom fetch client with GraphQL query builder (no SDK—lighter bundle)
+• The Graph: Custom fetch client with GraphQL query builder (no SDK lighter bundle)
 • 1inch: Custom API client (fetch-based) for Swap, Quote, Price, Liquidity APIs
 • Coinbase CDP: @coinbase/coinbase-sdk for server wallets and x402 authorization
 • World: @worldcoin/minikit-js (MiniKit), @worldcoin/idkit (World ID)
@@ -838,7 +838,7 @@ All AI-generated code was reviewed, tested, modified, and understood by human de
 ## 🎥 Demo Video Script (2-4 minutes)
 
 ### **Intro (15 seconds)**
-"Hi, I'm [Name], and this is HedgePod Agent—autonomous cross-chain DeFi for 23M World App users. Let me show you how we solved crypto's biggest UX problem."
+"Hi, I'm [Name], and this is HedgePod Agent autonomous cross-chain DeFi for 23M World App users. Let me show you how we solved crypto's biggest UX problem."
 
 ### **Problem Statement (20 seconds)**
 "Today's DeFi users face chain fragmentation: best yield on Base, but your funds on Arbitrum. Most users don't know what an RPC is, can't afford gas fees, and definitely won't manually bridge and rebalance."
@@ -846,7 +846,7 @@ All AI-generated code was reviewed, tested, modified, and understood by human de
 ### **Solution Demo (90 seconds)**
 1. **Landing Page** (15s): "HedgePod is a World mini app. One deposit, AI agents handle everything."
 2. **Portfolio** (30s): "Here's my portfolio tracked across 8 chains. This agent is actively monitoring yields in real-time."
-3. **Swap Page** (15s): "All data is REAL—Pyth Network for volatility, The Graph for liquidity. No mocks. See the dynamic fees adjusting live."
+3. **Swap Page** (15s): "All data is REAL Pyth Network for volatility, The Graph for liquidity. No mocks. See the dynamic fees adjusting live."
 4. **Agents Page** (20s): "Agent #1 just rebalanced 1000 USDC from Polygon to Base because the APR was 2% higher. All gasless, all automatic."
 5. **Architecture** (10s): "Behind the scenes: LayerZero for cross-chain transfers, Pyth for price feeds, The Graph for pool data, Coinbase CDP for agent autonomy."
 
@@ -1076,8 +1076,8 @@ All AI-generated code was reviewed, tested, modified, and understood by human de
 You've built something amazing. Now go show the judges! 🦔⭐
 
 **Remember**:
-- Be confident—you built a full autonomous DeFi platform in 3 days
-- Show, don't tell—let the demo speak
+- Be confident you built a full autonomous DeFi platform in 3 days
+- Show, don't tell let the demo speak
 - Be prepared to dive into code
 - Emphasize the user impact (23M World App users)
 
