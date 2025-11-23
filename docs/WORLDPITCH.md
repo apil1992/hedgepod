@@ -8,7 +8,9 @@
 
 **Our Solution**: Deposit once. AI agents automatically hunt for the best yields across 8+ chains and rebalance for you. Completely gasless. Completely chain-abstracted. Just "deposit USDC, watch number go up."
 
-**Why World?**: We use World ID for sybil-resistance (every agent = 1 human), built for all 19 World-supported languages, and designed for the 23M users who'll never touch MetaMask.
+**Why World?**: Full MiniKit SDK integration (not just IDKit!), World ID for sybil-resistance, 19-language support, and designed specifically for the 23M users who'll never touch MetaMask.
+
+**Live Now**: [hedgepod.app](https://hedgepod.app) - Deployed on World Chain mainnet & testnet!
 
 ---
 
@@ -80,47 +82,50 @@
 
 ### **Technical Questions:**
 
-1. **World Chain Faucet/Bridge Issue**:
-   - Bought WLD on mainnet and used faucet for testnet
-   - Funds never arrived to my wallet: `0xA167dAad364ab3cd018601b5D71aBCD74c76f982`
-   - Is there a delay? Do I need to do something specific?
-   - Best way to get World Chain testnet ETH for contract deployment?
+1. **World ID Integration Best Practices**:
+   - Currently using IDKit widget with Orb-level verification
+   - Should we also verify on-chain in smart contracts for additional security?
+   - Best practices for storing/checking verification status long-term?
+   - Any plans for recurring verification (e.g., agents that run for months/years)?
 
-2. **World ID Integration**:
-   - Currently using IDKit widget for verification
-   - Should we also verify on-chain in the smart contract?
-   - Best practices for storing/checking verification status?
-   - Any plans for recurring verification (e.g., agents that run for months)?
-
-3. **World Mini App Submission**:
+2. **World Mini App Submission**:
    - Ready to submit to World App store
-   - What's the review timeline?
+   - What's the review timeline for hackathon projects?
    - Any specific requirements beyond the standard metadata?
-   - Do you prioritize DeFi apps or specific categories?
+   - Do you prioritize DeFi apps or specific categories for featuring?
 
-4. **World Chain Contracts**:
-   - Deployed to World Chain Sepolia (testnet)
-   - Planning mainnet deployment after testing
+3. **World Chain Performance**:
+   - Deployed to both World Chain mainnet and Sepolia testnet
    - Any World Chain-specific gas optimizations we should know about?
-   - Oracle support: Does World Chain have recommended oracle providers?
+   - Oracle support: Does World Chain have recommended oracle providers beyond Pyth?
+   - Best practices for handling World Chain in multi-chain apps?
+
+4. **MiniKit SDK Advanced Features**:
+   - Currently using wallet auth, SIWE, and transaction commands
+   - Planning to add payment commands for on-ramp integration
+   - Any upcoming MiniKit features that would benefit DeFi use cases?
+   - Best practices for error handling when MiniKit is not installed?
 
 5. **Partnership Opportunities**:
-   - We're applying for the World Prize at ETHGlobal
-   - Any interest in featuring HedgePod in World App?
-   - Could we collaborate on educational content for your 23M users?
-   - Open to feedback/feature requests from your team!
+   - Competing for the $20K World Best Mini App Prize at ETHGlobal
+   - Would love to feature HedgePod in World App for the 23M users
+   - Open to collaboration on educational content about DeFi for your user base
+   - Feedback from your team would be invaluable for improving consumer UX!
 
 ---
 
 ## 🎁 **What We're Building For World Users**
 
-### **Phase 1 (Current - ETHGlobal Submission)**:
-- ✅ World ID verification
-- ✅ World Chain deployment (testnet)
-- ✅ 19-language support
-- ✅ Autonomous rebalancing agent
-- ✅ Cross-chain via LayerZero
-- ✅ Uniswap v4 + 1inch integration
+### **Phase 1 (✅ COMPLETE - ETHGlobal Submission)**:
+- ✅ Full MiniKit SDK integration (MiniKitProvider, wallet auth, SIWE, transactions)
+- ✅ World ID verification (Orb-level, backend-verified)
+- ✅ World Chain deployment (mainnet + testnet, all contracts)
+- ✅ 19-language support (all World locales)
+- ✅ Autonomous rebalancing agents (24/7 operation)
+- ✅ Cross-chain via LayerZero OFT (8 chains)
+- ✅ Uniswap v4 + 1inch + Pyth + The Graph integration
+- ✅ Gasless transactions (Privy sponsorship)
+- ✅ Consumer-grade UX (Animal Crossing theme, ENS everywhere)
 
 ### **Phase 2 (Post-Hackathon)**:
 - 🔄 World App store submission
@@ -163,7 +168,7 @@
 - 💻 [github.com/mollybeach](https://github.com/mollybeach)
 - 🌐 [hedgepod.app](https://hedgepod.app)
 
-**Looking forward to your feedback and hopefully resolving my World Chain wallet issue! 🙏**
+**Looking forward to your feedback and hopefully winning the World Best Mini App Prize! 🙏**
 
 ---
 
