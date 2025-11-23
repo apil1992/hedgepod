@@ -136,6 +136,22 @@ export function Navigation() {
               
               {/* Divider */}
               <div className="px-4 py-2 bg-pink-50 border-b-2 border-brown-200">
+                <p className="font-display font-bold text-pink-600 text-xs uppercase tracking-wide">Pool Prizes</p>
+              </div>
+              
+              <Link href="/pyth-implementation" onClick={() => setIsMoreDropdownOpen(false)}>
+                <div className="px-4 py-3 hover:bg-green-100 transition-colors cursor-pointer border-b-2 border-brown-200">
+                  <p className="font-display font-bold text-green-700 text-sm">📡 Pyth Network</p>
+                </div>
+              </Link>
+              <Link href="/thegraph-implementation" onClick={() => setIsMoreDropdownOpen(false)}>
+                <div className="px-4 py-3 hover:bg-green-100 transition-colors cursor-pointer border-b-2 border-brown-200">
+                  <p className="font-display font-bold text-green-700 text-sm">📊 The Graph</p>
+                </div>
+              </Link>
+              
+              {/* Divider */}
+              <div className="px-4 py-2 bg-pink-50 border-b-2 border-brown-200">
                 <p className="font-display font-bold text-pink-600 text-xs uppercase tracking-wide">Community</p>
               </div>
               
