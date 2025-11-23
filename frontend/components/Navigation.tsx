@@ -119,9 +119,9 @@ export function Navigation() {
                 <p className="font-display font-bold text-pink-600 text-xs uppercase tracking-wide">Partner Prizes</p>
               </div>
               
-              <Link href="/world-implementation" onClick={() => setIsMoreDropdownOpen(false)}>
+              <Link href="/world-best-mini-app-implementation" onClick={() => setIsMoreDropdownOpen(false)}>
                 <div className="px-4 py-3 hover:bg-green-100 transition-colors cursor-pointer border-b-2 border-brown-200">
-                  <p className="font-display font-bold text-green-700 text-sm">🌍 World</p>
+                  <p className="font-display font-bold text-green-700 text-sm">🌍 World: Best Mini App</p>
                 </div>
               </Link>
               <Link href="/layerzero-implementation" onClick={() => setIsMoreDropdownOpen(false)}>
@@ -140,9 +140,9 @@ export function Navigation() {
                 <p className="font-display font-bold text-pink-600 text-xs uppercase tracking-wide">Pool Prizes</p>
               </div>
               
-              <Link href="/world-minikit-implementation" onClick={() => setIsMoreDropdownOpen(false)}>
+              <Link href="/world-pool-prize-implementation" onClick={() => setIsMoreDropdownOpen(false)}>
                 <div className="px-4 py-3 hover:bg-green-100 transition-colors cursor-pointer border-b-2 border-brown-200">
-                  <p className="font-display font-bold text-green-700 text-sm">🌍 World MiniKit</p>
+                  <p className="font-display font-bold text-green-700 text-sm">🌍 World Pool Prize</p>
                 </div>
               </Link>
               <Link href="/uniswap-implementation" onClick={() => setIsMoreDropdownOpen(false)}>

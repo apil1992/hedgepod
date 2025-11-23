@@ -27,34 +27,106 @@ export default function WorldImplementation() {
             />
           </div>
           <h1 className="text-4xl md:text-6xl font-display font-bold text-green-700 drop-shadow-lg">
-            World Prize Implementation
+            World: Best Mini App Prize
           </h1>
           <p className="text-xl text-pink-600 font-body max-w-3xl mx-auto font-bold">
-            $20,000 Prize | Best Mini App for 23M World App Users
+            $20,000 Partner Prize | Build for 23M World App Users
           </p>
         </div>
 
         {/* Prize Tracks */}
-        <Card variant="dialogue">
+        <Card variant="dialogue" className="bg-gradient-to-r from-blue-50 to-purple-50">
           <h2 className="text-2xl font-display font-bold text-green-700 mb-4">
-            🏆 Prize Tracks
+            🏆 Partner Prize Tracks - Total $20,000
           </h2>
           <div className="space-y-3 text-green-800 font-body">
-            <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg border-2 border-green-300">
-              <span className="font-bold">1st Place - Best Mini App</span>
-              <span className="text-pink-600 font-bold">$6,500</span>
+            <div className="flex justify-between items-center p-3 bg-white rounded-lg border-2 border-blue-400">
+              <span className="font-bold">🥇 1st Place - Best Mini App</span>
+              <span className="text-pink-600 font-bold text-lg">$6,500</span>
             </div>
-            <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg border-2 border-green-300">
-              <span className="font-bold">2nd Place</span>
-              <span className="text-pink-600 font-bold">$4,500</span>
+            <div className="flex justify-between items-center p-3 bg-white rounded-lg border-2 border-blue-400">
+              <span className="font-bold">🥈 2nd Place</span>
+              <span className="text-pink-600 font-bold text-lg">$4,500</span>
             </div>
-            <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg border-2 border-green-300">
-              <span className="font-bold">3rd Place</span>
-              <span className="text-pink-600 font-bold">$2,000</span>
+            <div className="flex justify-between items-center p-3 bg-white rounded-lg border-2 border-blue-400">
+              <span className="font-bold">🥉 3rd Place</span>
+              <span className="text-pink-600 font-bold text-lg">$2,000</span>
             </div>
-            <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg border-2 border-green-300">
-              <span className="font-bold">Pool Prize (All Participants)</span>
-              <span className="text-pink-600 font-bold">$3,000 Split</span>
+            <div className="flex justify-between items-center p-3 bg-white rounded-lg border-2 border-green-400">
+              <span className="font-bold">🎖️ Honorable Mention (4x)</span>
+              <span className="text-pink-600 font-bold text-lg">$1,000 each</span>
+            </div>
+          </div>
+        </Card>
+
+        {/* Mandatory Requirements */}
+        <Card variant="dialogue" className="bg-gradient-to-r from-red-50 to-orange-50">
+          <h2 className="text-2xl font-display font-bold text-red-700 mb-4">
+            ⚠️ Mandatory Requirements (Must Have All)
+          </h2>
+          <div className="space-y-3 text-red-900 font-body">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">✅</span>
+              <div>
+                <strong>Build a Mini App with MiniKit:</strong> Must use the MiniKit SDK (not just IDKit). This is the core requirement.
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">✅</span>
+              <div>
+                <strong>Integrate MiniKit SDK Commands:</strong> Must use at least one MiniKit command (wallet, payments, signing, etc.). Mandatory to qualify.
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">✅</span>
+              <div>
+                <strong>Deploy to World Chain:</strong> If using on-chain activity, contracts must be deployed to World Chain mainnet or testnet.
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">✅</span>
+              <div>
+                <strong>No Gambling/Chance-Based:</strong> App cannot be gambling or prize-based on randomness. Must be skill or utility-based.
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">✅</span>
+              <div>
+                <strong>Proof Validation:</strong> Any verification (World ID, transactions) must occur in web backend or smart contract, not client-side.
+              </div>
+            </div>
+          </div>
+        </Card>
+
+        {/* Strong Bonus / Nice to Have */}
+        <Card variant="dialogue" className="bg-gradient-to-r from-green-50 to-emerald-50">
+          <h2 className="text-2xl font-display font-bold text-green-700 mb-4">
+            ⭐ Strong Bonus Points (Competitive Advantages)
+          </h2>
+          <div className="space-y-3 text-green-900 font-body">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🚀</span>
+              <div>
+                <strong>Viral/Shareable Mechanics:</strong> Features that encourage sharing and organic growth among 23M World App users.
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🎨</span>
+              <div>
+                <strong>Consumer-Grade UX:</strong> Clean, polished UI with no crypto jargon. Built for non-crypto natives.
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🔧</span>
+              <div>
+                <strong>Practical Utility:</strong> Solves a real-world problem. Not just a demo or toy example.
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🆔</span>
+              <div>
+                <strong>World ID Integration:</strong> Uses World ID for identity verification, proof of personhood, or Sybil resistance.
+              </div>
             </div>
           </div>
         </Card>

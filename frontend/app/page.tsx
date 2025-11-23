@@ -65,7 +65,7 @@ export default function Home() {
               
               {/* Partner Prize Badges */}
               <div className="flex flex-wrap gap-3 justify-center items-center mt-2">
-                <Link href="/world-implementation">
+                <Link href="/world-best-mini-app-implementation">
                   <div className="px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 rounded-full transition-all shadow-lg hover:shadow-xl cursor-pointer flex items-center gap-2">
                     <span className="text-2xl">🌍</span>
                     <span className="text-white font-bold text-sm hidden md:inline">World</span>
