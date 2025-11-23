@@ -119,14 +119,6 @@ export default function DeployAgentPage() {
     }
   };
 
-  // Handle transaction confirmation
-  useEffect(() => {
-    if (isConfirmed && hash) {
-      // Transaction confirmed! Now create the database entry
-      createAgentRecord(hash);
-    }
-  }, [isConfirmed, hash]);
-
   const createAgentRecord = async (txHash: string) => {
     try {
       const generatedAgentId = `agent_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
@@ -159,6 +151,15 @@ export default function DeployAgentPage() {
       setDeploying(false);
     }
   };
+
+  // Handle transaction confirmation
+  useEffect(() => {
+    if (isConfirmed && hash) {
+      // Transaction confirmed! Now create the database entry
+      createAgentRecord(hash);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isConfirmed, hash]);
 
   const handleDeploy = async () => {
     if (!isConnected || !address || !chain) {

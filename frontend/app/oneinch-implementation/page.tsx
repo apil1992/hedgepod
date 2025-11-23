@@ -287,7 +287,7 @@ export async function GET(request: NextRequest) {
               <div>
                 <strong>Practicality & Usefulness</strong>
                 <p className="text-sm text-green-700 mt-1">
-                  1inch APIs are core to HedgePod's autonomous yield optimization, providing swap execution and price feeds
+                  1inch APIs are core to HedgePod&apos;s autonomous yield optimization, providing swap execution and price feeds
                 </p>
               </div>
             </div>
