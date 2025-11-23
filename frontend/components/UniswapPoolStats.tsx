@@ -33,48 +33,43 @@ export function UniswapPoolStats() {
   const [swapping, setSwapping] = useState(false);
 
   useEffect(() => {
-    // Mock data for now - in production, fetch from backend/contracts
-    const mockPools: PoolStat[] = [
-      {
-        poolId: '0x1234...', 
-        pair: 'USDC/ETH',
-        token0: 'USDC',
-        token1: 'ETH',
-        fee: '0.3%',
-        liquidity: '$1.2M',
-        volume24h: '$450K',
-        currentFee: '0.25%',
-        volatility: 'Medium (2.5%)'
-      },
-      {
-        poolId: '0x5678...',
-        pair: 'USDC/WBTC',
-        token0: 'USDC',
-        token1: 'WBTC',
-        fee: '0.3%',
-        liquidity: '$850K',
-        volume24h: '$320K',
-        currentFee: '0.20%',
-        volatility: 'Low (1.2%)'
-      },
-      {
-        poolId: '0x9abc...',
-        pair: 'ETH/USDT',
-        token0: 'ETH',
-        token1: 'USDT',
-        fee: '0.3%',
-        liquidity: '$2.1M',
-        volume24h: '$780K',
-        currentFee: '0.30%',
-        volatility: 'High (4.8%)'
-      }
-    ];
+    // Fetch real pool data from Pyth Network API
+    const fetchPoolData = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('/api/uniswap/pools');
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch pool data');
+        }
 
-    // Simulate loading
-    setTimeout(() => {
-      setPools(mockPools);
-      setLoading(false);
-    }, 500);
+        const data = await response.json();
+        
+        if (data.success && data.pools) {
+          // Format pool IDs for display
+          const formattedPools = data.pools.map((pool: any) => ({
+            ...pool,
+            poolId: `${pool.poolId.slice(0, 6)}...${pool.poolId.slice(-4)}`,
+          }));
+          
+          setPools(formattedPools);
+          console.log('✅ Loaded real-time pool data from Pyth Network');
+        } else {
+          console.error('❌ API returned no pool data');
+        }
+      } catch (error) {
+        console.error('❌ Error fetching pool data:', error);
+        // Keep pools empty or show error state
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPoolData();
+
+    // Refresh every 30 seconds
+    const interval = setInterval(fetchPoolData, 30000);
+    return () => clearInterval(interval);
   }, []);
 
   const handleSwap = (pool: PoolStat) => {
@@ -229,14 +224,21 @@ export function UniswapPoolStats() {
     <div className="space-y-6">
       {/* Header Section */}
       <div className="space-y-3">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap gap-3">
           <h3 className="text-3xl font-display font-bold text-green-700">
             🦄 Trade on Uniswap v4
           </h3>
-          <div className="px-4 py-2 bg-pink-100 border-2 border-pink-400 rounded-full">
-            <span className="text-sm font-body font-bold text-pink-600">
-              🔥 Dynamic Fees Active
-            </span>
+          <div className="flex gap-2 flex-wrap">
+            <div className="px-4 py-2 bg-pink-100 border-2 border-pink-400 rounded-full">
+              <span className="text-sm font-body font-bold text-pink-600">
+                🔥 Dynamic Fees Active
+              </span>
+            </div>
+            <div className="px-4 py-2 bg-purple-100 border-2 border-purple-400 rounded-full animate-pulse">
+              <span className="text-sm font-body font-bold text-purple-600">
+                📡 Live Pyth Data
+              </span>
+            </div>
           </div>
         </div>
         
