@@ -21,14 +21,16 @@ export async function sendTransactionViaMiniKit(
     throw new Error('MiniKit not installed - use wagmi for browser transactions');
   }
 
-  const transactionInput: SendTransactionInput = [
-    {
-      address: params.to,
-      abi: [], // Empty ABI for simple value transfers
-      functionName: '', // Empty for value transfers
-      args: [],
-    },
-  ];
+  const transactionInput: SendTransactionInput = {
+    transaction: [
+      {
+        address: params.to,
+        abi: [], // Empty ABI for simple value transfers
+        functionName: '', // Empty for value transfers
+        args: [],
+      },
+    ],
+  };
 
   const { finalPayload } = await MiniKit.commandsAsync.sendTransaction(transactionInput);
 
@@ -55,14 +57,16 @@ export async function sendContractTransactionViaMiniKit(
     throw new Error('MiniKit not installed - use wagmi for browser transactions');
   }
 
-  const transactionInput: SendTransactionInput = [
-    {
-      address: params.address,
-      abi: params.abi,
-      functionName: params.functionName,
-      args: params.args,
-    },
-  ];
+  const transactionInput: SendTransactionInput = {
+    transaction: [
+      {
+        address: params.address,
+        abi: params.abi,
+        functionName: params.functionName,
+        args: params.args,
+      },
+    ],
+  };
 
   const { finalPayload } = await MiniKit.commandsAsync.sendTransaction(transactionInput);
 
@@ -82,9 +86,13 @@ export function isWorldApp(): boolean {
 
 /**
  * Get current user's wallet address from MiniKit
+ * Note: MiniKit doesn't expose walletAddress directly. Use localStorage after authentication.
  */
 export function getMiniKitWalletAddress(): string | undefined {
-  return MiniKit.walletAddress;
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem('minikit_wallet_address') || undefined;
+  }
+  return undefined;
 }
 
 /**
