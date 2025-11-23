@@ -111,7 +111,6 @@ contract RandomAgentSelector is IEntropyConsumer {
     /**
      * @notice Callback function called by Pyth Entropy with random number
      * @param sequenceNumber The sequence number of the request
-     * @param provider The provider that fulfilled the request
      * @param randomNumber The random number generated
      */
     function entropyCallback(
