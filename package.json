@@ -69,6 +69,7 @@
         "@layerzerolabs/oapp-evm": "^0.4.0",
         "@layerzerolabs/oft-evm": "^4.0.0",
         "@openzeppelin/contracts": "^5.0.1",
+        "@pythnetwork/entropy-sdk-solidity": "^2.2.1",
         "dotenv": "^16.3.1",
         "ethers": "^6.9.0"
     }

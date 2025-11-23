@@ -116,7 +116,7 @@ contract RandomAgentSelector is IEntropyConsumer {
      */
     function entropyCallback(
         uint64 sequenceNumber,
-        address provider,
+        address /* provider */,
         bytes32 randomNumber
     ) internal override {
         if (msg.sender != address(entropy)) revert OnlyEntropy();
