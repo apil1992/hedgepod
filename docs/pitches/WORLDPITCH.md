@@ -21,29 +21,45 @@ Live Now: hedgepod.app - Deployed on World Chain mainnet & testnet!"
 
 ---
 
-## 🌟 **Why This Matters for World**
+## Why This Matters for World (Show While Explaining)
 
-### **1. Onboarding 23M Non-Crypto Users to DeFi**
+**1. Onboarding 23M Non-Crypto Users to DeFi**
+
+**SHOW**: Homepage hero section
+**POINT TO**: "Create your own AI hedge fund" tagline - no crypto jargon
+
 - Most World users have never used DeFi because it's too complex
 - HedgePod abstracts away chains, gas, bridges—just "set it and forget it"
 - First DeFi experience feels like a savings account, not a blockchain maze
 
-### **2. World ID = Built-In Sybil Resistance**
+**2. World ID = Built-In Sybil Resistance**
+
+**SHOW**: Portfolio → Deploy Agent page
+**POINT TO**: World ID verification section with QR code
+
 - Every agent deployment requires World ID verification
 - Prevents bot farms from gaming yield strategies
 - Proof-of-personhood = fair access to optimal yields
 
-### **3. True Chain Abstraction**
+**3. True Chain Abstraction**
+
+**SHOW**: Portfolio page with agent card
+**POINT TO**: Chain badges (Base, Polygon, Arbitrum)
+
 - Users deposit on World Chain (home chain)
 - Agent automatically moves funds to Base, Polygon, Arbitrum, etc. for best APR
 - Returns profits back to World Chain
 - Users never know they left World Chain
 
-### **4. Built for 23M Users**
-- **19 languages** (all World-supported locales)
-- **Gasless UX** (Privy gas sponsorship)
-- **Human-readable addresses** (ENS integration)
-- **Mobile-first design** (World mini app optimized)
+**4. Built for 23M Users**
+
+**SHOW**: Language switcher in header (if implemented) OR mention it
+**SHOW**: Sidebar with ENS name (jane.eth not 0x...)
+
+- 19 languages (all World-supported locales)
+- Gasless UX (Privy gas sponsorship)
+- Human-readable addresses (ENS integration)
+- Mobile-first design (World mini app optimized)
 
 ---
 
