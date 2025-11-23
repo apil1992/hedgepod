@@ -5,7 +5,6 @@
 
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 import {
-  worldchain,
   base,
   celo,
   polygon,
@@ -13,6 +12,27 @@ import {
   optimism,
   avalanche,
 } from 'wagmi/chains';
+import type { Chain } from 'wagmi/chains';
+
+// Custom chain: World Chain (with custom logo)
+export const worldchain: Chain = {
+  id: 480,
+  name: 'World Chain',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Ether',
+    symbol: 'ETH',
+  },
+  rpcUrls: {
+    default: { http: ['https://worldchain-mainnet.g.alchemy.com/public'] },
+    public: { http: ['https://worldchain-mainnet.g.alchemy.com/public'] },
+  },
+  blockExplorers: {
+    default: { name: 'World Chain Explorer', url: 'https://worldchain-mainnet.explorer.alchemy.com' },
+  },
+  iconUrl: '/worldchain_logo.png',
+  iconBackground: '#ffffff',
+};
 
 // Custom chain: Zircuit (not in wagmi by default)
 export const zircuit = {
@@ -37,7 +57,7 @@ export const config = getDefaultConfig({
   appName: 'HedgePod Agent',
   projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || 'YOUR_PROJECT_ID',
   chains: [
-    worldchain,
+    worldchain, // Custom World Chain with logo
     base,
     celo,
     zircuit as any,
