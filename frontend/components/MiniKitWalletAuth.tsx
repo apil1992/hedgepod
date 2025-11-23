@@ -22,9 +22,12 @@ export function MiniKitWalletAuth({ onSuccess, onError }: MiniKitWalletAuthProps
     // Check if running in World App
     setIsWorldApp(MiniKit.isInstalled());
     
-    // Get existing wallet address if already connected
-    if (MiniKit.walletAddress) {
-      setWalletAddress(MiniKit.walletAddress);
+    // Check localStorage for previously connected wallet
+    if (typeof window !== 'undefined') {
+      const storedAddress = localStorage.getItem('minikit_wallet_address');
+      if (storedAddress) {
+        setWalletAddress(storedAddress);
+      }
     }
   }, []);
 
@@ -75,6 +78,12 @@ export function MiniKitWalletAuth({ onSuccess, onError }: MiniKitWalletAuthProps
       if (verifyData.isValid) {
         const address = (finalPayload as MiniAppWalletAuthSuccessPayload).address;
         setWalletAddress(address);
+        
+        // Store in localStorage for persistence
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('minikit_wallet_address', address);
+        }
+        
         onSuccess?.(address);
       } else {
         throw new Error('Invalid signature');
@@ -85,6 +94,13 @@ export function MiniKitWalletAuth({ onSuccess, onError }: MiniKitWalletAuthProps
       onError?.(error.message || 'Authentication failed');
     } finally {
       setIsConnecting(false);
+    }
+  };
+
+  const disconnect = () => {
+    setWalletAddress(null);
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('minikit_wallet_address');
     }
   };
 
