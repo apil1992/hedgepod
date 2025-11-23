@@ -1,16 +1,23 @@
-# 🦔 HedgePod Agent - World Booth Pitch
+# HedgePod Agent - World Booth Pitch
 
-## 🎯 **Quick Pitch (30 seconds)**
+## 30-Second Quick Pitch
 
-**"Hey! I'm Molly, building HedgePod Agent - a World mini app that turns your 23M users into hedge fund managers."**
+**SHOW**: Homepage (hedgepod.app) with sidebar visible
 
-**The Problem**: Your average World App user has no idea what "bridging" or "chain selection" means. They just want their money to grow.
+"Hey! I'm Molly, building HedgePod Agent - a World mini app that turns your 23M users into hedge fund managers.
 
-**Our Solution**: Deposit once. AI agents automatically hunt for the best yields across 8+ chains and rebalance for you. Completely gasless. Completely chain-abstracted. Just "deposit USDC, watch number go up."
+**POINT TO**: Sidebar stats ($14,450 Total Value, 4 Active Agents, 8.2% Yield)
 
-**Why World?**: Full MiniKit SDK integration (not just IDKit!), World ID for sybil-resistance, 19-language support, and designed specifically for the 23M users who'll never touch MetaMask.
+The Problem: Your average World App user has no idea what "bridging" or "chain selection" means. They just want their money to grow.
 
-**Live Now**: [hedgepod.app](https://hedgepod.app) - Deployed on World Chain mainnet & testnet!
+Our Solution: Deposit once. AI agents automatically hunt for the best yields across 8+ chains and rebalance for you. Completely gasless. Completely chain-abstracted. Just 'deposit USDC, watch number go up.'
+
+**SHOW**: Network switcher dropdown (click network button)
+**POINT TO**: World Chain logo front and center
+
+Why World? Full MiniKit SDK integration (not just IDKit!), World ID for sybil-resistance, 19-language support, and designed specifically for the 23M users who'll never touch MetaMask.
+
+Live Now: hedgepod.app - Deployed on World Chain mainnet & testnet!"
 
 ---
 
