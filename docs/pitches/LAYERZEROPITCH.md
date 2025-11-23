@@ -1,110 +1,124 @@
-# 🦔 HedgePod Agent - LayerZero Pitch
+# HedgePod Agent - LayerZero Pitch
 
-## 🎯 **Quick Pitch (30 seconds)**
-
-**"Hey! I'm Molly, building HedgePod Agent - the first yield-aware LayerZero OFT."**
-
-**The Problem**: Current cross-chain tokens move blindly. Bridge USDC from Ethereum to Polygon? Pay $20 gas. Earn 0.3% extra APR there? You just lost money. DeFi users manually track yields, calculate gas costs, and execute cross-chain moves inefficiently.
-
-**Our Solution**: Extended LayerZero OFT with custom APR-checking logic. Tokens only move cross-chain if yield improvement EXCEEDS gas costs. Autonomous agents use our OFT to optimize yields across 8 chains intelligently.
-
-**Why LayerZero?**: We didn't just inherit OApp/OFT - we EXTENDED the base contracts with custom `_debit()` and `_credit()` logic. This is TRUE extension per mandatory requirements. Novel cross-chain use case: autonomous yield optimization.
-
-**Live Now**: [hedgepod.app](https://hedgepod.app) - Deployed on 8 chains with working cross-chain transfers!
+**Prize**: $20K Best Omnichain Implementation
+**Format**: 30-second intro + 2-minute demo + Q&A
 
 ---
 
-## 🌟 **Why This Matters for LayerZero**
+## DEMO NAVIGATION MAP
 
-### **1. TRUE Extension of Base Contracts (Mandatory Requirement!)**
+**Quick Reference - What to Show When:**
 
-**Prize criteria explicitly states**:
+1. **Contracts Page** → 8-chain deployment (show all LayerZero addresses)
+2. **Portfolio → Agent → History** → Cross-chain rebalance (show LayerZero transfer)
+3. **GitHub → AutoYieldToken.sol** → Extended OFT code (show _debit() override)
+4. **Portfolio → Agent** → Chain badges (show multi-chain operation)
+5. **Agent History** → Transaction hash (show LayerScan link)
+6. **More → LayerZero Prize Page** → Evidence (show TRUE extension)
+
+---
+
+## 30-Second Quick Pitch
+
+**SHOW**: Contracts page (hedgepod.app/contracts)
+**POINT TO**: LayerZero OFT addresses on 8 chains
+
+"Hey! I'm Molly, building HedgePod Agent - the first yield-aware LayerZero OFT.
+
+**POINT TO**: Multiple chain sections (World, Base, Polygon, Arbitrum...)
+
+The Problem: Current cross-chain tokens move blindly. Bridge USDC from Ethereum to Polygon? Pay $20 gas. Earn 0.3% extra APR there? You just lost money. DeFi users manually track yields, calculate gas costs, and execute cross-chain moves inefficiently.
+
+**SHOW**: Portfolio → Agent card with chain badges
+**POINT TO**: Chain badges showing multi-chain activity
+
+Our Solution: Extended LayerZero OFT with custom APR-checking logic. Tokens only move cross-chain if yield improvement EXCEEDS gas costs. Autonomous agents use our OFT to optimize yields across 8 chains intelligently.
+
+**SHOW**: GitHub → contracts/AutoYieldToken.sol (open in new tab)
+**SCROLL TO**: _debit() function override (around line 112)
+**POINT TO**: Custom APR checking logic before super._debit()
+
+Why LayerZero? We didn't just inherit OApp/OFT - we EXTENDED the base contracts with custom _debit() and _credit() logic. This is TRUE extension per mandatory requirements. Novel cross-chain use case: autonomous yield optimization.
+
+Live Now: hedgepod.app - Deployed on 8 chains with working cross-chain transfers!"
+
+---
+
+## Why This Matters for LayerZero (Show While Explaining)
+
+**1. TRUE Extension of Base Contracts (Mandatory Requirement!)**
+
+**SHOW**: GitHub → contracts/AutoYieldToken.sol
+**SCROLL TO**: Line 112-230 (the _debit() and _credit() overrides)
+
+Prize criteria explicitly states:
 > "Must extend the Base Contract Logic (not sufficient to just inherit OApp/OFT/Endpoint interface contracts)"
 
-**What We Did**:
-```solidity
-// contracts/AutoYieldToken.sol
+**POINT TO**: Line 112 - _debit() function override
+**HIGHLIGHT**: Lines where we check APR before calling super._debit()
 
+What We Did:
+```solidity
 // ❌ NOT just this (inheritance):
 contract AutoYieldToken is OFT { ... }
 
 // ✅ YES - Override with custom logic:
-function _debit(
-    address _from,
-    uint256 _amountLD,
-    uint256 _minAmountLD,
-    uint32 _dstEid
-) internal virtual override returns (uint256 amountSentLD, uint256 amountReceivedLD) {
+function _debit(...) internal virtual override {
     // 🔥 CUSTOM LOGIC BEFORE calling parent
     uint256 targetAPR = getAPRForChain(_dstEid);
     uint256 currentAPR = getCurrentAPR();
     
-    // Only allow transfer if APR improvement justifies gas
-    require(
-        targetAPR > currentAPR + aprThreshold,
-        "InsufficientAPRImprovement"
-    );
+    require(targetAPR > currentAPR + aprThreshold, "InsufficientAPRImprovement");
     
-    // Track analytics
     totalCrossChainTransfers++;
     
     // NOW call parent
-    return super._debit(_from, _amountLD, _minAmountLD, _dstEid);
-}
-
-function _credit(
-    address _to,
-    uint256 _amountLD,
-    uint32 _srcEid
-) internal virtual override returns (uint256 amountReceivedLD) {
-    // 🔥 CUSTOM LOGIC for incoming transfers
-    emit CrossChainTransferReceived(_srcEid, _to, _amountLD);
-    
-    // Update analytics
-    lastTransferTimestamp = block.timestamp;
-    
-    // Call parent
-    return super._credit(_to, _amountLD, _srcEid);
+    return super._debit(...);
 }
 ```
 
-**This is TRUE extension. Not just inheritance. Custom logic that creates NEW functionality.**
+**SAY**: "This is TRUE extension. Not just inheritance. Custom logic that creates NEW functionality."
 
----
+**2. Novel Cross-Chain Use Case: Intelligent Yield Optimization**
 
-### **2. Novel Cross-Chain Use Case: Intelligent Yield Optimization**
+**SHOW**: Portfolio → Agent → History page
+**POINT TO**: Latest rebalance showing chain-to-chain transfer
 
-**What Doesn't Exist Yet**:
+What Doesn't Exist Yet:
 - No LayerZero OFT checks if cross-chain transfer is profitable
 - No OFT tracks analytics about cross-chain movements
 - No OFT prevents unprofitable gas-burning transfers
 
-**What We Created**:
-- ✅ APR-aware routing: Only moves funds if yield improvement exceeds threshold
-- ✅ Circuit breakers: Per-chain pause control for safety
-- ✅ Batch transfers: Multi-destination in single transaction (LayerZero pattern)
-- ✅ On-chain analytics: Tracks totalCrossChainTransfers, totalGasSaved
-- ✅ Custom events: CrossChainTransferReceived, APRThresholdUpdated
-- ✅ Autonomous integration: Coinbase CDP agents trigger rebalances automatically
+**POINT TO**: Transaction details showing APR improvement (Base 6.1% → Polygon 8.4%)
 
-**This is innovation on top of LayerZero, not just using it as-is.**
+What We Created:
+- APR-aware routing: Only moves funds if yield improvement exceeds threshold
+- Circuit breakers: Per-chain pause control for safety
+- Batch transfers: Multi-destination in single transaction
+- On-chain analytics: Tracks totalCrossChainTransfers, totalGasSaved
+- Custom events: CrossChainTransferReceived, APRThresholdUpdated
 
----
+**SHOW**: Transaction hash link
+**SAY**: "Click this and you'll see it on LayerScan - real cross-chain transfer"
 
-### **3. Production Scale: 8-Chain Deployment**
+**3. Production Scale: 8-Chain Deployment**
+
+**SHOW**: Contracts page (hedgepod.app/contracts)
+**SCROLL**: Through all 8 chain sections
 
 Not just a testnet demo. Deployed on:
 
-| Chain | LayerZero Endpoint ID | Contract Address |
-|-------|----------------------|------------------|
-| **World Chain** | 30163 | 0xb698...eAb1 |
-| **Base** | 30184 | 0x18f6...C0BE |
-| **Polygon** | 30109 | 0x90A0...F982 |
-| **Arbitrum** | 30110 | 0x4cE9...C99C |
-| **Optimism** | 30111 | 0x0165...Eb8F |
-| **Avalanche** | 30106 | 0xCf7E...0Fc9 |
-| **Celo** | 30125 | 0xe7f1...F512 |
-| **Zircuit** | 30280 | 0x5FbD...0aa3 |
+**POINT TO EACH**: 
+- World Chain (30163) - 0xb698...eAb1
+- Base (30184) - 0x18f6...C0BE
+- Polygon (30109) - 0x90A0...F982
+- Arbitrum (30110) - 0x4cE9...C99C
+- Optimism (30111) - 0x0165...Eb8F
+- Avalanche (30106) - 0xCf7E...0Fc9
+- Celo (30125) - 0xe7f1...F512
+- Zircuit (30280) - 0x5FbD...0aa3
+
+**SAY**: "56 peer connections configured (8 chains × 7 destinations each)"
 
 **Automated peer configuration** via `scripts/layerzero/setPeers.ts`:
 ```typescript
@@ -497,64 +511,124 @@ contract AutoYieldToken is OFT {
 
 ---
 
-## 🔴 **Live Demo**
+## 2-Minute Live Demo Flow
 
-**🚀 [hedgepod.app](https://hedgepod.app)**
+**Step 1: Contracts Page - 8-Chain Deployment (30 seconds)**
 
-### **What to Test**:
+**SHOW**: hedgepod.app/contracts
+**SCROLL**: Through all 8 chain sections
+**SAY**: "We're deployed on 8 chains - World Chain, Base, Polygon, Arbitrum, Optimism, Avalanche, Celo, and Zircuit"
 
-1. **Deploy Agent** (Portfolio → Deploy Agent)
-   - Creates agent that will use LayerZero for rebalancing
-   - Select multiple chains
+**POINT TO**: AutoYieldToken addresses
+**SAY**: "This is our extended LayerZero OFT - same contract on every chain, 56 peers configured"
 
-2. **View Agent Performance** (Portfolio Page)
-   - See which chains agent is active on
-   - Real-time APR tracking
-   - Number of cross-chain rebalances
+**CLICK**: One of the explorer links
+**SAY**: "All contracts verified - you can read the custom _debit() and _credit() logic on-chain"
 
-3. **Trigger Cross-Chain Rebalance** (Portfolio → Agent → History)
-   - Click "Run Rebalance Now"
-   - Agent checks APRs via Pyth
-   - If profitable, executes LayerZero transfer
-   - See transaction hash + LayerScan link
+**Step 2: GitHub - Extended OFT Code (30 seconds)**
 
-4. **Check Contract** (Contracts Page)
-   - See AutoYieldToken addresses on all 8 chains
-   - Links to verified contracts on block explorers
-   - Read the custom `_debit()` and `_credit()` logic
+**SHOW**: GitHub → contracts/AutoYieldToken.sol (open in new tab)
+**SCROLL TO**: Line 112 - _debit() function override
 
-5. **Multi-Chain Evidence** (Swap Page)
-   - Network selector shows all 8 chains
-   - OFT deployed on each with peer configuration
-   - Try switching chains and seeing consistent contract addresses
+**SAY**: "Here's the mandatory requirement - we EXTENDED the base OFT, not just inherited"
+**POINT TO**: Lines where we check APR before calling super._debit()
+**HIGHLIGHT**: "require(targetAPR > currentAPR + aprThreshold)"
+
+**SAY**: "Only allow cross-chain transfer if APR improvement justifies gas. This is TRUE extension."
+
+**SCROLL TO**: Line 150 - _credit() function override
+**POINT TO**: Custom events and analytics tracking
+**SAY**: "Same thing on incoming transfers - custom logic, then call parent"
+
+**Step 3: Portfolio - Agent with Multi-Chain Activity (30 seconds)**
+
+**SHOW**: Portfolio page
+**POINT TO**: First agent card showing chain badges
+
+**SAY**: "This agent is active on Base, Polygon, and Arbitrum - all using our LayerZero OFT for cross-chain movement"
+**POINT TO**: Stats showing rebalance count
+**SAY**: "12 successful rebalances - all cross-chain via LayerZero"
+
+**CLICK**: "View History" button
+
+**Step 4: Agent History - Real LayerZero Transfer (30 seconds)**
+
+**SHOW**: Agent History timeline
+**POINT TO**: Latest rebalance entry
+
+**SAY**: "Here's a cross-chain rebalance - moved funds from Base to Polygon because APR went from 6.1% to 8.4%"
+**POINT TO**: Transaction hash
+**SAY**: "This is a real LayerZero transfer - click it and you'll see it on LayerScan"
+
+**HOVER**: Over transaction hash to show it's clickable
+**SAY**: "Every cross-chain move is transparent and verifiable"
+
+**CLICK**: "Run Rebalance Now" button
+**SHOW**: Modal with Pyth APR data
+
+**POINT TO**: APR comparison across chains
+**SAY**: "Agent checks real-time APRs from Pyth - if another chain's APR exceeds the threshold, it executes a LayerZero transfer automatically"
 
 ---
 
-## 📸 **Screenshots for Context**
+## Key Screens to Show (Quick Reference)
 
-**Key screens demonstrating LayerZero integration**:
+**Screen 1: Contracts Page**
+- **What to show**: All 8 chain sections with LayerZero OFT addresses
+- **What to point out**: Endpoint IDs, verified explorer links, consistent deployment
+- **Key message**: Production-ready, 8-chain deployment with automated peer configuration
 
-1. **Contracts Page**
-   - Shows AutoYieldToken deployed on 8 chains
-   - LayerZero Endpoint IDs for each
-   - Links to verified contracts
+**Screen 2: GitHub - AutoYieldToken.sol**
+- **What to show**: Lines 112-230 (function overrides)
+- **What to point out**: _debit() override with APR checking, super._debit() call, _credit() override with analytics
+- **Key message**: TRUE extension per mandatory requirements, not just inheritance
 
-2. **Agent History Timeline**
-   - Shows cross-chain rebalances
-   - From/To chains
-   - Transaction hashes with LayerScan links
-   - APR improvement for each transfer
+**Screen 3: Portfolio Page**
+- **What to show**: Agent cards with chain badges
+- **What to point out**: Multiple chains per agent, rebalance counts, APR stats
+- **Key message**: Multi-chain operation using LayerZero seamlessly
 
-3. **Network Switcher**
-   - All 8 chains listed
-   - OFT address consistent across chains
-   - Unified token supply
+**Screen 4: Agent History Timeline**
+- **What to show**: Rebalance entries with from/to chains
+- **What to point out**: Transaction hashes with LayerScan links, APR improvements
+- **Key message**: Every LayerZero transfer is recorded and verifiable
 
-4. **Code View** (GitHub)
-   - `AutoYieldToken.sol` with custom `_debit()` override
-   - Circuit breakers implementation
-   - Batch send pattern
-   - Comprehensive events and analytics
+**Screen 5: "Run Rebalance Now" Modal**
+- **What to show**: Real-time APR data from Pyth across all 8 chains
+- **What to point out**: APR comparison, threshold logic
+- **Key message**: OFT validates profitability on-chain before transferring
+
+**Screen 6: More → LayerZero Prize Page**
+- **What to show**: Prize evidence page with code links
+- **What to point out**: Deep integration details, custom extension explanation
+- **Key message**: Comprehensive evidence for all mandatory requirements
+
+**Screen 7: Network Switcher**
+- **What to show**: Network dropdown with all 8 chains
+- **What to point out**: Same OFT address format across chains, consistent deployment
+- **Key message**: Unified token supply, no fragmented liquidity
+
+---
+
+## What Makes Our Extension Special (Visual Proof)
+
+**WHILE NAVIGATING**, point out these technical elements:
+
+**In Code (GitHub)**:
+- Custom _debit() and _credit() overrides (not just inheritance)
+- APR validation before transfer (prevents unprofitable moves)
+- Circuit breakers for per-chain control
+- Batch send pattern for multi-destination transfers
+- On-chain analytics (totalCrossChainTransfers, totalGasSaved)
+- Custom events (CrossChainTransferReceived, APRThresholdUpdated)
+
+**In App (hedgepod.app)**:
+- 8-chain deployment (all contracts verified)
+- Agent History shows LayerZero transfers with LayerScan links
+- "Run Rebalance Now" triggers LayerZero cross-chain transfer
+- Chain badges show multi-chain operation
+- Transaction hashes are real (click to see on LayerScan)
+- APR checking happens on-chain (smart contract validation)
 
 ---
 
