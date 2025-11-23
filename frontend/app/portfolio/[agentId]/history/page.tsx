@@ -38,6 +38,8 @@ export default function AgentHistoryPage() {
   const [history, setHistory] = useState<RebalanceHistory[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [triggering, setTriggering] = useState(false);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   useEffect(() => {
     fetchHistory();
@@ -59,6 +61,35 @@ export default function AgentHistoryPage() {
       setError(err.message);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const triggerRebalance = async () => {
+    try {
+      setTriggering(true);
+      setError(null);
+      setSuccessMessage(null);
+      
+      const response = await fetch(`/api/agents/${agentId}/rebalance`, {
+        method: 'POST',
+      });
+      
+      const data = await response.json();
+
+      if (data.success) {
+        setSuccessMessage(`✅ Rebalance executed! ${data.rebalance.from_chain} → ${data.rebalance.to_chain} (+${data.rebalance.expected_gain?.toFixed(2) || '0'} USDC)`);
+        // Refresh history to show new rebalance
+        await fetchHistory();
+        
+        // Clear success message after 5 seconds
+        setTimeout(() => setSuccessMessage(null), 5000);
+      } else {
+        setError(data.error);
+      }
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setTriggering(false);
     }
   };
 
@@ -92,9 +123,19 @@ export default function AgentHistoryPage() {
               Rebalancing transactions for {agentId}
             </p>
           </div>
-          <Button variant="nav" size="md" onClick={() => router.back()}>
-            ← Back
-          </Button>
+          <div className="flex gap-3">
+            <Button 
+              variant="primary" 
+              size="md" 
+              onClick={triggerRebalance}
+              disabled={triggering}
+            >
+              {triggering ? '⏳ Checking...' : '🔄 Run Rebalance Now'}
+            </Button>
+            <Button variant="nav" size="md" onClick={() => router.back()}>
+              ← Back
+            </Button>
+          </div>
         </div>
 
         {/* Loading State */}
@@ -106,10 +147,19 @@ export default function AgentHistoryPage() {
           </Card>
         )}
 
+        {/* Success State */}
+        {successMessage && (
+          <Card variant="dialogue">
+            <div className="text-center py-6 bg-green-50 border-green-300">
+              <p className="text-green-700 font-body text-lg font-bold">{successMessage}</p>
+            </div>
+          </Card>
+        )}
+
         {/* Error State */}
         {error && (
           <Card variant="dialogue">
-            <div className="text-center py-8">
+            <div className="text-center py-8 bg-red-50 border-red-300">
               <p className="text-red-600 font-body">❌ {error}</p>
             </div>
           </Card>
@@ -118,13 +168,37 @@ export default function AgentHistoryPage() {
         {/* Empty State */}
         {!loading && !error && history.length === 0 && (
           <Card variant="dialogue">
-            <div className="text-center py-8 space-y-4">
-              <p className="text-green-700 font-body text-lg">
-                🌱 No rebalancing history yet
-              </p>
-              <p className="text-green-600 font-body">
-                This agent hasn&apos;t made any rebalances. Once the agent starts monitoring and finds optimal opportunities, transactions will appear here.
-              </p>
+            <div className="text-center py-12 space-y-6">
+              <div className="text-6xl mb-4">🌱</div>
+              <div>
+                <p className="text-green-700 font-display font-bold text-2xl mb-2">
+                  No rebalancing history yet
+                </p>
+                <p className="text-green-600 font-body text-lg">
+                  This agent hasn&apos;t made any rebalances yet.
+                </p>
+                <p className="text-green-600 font-body">
+                  Click &quot;Run Rebalance Now&quot; above to check for profitable opportunities,
+                  or wait for the automated agent to find one.
+                </p>
+              </div>
+              <div className="pt-4">
+                <Button 
+                  variant="primary" 
+                  size="lg" 
+                  onClick={triggerRebalance}
+                  disabled={triggering}
+                >
+                  {triggering ? '⏳ Checking Opportunities...' : '🚀 Check for Opportunities Now'}
+                </Button>
+              </div>
+              <div className="border-t-2 border-green-300 pt-6 mt-6">
+                <p className="text-sm text-green-600 font-body">
+                  <strong>How it works:</strong> The agent monitors yield rates across 8+ chains in real-time.
+                  When a profitable rebalancing opportunity is found (APR improvement &gt; 1%), 
+                  it automatically moves your funds via LayerZero and executes swaps through Uniswap v4 or 1inch.
+                </p>
+              </div>
             </div>
           </Card>
         )}
