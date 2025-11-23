@@ -10,6 +10,7 @@ export default function Contracts() {
   const contracts = [
     {
       name: 'HedgePodVault',
+      github: 'https://github.com/mollybeach/hedgepod/blob/master/contracts/HedgePodVault.sol',
       description: 'Main vault contract for deposits, withdrawals, and autonomous rebalancing. Manages user funds across multiple chains.',
       features: [
         'Deposit USDC/ETH/USDT',
@@ -32,6 +33,7 @@ export default function Contracts() {
     },
     {
       name: 'AutoYieldToken',
+      github: 'https://github.com/mollybeach/hedgepod/blob/master/contracts/AutoYieldToken.sol',
       description: 'LayerZero OFT (Omnichain Fungible Token) representing user shares. Enables seamless cross-chain token transfers.',
       features: [
         'Omnichain fungible token',
@@ -55,6 +57,7 @@ export default function Contracts() {
     },
     {
       name: 'YieldOracle',
+      github: 'https://github.com/mollybeach/hedgepod/blob/master/contracts/YieldOracle.sol',
       description: 'Aggregates yield and price data from Pyth Network and Chainlink. Provides real-time APR calculations.',
       features: [
         'Pyth price feeds',
@@ -77,6 +80,7 @@ export default function Contracts() {
     },
     {
       name: 'VolatilityFeeHook',
+      github: 'https://github.com/mollybeach/hedgepod/blob/master/contracts/VolatilityFeeHook.sol',
       description: 'Uniswap v4 hook that dynamically adjusts swap fees based on market volatility from Pyth Network.',
       features: [
         'Dynamic fee adjustment',
@@ -99,6 +103,7 @@ export default function Contracts() {
     },
     {
       name: 'RandomAgentSelector',
+      github: 'https://github.com/mollybeach/hedgepod/blob/master/contracts/RandomAgentSelector.sol',
       description: 'Pyth Entropy integration for verifiable randomness. Enables fair agent selection for lottery rewards and MEV protection.',
       features: [
         'Verifiable randomness',
@@ -142,9 +147,20 @@ export default function Contracts() {
               {/* Contract Header */}
               <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <h2 className="text-2xl font-display font-bold text-green-700 mb-2">
-                    {contract.name}
-                  </h2>
+                  <div className="flex items-center gap-2 mb-2">
+                    <h2 className="text-2xl font-display font-bold text-green-700">
+                      {contract.name}
+                    </h2>
+                    <a
+                      href={contract.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-7 h-7 bg-green-500 hover:bg-green-400 rounded-full border-2 border-brown-500 shadow-ac-sm hover:shadow-ac transition-all group"
+                      title="View source code on GitHub"
+                    >
+                      <span className="text-white text-sm group-hover:scale-110 transition-transform">💻</span>
+                    </a>
+                  </div>
                   <p className="text-sm text-green-800 font-body">
                     {contract.description}
                   </p>
