@@ -244,6 +244,75 @@ LayerZero V2 OFT, Pyth Network (Hermes API + Price Feeds), Pyth Entropy, The Gra
 
 ---
 
+## 📋 Partner Prize Submission Table
+
+**Copy these exact answers into the ETHGlobal submission form**:
+
+| Prize | How are you using this Protocol / API? | Link to Code | Ease of Use (1-10) | Additional Feedback |
+|-------|----------------------------------------|--------------|-------------------|---------------------|
+| **LayerZero - $20,000** | HedgePod uses LayerZero as the core infrastructure for cross-chain token transfers and agent rebalancing. We've extended the OFT (Omnichain Fungible Token) standard to create AutoYieldToken, which includes custom yield-aware routing logic. Our agents autonomously move user funds across 8+ chains via LayerZero to optimize APR, making it a critical component of our chain abstraction strategy. This is not a superficial integration - LayerZero is the backbone that enables true autonomous cross-chain yield optimization. | https://github.com/mollybeach/hedgepod/blob/master/contracts/AutoYieldToken.sol | **8** | LayerZero's OFT standard is well-documented and the endpoint interface is clean. The testnet faucet worked flawlessly, and Layerscan was invaluable for debugging cross-chain transactions. Minor pain point: adapter params encoding for custom gas limits could use better TypeScript type definitions. Overall, excellent developer experience - we were able to implement custom yield-aware routing on top of the base OFT in just a few hours. |
+| **World - $20,000** | HedgePod is built specifically as a World mini app to make DeFi accessible to the 23 million World App users. We integrate World ID for sybil-resistant agent deployment and use MiniKit SDK for all critical user flows (connect, transaction, payment commands). Our UX is designed for non-crypto users - no technical jargon, one-click operations, and human-readable ENS names throughout. The app is deployed on World Chain with gasless transactions, making it truly frictionless for mainstream adoption. This directly addresses World's mission of bringing financial tools to everyone. | https://github.com/mollybeach/hedgepod/blob/master/contracts/HedgePodVault.sol#L200-L215 | **9** | MiniKit SDK is extremely developer-friendly with excellent TypeScript support and clear documentation. World ID integration was straightforward, and the testnet faucet made testing seamless. The SDK's command structure (connect, transaction, payment) is intuitive and maps well to real-world user flows. Only minor suggestion: more examples of gasless transaction patterns would be helpful. Overall, best-in-class developer experience for building consumer crypto apps. |
+| **Coinbase Developer Platform - $20,000** | HedgePod leverages Coinbase CDP's Server Wallets to create truly autonomous agents that operate 24/7 without user intervention. We use x402 authorization to grant agents recurring permissions, eliminating the need for constant user approvals while maintaining security. CDP's Trade API powers our swap execution, and the wallet infrastructure ensures agents can operate independently across multiple chains. This enables our core value proposition: set-it-and-forget-it yield optimization. CDP is essential for agent autonomy - without it, our agents couldn't function. | https://github.com/mollybeach/hedgepod/blob/master/backend/src/agent/wallet.ts | **7** | CDP SDK is powerful and well-structured. Server Wallets are easy to create and manage, and the x402 authorization pattern is elegant. Trade API documentation is comprehensive. However, the learning curve for x402 is steeper than expected - more code examples and patterns for recurring authorization would help. Also, local development/testing without hitting rate limits can be tricky. Despite these minor issues, CDP unlocks agent autonomy that's impossible with traditional wallets. |
+
+### 📝 Individual Answers (Copy/Paste for Form)
+
+#### **LayerZero - How are you using this Protocol / API?**
+```
+HedgePod uses LayerZero as the core infrastructure for cross-chain token transfers and agent rebalancing. We've extended the OFT (Omnichain Fungible Token) standard to create AutoYieldToken, which includes custom yield-aware routing logic. Our agents autonomously move user funds across 8+ chains via LayerZero to optimize APR, making it a critical component of our chain abstraction strategy. This is not a superficial integration - LayerZero is the backbone that enables true autonomous cross-chain yield optimization.
+```
+
+**Link to code:**
+```
+https://github.com/mollybeach/hedgepod/blob/master/contracts/AutoYieldToken.sol
+```
+
+**Ease of use (1-10):** `8`
+
+**Additional feedback:**
+```
+LayerZero's OFT standard is well-documented and the endpoint interface is clean. The testnet faucet worked flawlessly, and Layerscan was invaluable for debugging cross-chain transactions. Minor pain point: adapter params encoding for custom gas limits could use better TypeScript type definitions. Overall, excellent developer experience - we were able to implement custom yield-aware routing on top of the base OFT in just a few hours.
+```
+
+---
+
+#### **World - How are you using this Protocol / API?**
+```
+HedgePod is built specifically as a World mini app to make DeFi accessible to the 23 million World App users. We integrate World ID for sybil-resistant agent deployment and use MiniKit SDK for all critical user flows (connect, transaction, payment commands). Our UX is designed for non-crypto users - no technical jargon, one-click operations, and human-readable ENS names throughout. The app is deployed on World Chain with gasless transactions, making it truly frictionless for mainstream adoption. This directly addresses World's mission of bringing financial tools to everyone.
+```
+
+**Link to code:**
+```
+https://github.com/mollybeach/hedgepod/blob/master/contracts/HedgePodVault.sol#L200-L215
+```
+
+**Ease of use (1-10):** `9`
+
+**Additional feedback:**
+```
+MiniKit SDK is extremely developer-friendly with excellent TypeScript support and clear documentation. World ID integration was straightforward, and the testnet faucet made testing seamless. The SDK's command structure (connect, transaction, payment) is intuitive and maps well to real-world user flows. Only minor suggestion: more examples of gasless transaction patterns would be helpful. Overall, best-in-class developer experience for building consumer crypto apps.
+```
+
+---
+
+#### **Coinbase Developer Platform - How are you using this Protocol / API?**
+```
+HedgePod leverages Coinbase CDP's Server Wallets to create truly autonomous agents that operate 24/7 without user intervention. We use x402 authorization to grant agents recurring permissions, eliminating the need for constant user approvals while maintaining security. CDP's Trade API powers our swap execution, and the wallet infrastructure ensures agents can operate independently across multiple chains. This enables our core value proposition: set-it-and-forget-it yield optimization. CDP is essential for agent autonomy - without it, our agents couldn't function.
+```
+
+**Link to code:**
+```
+https://github.com/mollybeach/hedgepod/blob/master/backend/src/agent/wallet.ts
+```
+
+**Ease of use (1-10):** `7`
+
+**Additional feedback:**
+```
+CDP SDK is powerful and well-structured. Server Wallets are easy to create and manage, and the x402 authorization pattern is elegant. Trade API documentation is comprehensive. However, the learning curve for x402 is steeper than expected - more code examples and patterns for recurring authorization would help. Also, local development/testing without hitting rate limits can be tricky. Despite these minor issues, CDP unlocks agent autonomy that's impossible with traditional wallets.
+```
+
+---
+
 ## 🎁 Pool Prize Eligibility
 
 ### 📊 **The Graph** (Pool Prize)
@@ -457,6 +526,59 @@ query GetTopPools {
 - **Oracle Integration**: Deep Pyth Network integration with real-time data
 - **Production UI**: Animal Crossing-themed interface with real-time volatility display
 - **Multi-Chain**: Deployed on 5 chains (Base, Arbitrum, Optimism, Polygon, World Chain)
+
+---
+
+## 🛠️ Which Other Partners' Technologies Have You Used?
+
+**Select any additional technologies you used but aren't applying for prizes**:
+
+✅ **Pyth Network**
+- Real-time price feeds and volatility data
+- Pyth Entropy for verifiable randomness
+- VolatilityFeeHook integration
+
+✅ **1inch**
+- Swap API for optimal routing across 50+ DEXs
+- Quote API for price comparisons
+- Price API for real-time token valuations
+- Liquidity Sources API
+
+✅ **Uniswap Foundation**
+- Uniswap v4 hooks (VolatilityFeeHook)
+- Pool management and liquidity provision
+- Dynamic fee adjustment based on volatility
+
+✅ **The Graph**
+- GraphQL subgraphs for Uniswap v3 data
+- Real-time liquidity and volume queries
+- Multi-chain indexing (5 chains)
+
+✅ **Chainlink**
+- Price feed fallback for oracle redundancy
+- CCIP for cross-chain messaging backup
+
+✅ **Privy**
+- Embedded wallets for gasless transactions
+- Gas sponsorship for all user operations
+- Simplified onboarding for non-crypto users
+
+✅ **ENS**
+- Human-readable address resolution
+- Displayed throughout UI instead of 0x addresses
+
+✅ **Hardhat**
+- Smart contract development framework
+- Testing, deployment, and verification
+- Multi-chain deployment scripts
+
+✅ **Zircuit**
+- Deployed contracts on Zircuit testnet
+- Cross-chain yield optimization support
+
+✅ **Octav**
+- Multi-chain portfolio tracking widget
+- Real-time balance aggregation
 
 ---
 

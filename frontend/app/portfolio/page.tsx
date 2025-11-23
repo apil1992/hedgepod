@@ -83,6 +83,18 @@ export default function Portfolio() {
   const fetchAgents = async () => {
     try {
       setLoading(true);
+      
+      // Demo mode: Use mock data for smooth demo
+      const DEMO_MODE = process.env.NEXT_PUBLIC_DEMO_MODE === 'true';
+      if (DEMO_MODE) {
+        const { MOCK_AGENTS } = await import('@/lib/mockData');
+        setTimeout(() => {
+          setAgents(MOCK_AGENTS);
+          setLoading(false);
+        }, 500); // Simulate API delay
+        return;
+      }
+
       // TODO: Filter by wallet address once owner_wallet column is added to DB
       const response = await fetch('/api/agents');
       const data = await response.json();

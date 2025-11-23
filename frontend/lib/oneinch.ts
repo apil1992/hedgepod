@@ -239,7 +239,7 @@ export function format1inchAmount(amount: string, decimals: number): string {
 export function get1inchRouteDescription(protocols: SwapQuote['protocols']): string {
   if (!protocols || protocols.length === 0) return 'Direct swap';
   
-  const uniqueProtocols = [...new Set(protocols.map(p => p.name))];
+  const uniqueProtocols = Array.from(new Set(protocols.map(p => p.name)));
   
   if (uniqueProtocols.length === 1) {
     return `via ${uniqueProtocols[0]}`;

@@ -13,6 +13,7 @@ import { PageLayout } from '@/components/PageLayout';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { WorldIDVerify } from '@/components/WorldIDVerify';
+import { WorldIDDemo } from '@/components/WorldIDDemo';
 import Image from 'next/image';
 import { getContractAddress, getExplorerUrl, HEDGEPOD_VAULT_ABI, ERC20_ABI } from '@/lib/contracts';
 
@@ -266,32 +267,25 @@ export default function DeployAgentPage() {
           </Card>
         )}
 
-        {/* World ID Verification - TEMPORARILY DISABLED FOR TESTING */}
-        {/* <Card variant="dialogue">
-          <h3 className="text-xl font-display font-bold text-green-700 mb-4">
-            1. Verify Your Humanity 🔒
-          </h3>
-          <WorldIDVerify
-            onSuccess={(proof) => {
-              console.log('World ID verification successful:', proof);
-              setWorldIdVerified(true);
-              setWorldIdProof(proof);
-            }}
-            onError={(error) => {
-              console.error('World ID verification failed:', error);
-              setError('World ID verification failed. Please try again.');
-            }}
-            actionId="hedgepod-deploy-agent"
-            signal={address}
-          />
-          {worldIdVerified && (
-            <div className="mt-4 p-3 bg-green-100 border-2 border-green-500 rounded-lg">
-              <p className="text-sm text-green-800 font-body text-center">
-                ✅ Humanity verified! You can now proceed with deployment.
-              </p>
-            </div>
-          )}
-        </Card> */}
+        {/* World ID Verification - Demo Mode for Video */}
+        {process.env.NEXT_PUBLIC_DEMO_MODE === 'true' && (
+          <Card variant="dialogue">
+            <h3 className="text-xl font-display font-bold text-green-700 mb-4">
+              1. Verify Your Humanity 🔒
+            </h3>
+            <WorldIDDemo
+              onSuccess={(proof) => {
+                console.log('✅ World ID verification successful (Demo Mode):', proof);
+                setWorldIdVerified(true);
+                setWorldIdProof(proof);
+              }}
+              onError={(error) => {
+                console.error('❌ World ID verification failed:', error);
+                setError('World ID verification failed. Please try again.');
+              }}
+            />
+          </Card>
+        )}
 
         {/* Agent Name */}
         <Card variant="dialogue">
