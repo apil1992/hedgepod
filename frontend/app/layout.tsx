@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Nunito } from 'next/font/google'
 import { Providers } from '@/components/Providers'
-import { MiniKitProvider } from '@worldcoin/minikit-js'
+import { MiniKitProvider } from '@worldcoin/minikit-js/minikit-provider'
 import './globals.css'
 
 const inter = Inter({ 
