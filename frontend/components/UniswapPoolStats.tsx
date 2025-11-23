@@ -222,6 +222,62 @@ export function UniswapPoolStats() {
 
   return (
     <div className="space-y-6">
+      {/* Innovation Banner */}
+      <Card variant="dialogue" className="bg-gradient-to-r from-purple-100 via-pink-100 to-purple-100 border-3 border-purple-400">
+        <div className="space-y-3">
+          <div className="flex items-center justify-between flex-wrap gap-3">
+            <h4 className="text-2xl font-display font-bold text-purple-700">
+              🛡️ How Dynamic Fees Protect You
+            </h4>
+            <div className="px-4 py-2 bg-purple-500 text-white border-2 border-purple-700 rounded-full">
+              <span className="text-sm font-body font-bold">
+                🏆 Uniswap v4 Competition Entry
+              </span>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-3">
+            <div className="p-3 bg-white rounded-lg border-2 border-green-300">
+              <div className="flex items-start gap-2">
+                <span className="text-2xl">⚡</span>
+                <div>
+                  <h5 className="font-display font-bold text-green-700 text-sm">Low Volatility = Low Fees</h5>
+                  <p className="text-xs text-green-800 font-body mt-1">
+                    When markets are calm, fees drop to 0.1% to maximize volume and LP earnings
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="p-3 bg-white rounded-lg border-2 border-orange-300">
+              <div className="flex items-start gap-2">
+                <span className="text-2xl">🛡️</span>
+                <div>
+                  <h5 className="font-display font-bold text-orange-700 text-sm">High Volatility = Protection</h5>
+                  <p className="text-xs text-orange-800 font-body mt-1">
+                    Fees increase to 0.3% during volatility, protecting LPs from impermanent loss
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="p-3 bg-white rounded-lg border-2 border-purple-300">
+              <div className="flex items-start gap-2">
+                <span className="text-2xl">📡</span>
+                <div>
+                  <h5 className="font-display font-bold text-purple-700 text-sm">Real-Time Oracle Data</h5>
+                  <p className="text-xs text-purple-800 font-body mt-1">
+                    Pyth Network provides sub-second price updates for instant fee adjustments
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center">
+            <a href="/uniswap-implementation" className="text-sm text-purple-700 font-body font-bold hover:text-purple-800 underline">
+              Learn more about our Uniswap v4 Hook →
+            </a>
+          </div>
+        </div>
+      </Card>
+
       {/* Header Section */}
       <div className="space-y-3">
         <div className="flex items-center justify-between flex-wrap gap-3">
