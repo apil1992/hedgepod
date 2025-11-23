@@ -1,9 +1,12 @@
 /**
  * Uniswap v4 Pools API Route
- * Fetches real pool data using Pyth Network (volatility/prices) and on-chain data
+ * Fetches real pool data using:
+ * - Pyth Network: Real-time volatility and prices
+ * - The Graph: Real liquidity and 24h volume from Uniswap v3
  */
 
 import { NextResponse } from 'next/server';
+import { fetchUniswapPools, formatUSD, formatFeeTier } from '@/lib/thegraph';
 
 // Pyth price feed IDs (from Pyth Network)
 const PRICE_FEEDS = {
@@ -97,81 +100,96 @@ async function fetchPythData(priceId: string) {
 }
 
 /**
- * Fetch mock liquidity data (would come from subgraph or on-chain in production)
+ * Map token pairs to The Graph pool data
  */
-function getMockLiquidityData(pair: string) {
-  const liquidityMap: Record<string, { liquidity: string; volume24h: string; poolId: string }> = {
-    'USDC/ETH': {
-      liquidity: '$1.2M',
-      volume24h: '$450K',
-      poolId: '0x1234567890abcdef1234567890abcdef12345678',
-    },
-    'USDC/WBTC': {
-      liquidity: '$850K',
-      volume24h: '$320K',
-      poolId: '0x234567890abcdef1234567890abcdef123456789',
-    },
-    'ETH/USDT': {
-      liquidity: '$2.1M',
-      volume24h: '$780K',
-      poolId: '0x34567890abcdef1234567890abcdef1234567890',
-    },
-  };
+async function getRealPoolData(token0: string, token1: string) {
+  try {
+    // Fetch from The Graph (Ethereum mainnet has most reliable data)
+    const pools = await fetchUniswapPools('mainnet');
+    
+    // Find pool matching our token pair (case-insensitive)
+    const pool = pools.find(
+      (p) =>
+        (p.token0.symbol.toUpperCase() === token0.toUpperCase() &&
+          p.token1.symbol.toUpperCase() === token1.toUpperCase()) ||
+        (p.token0.symbol.toUpperCase() === token1.toUpperCase() &&
+          p.token1.symbol.toUpperCase() === token0.toUpperCase())
+    );
 
-  return liquidityMap[pair] || {
-    liquidity: '$0',
-    volume24h: '$0',
-    poolId: '0x0000000000000000000000000000000000000000',
-  };
+    if (pool) {
+      return {
+        liquidity: formatUSD(pool.totalValueLockedUSD),
+        volume24h: formatUSD(pool.volumeUSD),
+        poolId: pool.id,
+        feeTier: formatFeeTier(pool.feeTier),
+      };
+    }
+
+    // Fallback if no pool found
+    return {
+      liquidity: '$0',
+      volume24h: '$0',
+      poolId: '0x0000000000000000000000000000000000000000',
+      feeTier: '0.30%',
+    };
+  } catch (error) {
+    console.error(`Error fetching pool data for ${token0}/${token1}:`, error);
+    return {
+      liquidity: '$0',
+      volume24h: '$0',
+      poolId: '0x0000000000000000000000000000000000000000',
+      feeTier: '0.30%',
+    };
+  }
 }
 
 export async function GET() {
   try {
     // Fetch real volatility data from Pyth Network for all pairs
-    const [ethData, btcData] = await Promise.all([
+    const [ethData, btcData, usdcEthPool, usdcWbtcPool, ethUsdtPool] = await Promise.all([
       fetchPythData(PRICE_FEEDS.ETH_USD),
       fetchPythData(PRICE_FEEDS.BTC_USD),
+      getRealPoolData('USDC', 'ETH'),
+      getRealPoolData('USDC', 'WBTC'),
+      getRealPoolData('ETH', 'USDT'),
     ]);
 
-    // USDT typically has low volatility (stablecoin)
-    const usdtVolatility = 0.8; // Low, stable
-
-    // Build pool stats with real Pyth volatility data
+    // Build pool stats with REAL data from Pyth + The Graph
     const pools = [
       {
-        poolId: getMockLiquidityData('USDC/ETH').poolId,
+        poolId: usdcEthPool.poolId,
         pair: 'USDC/ETH',
         token0: 'USDC',
         token1: 'ETH',
-        fee: '0.3%',
-        liquidity: getMockLiquidityData('USDC/ETH').liquidity,
-        volume24h: getMockLiquidityData('USDC/ETH').volume24h,
+        fee: usdcEthPool.feeTier,
+        liquidity: usdcEthPool.liquidity,
+        volume24h: usdcEthPool.volume24h,
         currentFee: `${calculateDynamicFee(ethData.volatility).toFixed(2)}%`,
         volatility: `${getVolatilityCategory(ethData.volatility)} (${ethData.volatility.toFixed(1)}%)`,
         volatilityPercent: ethData.volatility,
         price: ethData.price,
       },
       {
-        poolId: getMockLiquidityData('USDC/WBTC').poolId,
+        poolId: usdcWbtcPool.poolId,
         pair: 'USDC/WBTC',
         token0: 'USDC',
         token1: 'WBTC',
-        fee: '0.3%',
-        liquidity: getMockLiquidityData('USDC/WBTC').liquidity,
-        volume24h: getMockLiquidityData('USDC/WBTC').volume24h,
+        fee: usdcWbtcPool.feeTier,
+        liquidity: usdcWbtcPool.liquidity,
+        volume24h: usdcWbtcPool.volume24h,
         currentFee: `${calculateDynamicFee(btcData.volatility).toFixed(2)}%`,
         volatility: `${getVolatilityCategory(btcData.volatility)} (${btcData.volatility.toFixed(1)}%)`,
         volatilityPercent: btcData.volatility,
         price: btcData.price,
       },
       {
-        poolId: getMockLiquidityData('ETH/USDT').poolId,
+        poolId: ethUsdtPool.poolId,
         pair: 'ETH/USDT',
         token0: 'ETH',
         token1: 'USDT',
-        fee: '0.3%',
-        liquidity: getMockLiquidityData('ETH/USDT').liquidity,
-        volume24h: getMockLiquidityData('ETH/USDT').volume24h,
+        fee: ethUsdtPool.feeTier,
+        liquidity: ethUsdtPool.liquidity,
+        volume24h: ethUsdtPool.volume24h,
         currentFee: `${calculateDynamicFee(ethData.volatility).toFixed(2)}%`,
         volatility: `${getVolatilityCategory(ethData.volatility)} (${ethData.volatility.toFixed(1)}%)`,
         volatilityPercent: ethData.volatility,
@@ -183,7 +201,11 @@ export async function GET() {
       success: true,
       pools,
       timestamp: Date.now(),
-      source: 'Pyth Network (Real-time)',
+      sources: {
+        volatility: 'Pyth Network (Real-time)',
+        liquidity: 'The Graph (Uniswap v3)',
+        volume: 'The Graph (Uniswap v3)',
+      },
     });
   } catch (error) {
     console.error('Error fetching Uniswap pool data:', error);

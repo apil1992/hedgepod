@@ -231,12 +231,12 @@ export function UniswapPoolStats() {
           <div className="flex gap-2 flex-wrap">
             <div className="px-4 py-2 bg-pink-100 border-2 border-pink-400 rounded-full">
               <span className="text-sm font-body font-bold text-pink-600">
-                🔥 Dynamic Fees Active
+                🔥 Dynamic Fees
               </span>
             </div>
             <div className="px-4 py-2 bg-purple-100 border-2 border-purple-400 rounded-full animate-pulse">
               <span className="text-sm font-body font-bold text-purple-600">
-                📡 Live Pyth Data
+                📡 Pyth + The Graph
               </span>
             </div>
           </div>
