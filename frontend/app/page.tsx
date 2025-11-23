@@ -25,7 +25,7 @@ export default function Home() {
           <Avatar size="lg" />
           
           <h1 className="text-4xl md:text-5xl font-display font-bold text-green-700 text-center">
-            Your AI-Powered Hedge Fund
+            Create Your Own AI-Powered Hedge Fund
           </h1>
           
           <p className="text-center text-green-800 font-body text-lg leading-relaxed max-w-2xl">
@@ -94,7 +94,7 @@ export default function Home() {
                   <p className="text-sm text-green-600 font-body mb-2">Let AI optimize your yields automatically</p>
                 </div>
               </div>
-              <Link href="/agents/deploy">
+              <Link href="/portfolio/deploy">
                 <Button variant="primary" size="md" className="w-full">
                   Start Now →
                 </Button>

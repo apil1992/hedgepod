@@ -294,7 +294,7 @@ Your HedgePod application is now:
 - ✅ Ready to deploy
 - ✅ Ready to demo!
 
-**Time to showcase your AI-powered hedge fund!** 🚀
+**Time to showcase Create Your Own AI-Powered Hedge Fund!** 🚀
 
 ---
 
