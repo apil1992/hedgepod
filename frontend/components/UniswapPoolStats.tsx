@@ -463,9 +463,10 @@ export function UniswapPoolStats() {
               </div>
 
               <div className="space-y-3">
+                {/* You Pay Input with Up/Down Arrows */}
                 <div className="p-4 bg-cream-50 rounded-lg border-2 border-green-300">
                   <p className="text-sm text-green-600 font-body mb-2">You Pay</p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-3">
                     <input 
                       type="text" 
                       placeholder="0.00" 
@@ -473,22 +474,52 @@ export function UniswapPoolStats() {
                       onChange={(e) => handleInputChange(e.target.value)}
                       className="text-2xl font-display font-bold bg-transparent outline-none flex-1"
                     />
+                    <div className="flex flex-col gap-1">
+                      <button
+                        onClick={() => {
+                          const current = parseFloat(inputAmount) || 0;
+                          handleInputChange((current + 0.1).toFixed(2));
+                        }}
+                        className="px-2 py-1 bg-green-500 hover:bg-green-600 text-white rounded border border-green-700 text-xs font-bold transition-colors"
+                      >
+                        ▲
+                      </button>
+                      <button
+                        onClick={() => {
+                          const current = parseFloat(inputAmount) || 0;
+                          handleInputChange(Math.max(0, current - 0.1).toFixed(2));
+                        }}
+                        className="px-2 py-1 bg-green-500 hover:bg-green-600 text-white rounded border border-green-700 text-xs font-bold transition-colors"
+                      >
+                        ▼
+                      </button>
+                    </div>
                     <span className="px-3 py-1 bg-green-100 border border-green-400 rounded-full text-sm font-body font-bold">
                       {isReversed ? selectedPool.token1 : selectedPool.token0}
                     </span>
                   </div>
                 </div>
 
+                {/* Purple Recycle Icon Button */}
                 <div className="flex justify-center">
                   <button
                     onClick={handleFlipTokens}
-                    className="px-3 py-2 bg-green-500 hover:bg-green-600 border-2 border-green-700 rounded-lg shadow-ac transition-all hover:scale-110 active:scale-95"
+                    className="p-3 bg-purple-500 hover:bg-purple-600 border-3 border-purple-700 rounded-full shadow-ac transition-all hover:scale-110 active:scale-95"
                     title="Swap token positions"
                   >
-                    <div className="flex flex-col items-center text-white">
-                      <span className="text-xl font-bold leading-none">▲</span>
-                      <span className="text-xl font-bold leading-none">▲</span>
-                    </div>
+                    <svg 
+                      className="w-6 h-6 text-white" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2.5} 
+                        d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" 
+                      />
+                    </svg>
                   </button>
                 </div>
 
