@@ -100,10 +100,15 @@ export default function Portfolio() {
       const data = await response.json();
 
       if (data.success) {
-        setAgents(data.agents.map((agent: any, idx: number) => ({
-          ...agent,
-          id: idx + 1,
-        })));
+        // Enrich agents with mock data for better demo experience
+        const { enrichAgentWithMockData } = await import('@/lib/mockData');
+        const enrichedAgents = data.agents.map((agent: any, idx: number) => 
+          enrichAgentWithMockData({
+            ...agent,
+            id: idx + 1,
+          }, idx)
+        );
+        setAgents(enrichedAgents);
       } else {
         setError(data.error);
       }

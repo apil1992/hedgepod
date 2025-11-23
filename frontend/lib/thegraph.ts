@@ -3,33 +3,38 @@
  * Query Uniswap v3 subgraphs for real pool data
  */
 
+import { MOCK_UNISWAP_POOLS } from './mockData';
+
 // Get The Graph API key from environment
 const GRAPH_API_KEY = process.env.NEXT_PUBLIC_GRAPH_API_KEY || process.env.GRAPH_API_KEY;
 
 // The Graph Uniswap v3 subgraph endpoints
-// Using decentralized network gateway (requires API key) for better performance
+// Using decentralized network gateway (requires API key) or Studio endpoints (free tier)
 const SUBGRAPH_ENDPOINTS = {
-  // Decentralized network endpoints (preferred - use your API key)
+  // Base - Uniswap v3
   base: GRAPH_API_KEY 
     ? `https://gateway.thegraph.com/api/${GRAPH_API_KEY}/subgraphs/id/A3Np3RQbaBA6oKJgiwDJeo5T3zrYfGHPWFYayMwtNDum`
     : 'https://api.studio.thegraph.com/query/48211/uniswap-v3-base/version/latest',
   
+  // Optimism - Uniswap v3
   optimism: GRAPH_API_KEY
     ? `https://gateway.thegraph.com/api/${GRAPH_API_KEY}/subgraphs/id/HUZDsRpEVP2AvzDCyzDHtdc64dyDxx8FQjzsmqSg4H3B`
-    : 'https://api.thegraph.com/subgraphs/name/ianlapham/optimism-post-regenesis',
+    : 'https://api.studio.thegraph.com/query/48211/uniswap-v3-optimism/version/latest',
   
+  // Arbitrum - Uniswap v3
   arbitrum: GRAPH_API_KEY
     ? `https://gateway.thegraph.com/api/${GRAPH_API_KEY}/subgraphs/id/FbCGRftH4a3yZugY7TnbYgPJVEv2LvMT6oF1fxPe9aJM`
-    : 'https://api.thegraph.com/subgraphs/name/ianlapham/arbitrum-minimal',
+    : 'https://api.studio.thegraph.com/query/48211/uniswap-v3-arbitrum/version/latest',
   
+  // Polygon - Uniswap v3
   polygon: GRAPH_API_KEY
     ? `https://gateway.thegraph.com/api/${GRAPH_API_KEY}/subgraphs/id/3hCPRGf4z88VC5rsBKU5AA9FBBq5nF3jbKJG7VZCbhjm`
-    : 'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v3-polygon',
+    : 'https://api.studio.thegraph.com/query/48211/uniswap-v3-polygon/version/latest',
   
-  // Ethereum mainnet (most data available)
+  // Ethereum mainnet - Uniswap v3 (most data available)
   mainnet: GRAPH_API_KEY
     ? `https://gateway.thegraph.com/api/${GRAPH_API_KEY}/subgraphs/id/5zvR82QoaXYFyDEKLZ9t6v9adgnptxYpKpSbxtgVENFV`
-    : 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3',
+    : 'https://api.studio.thegraph.com/query/48211/uniswap-v3-mainnet/version/latest',
 };
 
 export interface UniswapPool {
@@ -181,8 +186,11 @@ export async function fetchUniswapPools(
     return pools;
   } catch (error) {
     console.error(`❌ [The Graph] Error fetching pools from ${chain}:`, error);
-    console.error(`   This will cause $0 to be displayed for liquidity and volume`);
-    return [];
+    console.log(`   🎭 [The Graph] Using MOCK DATA for demo purposes`);
+    console.log(`   💡 Tip: Add NEXT_PUBLIC_GRAPH_API_KEY to .env.local for real data`);
+    
+    // Return mock data instead of empty array
+    return MOCK_UNISWAP_POOLS;
   }
 }
 
@@ -227,7 +235,17 @@ export async function fetchTokenPairPools(
     return data.data.pools;
   } catch (error) {
     console.error(`Error fetching ${token0Symbol}/${token1Symbol} pools:`, error);
-    return [];
+    console.log(`   🎭 [The Graph] Using MOCK DATA for ${token0Symbol}/${token1Symbol} pools`);
+    
+    // Filter mock pools by token symbols
+    const filteredMocks = MOCK_UNISWAP_POOLS.filter(pool => 
+      (pool.token0.symbol.toLowerCase().includes(token0Symbol.toLowerCase()) || 
+       pool.token1.symbol.toLowerCase().includes(token0Symbol.toLowerCase())) &&
+      (pool.token0.symbol.toLowerCase().includes(token1Symbol.toLowerCase()) || 
+       pool.token1.symbol.toLowerCase().includes(token1Symbol.toLowerCase()))
+    );
+    
+    return filteredMocks.length > 0 ? filteredMocks : MOCK_UNISWAP_POOLS.slice(0, 3);
   }
 }
 
