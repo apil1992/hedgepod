@@ -10,6 +10,7 @@ export interface NetworkConfig {
   pythOracle: string;
   chainlinkOracle: string;
   lzEndpoint: string;
+  lzEid: number; // LayerZero V2 Endpoint ID
   depositToken: string;
 }
 
@@ -21,6 +22,7 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     pythOracle: "0x0000000000000000000000000000000000000000", // Mock address
     chainlinkOracle: "0x0000000000000000000000000000000000000000", // Mock address
     lzEndpoint: "0x0000000000000000000000000000000000000000", // Mock address
+    lzEid: 31337, // Local chain ID
     depositToken: "0x0000000000000000000000000000000000000000", // Will deploy mock USDC
   },
 
@@ -30,6 +32,7 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     pythOracle: "0x0000000000000000000000000000000000000000", // Mock address
     chainlinkOracle: "0x0000000000000000000000000000000000000000", // Mock address
     lzEndpoint: "0x0000000000000000000000000000000000000000", // Mock address
+    lzEid: 31337, // Local chain ID
     depositToken: "0x0000000000000000000000000000000000000000", // Will deploy mock USDC
   },
 
@@ -40,6 +43,7 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     pythOracle: "0xA2aa501b19aff244D90cc15a4Cf739D2725B5729",
     chainlinkOracle: "0x0000000000000000000000000000000000000000",
     lzEndpoint: "0x6EDCE65403992e310A62460808c4b910D972f10f", // LayerZero V2 Endpoint
+    lzEid: 40245, // Base Sepolia EID
     depositToken: "0x036CbD53842c5426634e7929541eC2318f3dCF7e", // USDC on Base Sepolia
   },
 
@@ -50,6 +54,7 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     pythOracle: "0x0000000000000000000000000000000000000000", // TODO: Get actual address
     chainlinkOracle: "0x0000000000000000000000000000000000000000",
     lzEndpoint: "0x1a44076050125825900e736c501f859c50fE728c", // LayerZero V2 Endpoint
+    lzEid: 30302, // World Chain Mainnet EID
     depositToken: "0x0000000000000000000000000000000000000000", // TODO: Get USDC address
   },
 
@@ -59,6 +64,7 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     pythOracle: "0x8250f4aF4B972684F7b336503E2D6dFeDeB1487a",
     chainlinkOracle: "0x0000000000000000000000000000000000000000",
     lzEndpoint: "0x1a44076050125825900e736c501f859c50fE728c", // LayerZero V2 Endpoint
+    lzEid: 30184, // Base Mainnet EID
     depositToken: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913", // USDC on Base
   },
 
@@ -68,6 +74,7 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     pythOracle: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
     chainlinkOracle: "0x0000000000000000000000000000000000000000",
     lzEndpoint: "0x1a44076050125825900e736c501f859c50fE728c", // LayerZero V2 Endpoint
+    lzEid: 30125, // Celo Mainnet EID
     depositToken: "0xcebA9300f2b948710d2653dD7B07f33A8B32118C", // USDC on Celo
   },
 
@@ -77,6 +84,7 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     pythOracle: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
     chainlinkOracle: "0x0000000000000000000000000000000000000000",
     lzEndpoint: "0x1a44076050125825900e736c501f859c50fE728c", // LayerZero V2 Endpoint
+    lzEid: 30109, // Polygon Mainnet EID
     depositToken: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359", // USDC on Polygon (Native USDC)
   },
 
@@ -86,6 +94,7 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     pythOracle: "0x0000000000000000000000000000000000000000", // TODO: Check if Pyth is deployed
     chainlinkOracle: "0x0000000000000000000000000000000000000000",
     lzEndpoint: "0x0000000000000000000000000000000000000000", // TODO: Get LayerZero endpoint
+    lzEid: 0, // TODO: Get Zircuit EID
     depositToken: "0x0000000000000000000000000000000000000000", // TODO: Get USDC address
   },
 
@@ -95,6 +104,7 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     pythOracle: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
     chainlinkOracle: "0x0000000000000000000000000000000000000000",
     lzEndpoint: "0x1a44076050125825900e736c501f859c50fE728c", // LayerZero V2 Endpoint
+    lzEid: 30110, // Arbitrum One EID
     depositToken: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831", // USDC on Arbitrum (Native USDC)
   },
 
@@ -104,6 +114,7 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     pythOracle: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
     chainlinkOracle: "0x0000000000000000000000000000000000000000",
     lzEndpoint: "0x1a44076050125825900e736c501f859c50fE728c", // LayerZero V2 Endpoint
+    lzEid: 30111, // Optimism Mainnet EID
     depositToken: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85", // USDC on Optimism (Native USDC)
   },
 
@@ -113,6 +124,7 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     pythOracle: "0x4305FB66699C3B2702D4d05CF36551390A4c69C6", // Pyth on Avalanche
     chainlinkOracle: "0x0000000000000000000000000000000000000000",
     lzEndpoint: "0x1a44076050125825900e736c501f859c50fE728c", // LayerZero V2 Endpoint
+    lzEid: 30106, // Avalanche C-Chain EID
     depositToken: "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E", // USDC on Avalanche
   },
 };
