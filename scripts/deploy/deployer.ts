@@ -215,9 +215,32 @@ async function main() {
   saveABI("VolatilityFeeHook", VolatilityFeeHook.interface.formatJson());
 
   // =====================================================
-  // 5. Save Deployment Data
+  // 5. Deploy RandomAgentSelector (if Entropy available)
   // =====================================================
-  printStepHeader("Step 5: Save Deployment Data");
+  if (config.pythEntropy && config.entropyProvider) {
+    printStepHeader("Step 5: Deploy RandomAgentSelector");
+    printInfo("🎲 Deploying Pyth Entropy random agent selector...");
+    
+    const RandomAgentSelector = await ethers.getContractFactory("RandomAgentSelector");
+    const randomSelector = await RandomAgentSelector.deploy(
+      config.pythEntropy,
+      config.entropyProvider
+    );
+    await randomSelector.waitForDeployment();
+    const randomSelectorAddress = await randomSelector.getAddress();
+    deployedContracts.RandomAgentSelector = randomSelectorAddress;
+    
+    printExplorerLink("✅ RandomAgentSelector", randomSelectorAddress, config.explorerUrl);
+    saveABI("RandomAgentSelector", RandomAgentSelector.interface.formatJson());
+    printSuccess("RandomAgentSelector deployed with Pyth Entropy integration");
+  } else {
+    printInfo("⚠️  Skipping RandomAgentSelector: Pyth Entropy not available on this chain");
+  }
+
+  // =====================================================
+  // 6. Save Deployment Data
+  // =====================================================
+  printStepHeader("Step 6: Save Deployment Data");
   
   const deploymentData = {
     network: networkName,
@@ -240,6 +263,9 @@ async function main() {
       AutoYieldToken: `npx hardhat verify --network ${networkName} ${autoYieldTokenAddress} ${config.lzEndpoint} 100`,
       HedgePodVault: `npx hardhat verify --network ${networkName} ${vaultAddress} ${config.depositToken} ${autoYieldTokenAddress} ${config.pythOracle} ${PRICE_IDS.ETH_USD} ${PRICE_IDS.USDC_USD}`,
       VolatilityFeeHook: `npx hardhat verify --network ${networkName} ${hookAddress} ${config.pythOracle} ${poolManager} ${PRICE_IDS.ETH_USD}`,
+      ...(deployedContracts.RandomAgentSelector && {
+        RandomAgentSelector: `npx hardhat verify --network ${networkName} ${deployedContracts.RandomAgentSelector} ${config.pythEntropy} ${config.entropyProvider}`,
+      }),
     }
   };
 
@@ -247,7 +273,7 @@ async function main() {
   saveFrontendData(deploymentData);
 
   // =====================================================
-  // 6. Print Summary
+  // 7. Print Summary
   // =====================================================
   printSectionHeader("DEPLOYMENT SUMMARY");
   printInfo(`Network:           ${config.name} (${networkName})`);
@@ -256,16 +282,22 @@ async function main() {
   printInfo(`Timestamp:         ${timestamp}`);
   console.log();
   printInfo("📝 Deployed Contracts:");
-  printInfo(`  YieldOracle:       ${yieldOracleAddress}`);
-  printInfo(`  AutoYieldToken:    ${autoYieldTokenAddress}`);
-  printInfo(`  HedgePodVault:     ${vaultAddress}`);
-  printInfo(`  VolatilityFeeHook: ${hookAddress}`);
+  printInfo(`  YieldOracle:           ${yieldOracleAddress}`);
+  printInfo(`  AutoYieldToken:        ${autoYieldTokenAddress}`);
+  printInfo(`  HedgePodVault:         ${vaultAddress}`);
+  printInfo(`  VolatilityFeeHook:     ${hookAddress}`);
+  if (deployedContracts.RandomAgentSelector) {
+    printInfo(`  RandomAgentSelector:   ${deployedContracts.RandomAgentSelector}`);
+  }
   console.log();
   printInfo("🔗 Explorer Links:");
   printInfo(`  ${config.explorerUrl}/address/${yieldOracleAddress}`);
   printInfo(`  ${config.explorerUrl}/address/${autoYieldTokenAddress}`);
   printInfo(`  ${config.explorerUrl}/address/${vaultAddress}`);
   printInfo(`  ${config.explorerUrl}/address/${hookAddress}`);
+  if (deployedContracts.RandomAgentSelector) {
+    printInfo(`  ${config.explorerUrl}/address/${deployedContracts.RandomAgentSelector}`);
+  }
   
   printSectionHeader("✨ Deployment Complete!");
   

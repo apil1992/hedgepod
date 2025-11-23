@@ -8,6 +8,8 @@ export interface NetworkConfig {
   name: string;
   explorerUrl: string;
   pythOracle: string;
+  pythEntropy?: string; // Pyth Entropy contract (optional, not on all chains)
+  entropyProvider?: string; // Pyth Entropy provider address
   chainlinkOracle: string;
   lzEndpoint: string;
   lzEid: number; // LayerZero V2 Endpoint ID
@@ -41,6 +43,8 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     name: "Base Sepolia",
     explorerUrl: "https://sepolia.basescan.org",
     pythOracle: "0xA2aa501b19aff244D90cc15a4Cf739D2725B5729",
+    pythEntropy: "0x41c9e39574F40Ad34c79f1C99B66A45eFB830d4c", // Pyth Entropy on Base Sepolia
+    entropyProvider: "0x6CC14824Ea2918f5De5C2f75A9Da968ad4BD6344", // Fortuna testnet provider
     chainlinkOracle: "0x0000000000000000000000000000000000000000",
     lzEndpoint: "0x6EDCE65403992e310A62460808c4b910D972f10f", // LayerZero V2 Endpoint
     lzEid: 40245, // Base Sepolia EID
@@ -62,6 +66,8 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     name: "Base",
     explorerUrl: "https://basescan.org",
     pythOracle: "0x8250f4aF4B972684F7b336503E2D6dFeDeB1487a",
+    pythEntropy: "0x0000000000000000000000000000000000000000", // TODO: Pyth Entropy mainnet address
+    entropyProvider: "0x0000000000000000000000000000000000000000", // TODO: Provider address
     chainlinkOracle: "0x0000000000000000000000000000000000000000",
     lzEndpoint: "0x1a44076050125825900e736c501f859c50fE728c", // LayerZero V2 Endpoint
     lzEid: 30184, // Base Mainnet EID
@@ -102,6 +108,8 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     name: "Arbitrum",
     explorerUrl: "https://arbiscan.io",
     pythOracle: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
+    pythEntropy: "0x0000000000000000000000000000000000000000", // TODO: Pyth Entropy on Arbitrum
+    entropyProvider: "0x0000000000000000000000000000000000000000", // TODO: Provider address
     chainlinkOracle: "0x0000000000000000000000000000000000000000",
     lzEndpoint: "0x1a44076050125825900e736c501f859c50fE728c", // LayerZero V2 Endpoint
     lzEid: 30110, // Arbitrum One EID
@@ -112,6 +120,8 @@ export const NETWORK_CONFIG: Record<string, NetworkConfig> = {
     name: "Optimism",
     explorerUrl: "https://optimistic.etherscan.io",
     pythOracle: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
+    pythEntropy: "0x0000000000000000000000000000000000000000", // TODO: Pyth Entropy on Optimism
+    entropyProvider: "0x0000000000000000000000000000000000000000", // TODO: Provider address
     chainlinkOracle: "0x0000000000000000000000000000000000000000",
     lzEndpoint: "0x1a44076050125825900e736c501f859c50fE728c", // LayerZero V2 Endpoint
     lzEid: 30111, // Optimism Mainnet EID
