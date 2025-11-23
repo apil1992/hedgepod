@@ -142,7 +142,12 @@ export function Navigation() {
               
               <Link href="/pyth-implementation" onClick={() => setIsMoreDropdownOpen(false)}>
                 <div className="px-4 py-3 hover:bg-green-100 transition-colors cursor-pointer border-b-2 border-brown-200">
-                  <p className="font-display font-bold text-green-700 text-sm">📡 Pyth Network</p>
+                  <p className="font-display font-bold text-green-700 text-sm">📡 Pyth Price Feeds</p>
+                </div>
+              </Link>
+              <Link href="/entropy-implementation" onClick={() => setIsMoreDropdownOpen(false)}>
+                <div className="px-4 py-3 hover:bg-green-100 transition-colors cursor-pointer border-b-2 border-brown-200">
+                  <p className="font-display font-bold text-green-700 text-sm">🎲 Pyth Entropy</p>
                 </div>
               </Link>
               <Link href="/thegraph-implementation" onClick={() => setIsMoreDropdownOpen(false)}>

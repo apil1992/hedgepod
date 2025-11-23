@@ -1,0 +1,22 @@
+[Unit]
+Description=HedgePod Autonomous Agent
+After=network.target
+
+[Service]
+Type=simple
+User=hedgepod
+WorkingDirectory=/home/hedgepod/agent
+Environment="AGENT_ID=your-agent-id"
+Environment="COINBASE_CDP_API_KEY=your-key"
+Environment="COINBASE_CDP_SECRET=your-secret"
+Environment="SUPABASE_URL=https://your-project.supabase.co"
+Environment="SUPABASE_SERVICE_KEY=your-key"
+Environment="CHECK_INTERVAL_SECONDS=300"
+Environment="MIN_APR_IMPROVEMENT=0.5"
+ExecStart=/usr/bin/python3 /home/hedgepod/agent/autonomous_agent.py --agent-id ${AGENT_ID}
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+

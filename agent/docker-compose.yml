@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  agent:
+    build: .
+    container_name: hedgepod-agent
+    restart: unless-stopped
+    environment:
+      - AGENT_ID=${AGENT_ID}
+      - COINBASE_CDP_API_KEY=${COINBASE_CDP_API_KEY}
+      - COINBASE_CDP_SECRET=${COINBASE_CDP_SECRET}
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_SERVICE_KEY=${SUPABASE_SERVICE_KEY}
+      - PYTH_HERMES_API_URL=https://hermes.pyth.network
+      - ONEINCH_API_URL=https://api.1inch.dev
+      - CHECK_INTERVAL_SECONDS=300
+      - MIN_APR_IMPROVEMENT=0.5
+      - GAS_SAFETY_MARGIN=1.5
+    volumes:
+      - ./logs:/app/logs
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+

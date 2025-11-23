@@ -1,0 +1,21 @@
+## HedgePod Autonomous Agent Dependencies
+
+# Core
+requests>=2.31.0
+aiohttp>=3.9.0
+python-dotenv>=1.0.0
+
+# Blockchain
+web3>=6.11.0
+eth-account>=0.10.0
+
+# Coinbase CDP (when available)
+# coinbase-cdp-sdk>=1.0.0  # TODO: Install when published
+
+# Database
+supabase>=2.0.0
+
+# Utilities
+python-dateutil>=2.8.2
+pydantic>=2.5.0
+
