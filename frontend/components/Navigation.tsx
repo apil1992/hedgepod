@@ -108,11 +108,11 @@ export function Navigation() {
                   <p className="font-display font-bold text-green-700 text-sm">📖 About</p>
                 </div>
               </Link>
-              <Link href="/demo" onClick={() => setIsMoreDropdownOpen(false)}>
+              {/* <Link href="/demo" onClick={() => setIsMoreDropdownOpen(false)}>
                 <div className="px-4 py-3 hover:bg-green-100 transition-colors cursor-pointer border-b-2 border-brown-200">
                   <p className="font-display font-bold text-green-700 text-sm">🎥 Demo Video</p>
                 </div>
-              </Link>
+              </Link> */}
               <Link href="/contracts" onClick={() => setIsMoreDropdownOpen(false)} className="md:hidden">
                 <div className="px-4 py-3 hover:bg-green-100 transition-colors cursor-pointer border-b-2 border-brown-200">
                   <p className="font-display font-bold text-green-700 text-sm">📜 Contracts</p>
